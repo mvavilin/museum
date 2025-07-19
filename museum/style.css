@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+.container {
+  max-width: 144rem;
+  width: 100%;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */

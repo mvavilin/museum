@@ -27,7 +27,8 @@ ul {
 
 h1,
 h2,
-h3 {
+h3,
+p {
   margin: 0;
 }
 
@@ -58,6 +59,30 @@ h3 {
   font-weight: 100;
 }
 
+.section__title {
+  font-family: "Forum", serif;
+  font-size: 8rem;
+  font-weight: 100;
+  line-height: 9rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.section__title--gold {
+  color: #9d8665;
+}
+.section__title--underline {
+  position: relative;
+}
+.section__title--underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2.9rem;
+  left: 0;
+  right: 0;
+  height: 0.3rem;
+  background-color: #710707;
+}
+
 .Welcome {
   background-color: #030303;
   color: #ffffff;
@@ -73,14 +98,6 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-}
-.Welcome__title {
-  font-family: "Forum", serif;
-  font-size: 8rem;
-  font-weight: 100;
-  line-height: 9rem;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
 }
 .Welcome__subtitle {
   margin-bottom: 5rem;
@@ -104,6 +121,14 @@ h3 {
 .Welcome__link-btn-text:active {
   background-color: #7e6c51;
 }
+.Visiting__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10.3rem;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
 .navigation__link {
   font-size: 2.2rem;
   letter-spacing: 0.2rem;
@@ -208,4 +233,48 @@ h3 {
 }
 .slider__arrow-right {
   -webkit-mask-image: url("assets/img/slider/arrow-right.svg");
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7.5rem 6rem;
+}
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card__image {
+  display: block;
+  max-width: 44rem;
+  max-height: 28.5rem;
+}
+.card__title {
+  position: relative;
+  font-family: "Forum", serif;
+  font-size: 3.2rem;
+  font-weight: 100;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.card__title::after {
+  content: "";
+  position: absolute;
+  max-width: 68%;
+  bottom: -1.2rem;
+  left: 0;
+  right: 0;
+  height: 0.2rem;
+  background-color: #710707;
+}
+.card__label {
+  font-weight: 200;
+}
+.card__label--1 {
+  font-size: 2.2rem;
 }/*# sourceMappingURL=style.css.map */

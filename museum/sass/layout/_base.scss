@@ -10,8 +10,8 @@ html {
 body {
     font-family: $font-secondary;
     font-size: $font-size-base;
-    line-height: $line-height-base;
     font-weight: $font-weight-regular;
+    line-height: $line-height-base;
 }
 
 a {
@@ -25,10 +25,17 @@ ul {
     list-style: none;
 }
 
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
 .container {
-    max-width: $container-max-width + 2 * $spacing-unit;
-    padding-left: $spacing-unit;
-    padding-right: $spacing-unit;
+    max-width: $container-max-width;
+    // max-width: $container-max-width + 2 * $spacing-normal;
+    // padding-left: $spacing-normal;
+    // padding-right: $spacing-normal;
     width: 100%;
     margin: 0 auto;
 }
@@ -44,7 +51,7 @@ ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: $spacing-unit;
+        gap: $spacing-normal;
     }
 
     &__logo {}
@@ -64,4 +71,68 @@ ul {
     &__navigation-link {
         font-weight: $font-weight-thin;
     }
+}
+
+.section {}
+
+.Welcome {
+    background-color: $color-background;
+    color: $color-text-light;
+
+    &__container {
+        position: relative;
+        padding-top: 15rem;
+        padding-bottom: 27rem;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem
+    }
+
+    &__title {
+        font-family: $font-primary;
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-thin;
+        line-height: $line-height-lg;
+        letter-spacing: $letter-spacing-normal;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        margin-bottom: 5rem;
+
+        font-size: $font-size-lg;
+        font-weight: $font-weight-light;
+        letter-spacing: $letter-spacing-xs;
+    }
+
+    &__link-btn {}
+
+    &__link-btn-text {
+        display: inline-block;
+        padding: 2.5rem 6.7rem;
+        border-radius: $border-radius-normal;
+
+        background-color: $color-primary;
+
+        font-size: $font-size-md;
+        font-weight: $font-weight-light;
+        letter-spacing: $letter-spacing-xs;
+
+        transition: $transition-normal;
+
+        &:hover {
+            background-color: $color-link-hover;
+        }
+
+        &:active {
+            background-color: $color-link-active;
+        }
+    }
+
+    &__slider {}
 }

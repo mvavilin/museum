@@ -150,6 +150,38 @@ p {
   flex-direction: column;
   gap: 2.5rem;
 }
+.Video__container {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+}
+.Video__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7.5rem;
+}
+.Video__desc {
+  max-width: 72rem;
+}
+.Video__player {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.Video__slider {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.Video__pagination {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
 .navigation__link {
   font-size: 2.2rem;
   letter-spacing: 0.2rem;
@@ -339,4 +371,131 @@ p {
   height: 4rem;
   border: 0.5rem solid #ffffff;
   border-radius: 999.9rem;
+}
+
+.player__video {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 65rem;
+  background-image: url("assets/svg/player/preview.png");
+}
+.player__video--paused {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22rem;
+  height: 22rem;
+  border: 1rem solid #ffffff;
+  border-radius: 999.9rem;
+  background-color: #ffffff;
+  -webkit-mask-image: url("assets/svg/player/paused.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+}
+.player__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.player__slide {
+  flex-grow: 1;
+  max-width: 45.2rem;
+  height: 25.2rem;
+}
+.player__iframe {
+  width: 100%;
+  height: 100%;
+}
+.player__pagination, .player__dots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.player__nav, .player__dot {
+  cursor: pointer;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #999999;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  transition: 0.3s ease;
+}
+.player__nav:hover, .player__dot:hover {
+  background-color: #710707;
+}
+.player__nav--prev {
+  -webkit-mask-image: url("assets/svg/player/prev.svg");
+}
+.player__nav--next {
+  -webkit-mask-image: url("assets/svg/player/next.svg");
+}
+.player__dot {
+  border-radius: 999.9rem;
+}
+.player__dot--active {
+  background-color: #710707;
+}
+
+.control-unit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  padding: 2.6rem 3rem;
+  background-color: #000000;
+}
+.control-unit__progress-bar, .control-unit__volume-slider {
+  height: 0.8rem;
+  transition: background 0.5s ease;
+  -webkit-appearance: none;
+}
+.control-unit__progress-bar::-webkit-slider-thumb, .control-unit__volume-slider::-webkit-slider-thumb {
+  cursor: ew-resize;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background: #ffffff;
+}
+.control-unit__play-button, .control-unit__progress-bar, .control-unit__volume-icon, .control-unit__volume-slider, .control-unit__fullscreen-button {
+  cursor: pointer;
+}
+.control-unit__play-button, .control-unit__volume-icon, .control-unit__fullscreen-button {
+  background-color: #b3b3b3;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  transition: 0.3s ease;
+}
+.control-unit__play-button:hover, .control-unit__volume-icon:hover, .control-unit__fullscreen-button:hover {
+  background-color: #989898;
+}
+.control-unit__play-button {
+  width: 2.3rem;
+  height: 3.1rem;
+  -webkit-mask-image: url("assets/svg/player/play.svg");
+}
+.control-unit__progress-bar {
+  flex-grow: 1;
+  max-width: 92.9rem;
+  background: linear-gradient(to right, #710707 0%, #710707 54%, #fff 54%, #fff 100%);
+}
+.control-unit__volume-icon {
+  width: 3.8rem;
+  height: 3.1rem;
+  -webkit-mask-image: url("assets/svg/player/volume.svg");
+}
+.control-unit__volume-slider {
+  flex-grow: 1;
+  max-width: 15.5rem;
+  background: linear-gradient(to right, #710707 0%, #710707 42%, #fff 42%, #fff 100%);
+}
+.control-unit__fullscreen-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  -webkit-mask-image: url("assets/svg/player/fullscreen.svg");
 }/*# sourceMappingURL=style.css.map */

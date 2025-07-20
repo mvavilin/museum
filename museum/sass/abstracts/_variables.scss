@@ -12,6 +12,10 @@ $color-link-hover: #9d8665;
 $color-link-active: #7e6c51;
 $color-dot-active: #d2b183;
 $color-desc-marker: #caaa7d;
+$color-player-control-unit: #b3b3b3;
+$color-player-control-unit-hover: #989898;
+$color-player-pagination-unit: #999999;
+$color-player-pagination-unit-hover: #710707;
 
 $font-primary: 'Forum', serif;
 $font-secondary: 'Roboto', sans-serif;
@@ -56,7 +60,7 @@ $border-radius-full: 999.9rem;
 
 // $transition-fast: 0.15s ease;
 $transition-normal: 0.3s ease;
-// $transition-slow: 0.5s ease;
+$transition-slow: 0.5s ease;
 
 // $breakpoint-xs: 0;
 // $breakpoint-sm: 42rem;

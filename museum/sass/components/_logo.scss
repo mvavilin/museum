@@ -1,0 +1,25 @@
+.logo {
+
+    &__link {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    &__image {
+        display: inline-block;
+        min-width: 4.9rem;
+        min-height: 2.6rem;
+        background-color: $color-white;
+        -webkit-mask-image: url("assets/svg/logo.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-position: top center;
+        -webkit-mask-repeat: no-repeat;
+    }
+
+    &__title {
+        font-family: $font-primary;
+        font-size: $font-size-lg;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+    }
+}

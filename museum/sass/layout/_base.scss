@@ -291,3 +291,55 @@ p {
         object-fit: contain;
     }
 }
+
+.Contacts {
+
+    &__container {
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 19.8rem;
+    }
+
+    &__contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 2.5rem;
+    }
+
+    &__map {
+        max-width: 96rem;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+    }
+}
+
+.contact-list {
+
+    &__title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+    }
+
+    &__item {
+        font-size: $font-size-md;
+        font-weight: $font-weight-extra-light;
+    }
+
+    &__link {}
+}

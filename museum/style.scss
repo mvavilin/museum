@@ -2,8 +2,8 @@
 @import 'sass/abstracts/mixins';
 
 @import 'sass/layout/base';
-@import 'sass/layout/navigation';
 
+@import 'sass/components/navigation';
 @import 'sass/components/buttons';
 @import 'sass/components/logo';
 @import 'sass/components/slider';
@@ -11,3 +11,5 @@
 @import 'sass/components/desc';
 @import 'sass/components/slider-comparison';
 @import 'sass/components/player';
+@import 'sass/components/contact-list';
+@import 'sass/components/social-list';

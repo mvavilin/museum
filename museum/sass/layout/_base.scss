@@ -164,7 +164,36 @@ p {
         flex-direction: column;
         gap: 10.3rem;
 
-        padding-top: 7.5rem;
-        padding-bottom: 7.5rem;
+        padding-top: 7.6rem;
+        padding-bottom: 7.6rem;
     }
+}
+
+.Explore {
+    background-color: $color-background;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 6.1rem;
+
+        padding-top: 7.5rem;
+        padding-bottom: 7.3rem;
+
+        color: $color-text-light;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    &__slider-comparison {}
 }

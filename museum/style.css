@@ -182,6 +182,52 @@ p {
   margin: 0 auto;
 }
 
+.Gallery {
+  background-color: #000000;
+  color: #ffffff;
+}
+.Gallery__container {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  padding-top: 7.5rem;
+}
+.Gallery__image-container {
+  max-height: 196rem;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 0;
+}
+.Gallery__image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 36rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+.Gallery__inner-container {
+  -moz-columns: 3 auto;
+       columns: 3 auto;
+  -moz-column-gap: 3.6rem;
+       column-gap: 3.6rem;
+}
+.Gallery__image-wrapper {
+  max-width: 45.6rem;
+  margin-bottom: 2.5rem;
+}
+.Gallery__image-wrapper:nth-child(1), .Gallery__image-wrapper:nth-child(11) {
+  padding-top: 5rem;
+}
+.Gallery__image {
+  display: block;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .navigation__link {
   font-size: 2.2rem;
   letter-spacing: 0.2rem;

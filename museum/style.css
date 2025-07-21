@@ -676,6 +676,13 @@ p {
   font-size: 2.2rem;
   font-weight: 200;
 }
+.contact-list__link {
+  transition: 0.3s ease;
+}
+.contact-list__link:hover {
+  color: #9d8665;
+}
+
 .social-list__link {
   display: flex;
   justify-content: center;

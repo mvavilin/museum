@@ -28,6 +28,7 @@ ul {
 h1,
 h2,
 h3,
+h4,
 p {
     margin: 0;
 }
@@ -292,6 +293,39 @@ p {
     }
 }
 
+.Tickets {
+
+    &__container {
+        padding-top: 7.5rem;
+        padding-bottom: 7.1rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 6rem;
+    }
+
+    &__image-wrapper {
+        width: 72rem;
+    }
+
+    &__image {
+        object-fit: contain;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5.2rem;
+    }
+}
+
 .parallax {
     width: 100%;
     height: 40rem;
@@ -387,6 +421,8 @@ p {
     }
 
     &__additional {
+        position: relative;
+
         padding-top: 5rem;
         padding-bottom: 5.2rem;
 

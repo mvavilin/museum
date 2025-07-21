@@ -76,6 +76,8 @@
     }
 
     &__arrow {
+        display: block;
+
         min-width: 3rem;
         min-height: 4rem;
         background-color: $color-white;

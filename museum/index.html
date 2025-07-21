@@ -74,8 +74,8 @@
                             </div>
 
                             <div class="slider__arrows">
-                                <div class="slider__arrow slider__arrow-left"></div>
-                                <div class="slider__arrow slider__arrow-right"></div>
+                                <button class="slider__arrow slider__arrow-left"></button>
+                                <button class="slider__arrow slider__arrow-right"></button>
                             </div>
                         </div>
                     </div>
@@ -274,13 +274,63 @@
             </div>
         </section>
 
-        <div class="parallax"></div>
-
         <section id="Tickets" class="section Tickets">
-            <div class="container">
+            <div class="container Tickets__container">
+                <h2 class="section__title section__title--gold section__title--underline">Buy tickets</h2>
 
+                <div class="Tickets__content">
+                    <div class="Tickets__image-wrapper"><img src="assets/img/picture.png" alt="picture"
+                            class="Tickets__image"></div>
+                    <form action="#" class="Tickets__form form">
+                        <div class="form__purchase purchase">
+                            <div class="purchase__ticket-type ticket-type">
+                                <h3 class="ticket-type__title">Ticket Type</h3>
+                                <label class="ticket-type__item">Permanent exhibition
+                                    <input type="radio" checked="checked" name="radio" class="ticket-type__input">
+                                    <span class="ticket-type__checkmark"></span>
+                                </label>
+                                <label class="ticket-type__item">Temporary exhibition
+                                    <input type="radio" checked="checked" name="radio" class="ticket-type__input">
+                                    <span class="ticket-type__checkmark"></span>
+                                </label>
+                                <label class="ticket-type__item">Combined Admission
+                                    <input type="radio" checked="checked" name="radio" class="ticket-type__input">
+                                    <span class="ticket-type__checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="purchase__amount amount">
+                                <h3 class="amount__title">Amount</h3>
+
+                                <p class="amount__item">Basic 18+</p>
+                                <div class="amount__counter">
+                                    <button type="button" onclick="this.nextElementSibling.stepDown()"
+                                        class="amount__button">–</button>
+                                    <input type="number" min="0" max="999" value="1" readonly class="amount__number">
+                                    <button type="button" onclick="this.previousElementSibling.stepUp()"
+                                        class="amount__button">+</button>
+                                </div>
+
+                                <p class="amount__item">Senior 65+</p>
+                                <div class="amount__counter">
+                                    <button type="button" onclick="this.nextElementSibling.stepDown()"
+                                        class="amount__button">–</button>
+                                    <input type="number" min="0" max="999" value="1" readonly class="amount__number">
+                                    <button type="button" onclick="this.previousElementSibling.stepUp()"
+                                        class="amount__button">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__sum">Total €<span class="form__total">220</span></div>
+
+                        <button type="button" class="form__button"><span>Buy Now</span></button>
+                    </form>
+                </div>
             </div>
         </section>
+
+        <div class="parallax"></div>
 
         <section id="Contacts" class="section Contacts">
             <div class="container Contacts__container">

@@ -1,0 +1,454 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: $html-font-size;
+}
+
+body {
+    font-family: $font-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-base;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+.container {
+    max-width: $container-max-width;
+    // max-width: $container-max-width + 2 * $spacing-normal;
+    // padding-left: $spacing-normal;
+    // padding-right: $spacing-normal;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    color: $color-text-light;
+    background-color: $color-background;
+
+    &__container {
+        padding-top: 5.9rem;
+        padding-bottom: 5.9rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $spacing-normal;
+    }
+
+    &__logo {}
+
+    &__logo-link {}
+
+    &__navigation {}
+
+    &__navigation-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 5.6rem;
+    }
+
+    &__navigation-item {}
+
+    &__navigation-link {
+        font-weight: $font-weight-thin;
+    }
+}
+
+.section {
+
+    &__title {
+        font-family: $font-primary;
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-thin;
+        line-height: $line-height-lg;
+        letter-spacing: $letter-spacing-normal;
+        text-transform: uppercase;
+
+        &--gold {
+            color: $color-secondary;
+        }
+
+        &--underline {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -2.9rem;
+                left: 0;
+                right: 0;
+                height: .3rem;
+                background-color: $color-primary;
+            }
+        }
+    }
+}
+
+.Welcome {
+    background-color: $color-background;
+    color: $color-text-light;
+
+    &__container {
+        position: relative;
+        padding-top: 15rem;
+        padding-bottom: 27rem;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem
+    }
+
+    &__subtitle {
+        margin-bottom: 5rem;
+
+        font-size: $font-size-lg;
+        font-weight: $font-weight-light;
+        letter-spacing: $letter-spacing-xs;
+    }
+
+    &__link-btn {}
+
+    &__link-btn-text {
+        display: inline-block;
+        padding: 2.5rem 6.7rem;
+        border-radius: $border-radius-normal;
+
+        background-color: $color-primary;
+
+        font-size: $font-size-md;
+        font-weight: $font-weight-light;
+        letter-spacing: $letter-spacing-xs;
+
+        transition: $transition-normal;
+
+        &:hover {
+            background-color: $color-link-hover;
+        }
+
+        &:active {
+            background-color: $color-link-active;
+        }
+    }
+
+    &__slider {}
+}
+
+.Visiting {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+
+        padding-top: 7.6rem;
+        padding-bottom: 7.6rem;
+    }
+}
+
+.Explore {
+    background-color: $color-background;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 6.1rem;
+
+        padding-top: 7.5rem;
+        padding-bottom: 7.3rem;
+
+        color: $color-text-light;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    &__slider-comparison {}
+}
+
+.Video {
+
+    &__container {
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 7.5rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 7.5rem;
+    }
+
+    &__desc {
+        max-width: 72rem;
+    }
+
+    &__player {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    &__slider {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    &__pagination {
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+}
+
+.Gallery {
+    background-color: $color-black;
+    color: $color-white;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 7.5rem;
+
+        padding-top: 7.5rem;
+    }
+
+    &__image-container {
+        max-height: 196rem;
+        overflow-y: hidden;
+
+        position: relative;
+        z-index: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 36rem;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+            pointer-events: none;
+            z-index: 10; // Увеличиваем z-index чтобы быть уверенным, что градиент поверх других элементов
+        }
+    }
+
+    &__inner-container {
+        columns: 3 auto;
+        column-gap: 3.6rem;
+    }
+
+    &__image-wrapper {
+        max-width: 45.6rem;
+
+        margin-bottom: 2.5rem;
+
+        &:nth-child(1),
+        &:nth-child(11) {
+            padding-top: 5rem;
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.Tickets {
+
+    &__container {
+        padding-top: 7.5rem;
+        padding-bottom: 7.1rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 6rem;
+    }
+
+    &__image-wrapper {
+        width: 72rem;
+    }
+
+    &__image {
+        object-fit: contain;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5.2rem;
+    }
+}
+
+.parallax {
+    width: 100%;
+    height: 40rem;
+
+    background-image: url("assets/img/parallax.png");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.Contacts {
+
+    &__container {
+        padding-top: 7.5rem;
+        padding-bottom: 7.5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10.3rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 19.8rem;
+    }
+
+    &__contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    &__subtitle {
+        margin-bottom: 2.5rem;
+    }
+
+    &__map {
+        max-width: 96rem;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+    }
+}
+
+.footer {
+    background-color: $color-black;
+    color: $color-white;
+
+    &__container {}
+
+    &__head {
+        padding-top: 8.5rem;
+        padding-bottom: 5rem;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        width: 69.6rem;
+    }
+
+    &__logo {}
+
+    &__logo-link {}
+
+    &__navigation {}
+
+    &__navigation-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 15.2rem;
+        align-content: flex-start
+    }
+
+    &__navigation-item {}
+
+    &__navigation-link {
+        font-weight: $font-weight-extra-light;
+    }
+
+    &__social-list {
+        display: flex;
+        gap: 2.5rem;
+        align-items: end;
+
+        padding-bottom: 0.5rem;
+    }
+
+    &__additional {
+        position: relative;
+
+        padding-top: 5rem;
+        padding-bottom: 5.2rem;
+
+        border-top: .3rem solid $color-player-pagination-unit;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__desc {
+        flex-grow: 1;
+
+        font-size: $font-size-md;
+        font-weight: $font-weight-thin;
+        line-height: $line-height-xs;
+        letter-spacing: $letter-spacing-xs;
+
+        text-align: center;
+
+        &:first-child {
+            margin-right: 3.5rem;
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+}

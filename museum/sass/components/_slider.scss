@@ -1,0 +1,106 @@
+.slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // right: $spacing-normal;
+
+    &__container {
+        position: relative;
+    }
+
+    &__image {
+        width: 100rem;
+        height: 75rem;
+
+        background: linear-gradient(90deg, $color-black 0%, rgba(0, 0, 0, 0.50) 16.19%, rgba(0, 0, 0, 0.00) 30.73%), url("assets/img/slider/1.png") lightgray 50% / cover no-repeat;
+    }
+
+    &__controls {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        transform: translateY(50%);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 60rem;
+        width: 100%;
+        padding: 4rem 7.5rem;
+
+        background-color: $color-background;
+
+        font-size: $font-size-md;
+        line-height: $line-height-md;
+    }
+
+    &__slide-counter {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__current-slide {}
+
+    &__divider {}
+
+    &__total-slides {}
+
+
+    &__pagination {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    &__dot {
+        background-color: $color-white;
+
+        width: 1.6rem;
+        height: 1.6rem;
+        transition: $transition-normal;
+
+        cursor: pointer;
+
+        &--active {
+            background-color: $color-dot-active;
+        }
+
+        &:hover {
+            background-color: $color-link-hover;
+        }
+    }
+
+    &__arrows {
+        display: flex;
+        gap: 2rem
+    }
+
+    &__arrow {
+        display: block;
+
+        min-width: 3rem;
+        min-height: 4rem;
+        background-color: $color-white;
+
+        cursor: pointer;
+
+        -webkit-mask-size: contain;
+        -webkit-mask-position: center center;
+        -webkit-mask-repeat: no-repeat;
+
+        transition: $transition-normal;
+
+        &:hover {
+            background-color: $color-link-hover;
+        }
+    }
+
+    &__arrow-left {
+        -webkit-mask-image: url("assets/img/slider/arrow-left.svg");
+
+    }
+
+    &__arrow-right {
+        -webkit-mask-image: url("assets/img/slider/arrow-right.svg");
+    }
+}

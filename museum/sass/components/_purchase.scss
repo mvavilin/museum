@@ -1,0 +1,137 @@
+.purchase {
+
+    &__ticket-type {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    &__amount {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.ticket-type {
+    &__title {
+        margin-bottom: 2.5rem;
+
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+    }
+
+    &__item {
+        cursor: pointer;
+
+        display: block;
+        position: relative;
+        padding-left: 4rem;
+
+        font-size: $font-size-md;
+        font-weight: $font-weight-light;
+
+        .ticket-type__input:checked~.ticket-type__checkmark {
+            background-color: $color-white;
+
+            &::after {
+                display: block;
+            }
+        }
+
+        .ticket-type__checkmark {
+            &::after {
+                content: "";
+                display: none;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                width: .8rem;
+                height: .8rem;
+                border-radius: 50%;
+                background: $color-black;
+
+            }
+        }
+    }
+
+    &__input {
+        cursor: pointer;
+
+        position: absolute;
+        opacity: 0;
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        transform: translateY(-50%);
+
+        height: 1.8rem;
+        width: 1.8rem;
+
+        border-radius: 50%;
+        border: .2rem solid $color-black;
+    }
+}
+
+.amount {
+    &__title {
+        margin-bottom: 1.5rem;
+
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        text-align: right;
+    }
+
+    &__item {
+        font-size: $font-size-md;
+        font-weight: $font-weight-light;
+        margin-bottom: .5rem;
+    }
+
+    &__counter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 15rem;
+
+        border: .3rem solid $color-black;
+        padding: .6rem 1.2rem;
+    }
+
+    &__button {
+        cursor: pointer;
+
+        padding: 0;
+        width: 1.9rem;
+        text-align: center;
+
+        font-size: $font-size-xl;
+        font-weight: $font-weight-regular;
+
+        line-height: 1;
+        border: none;
+        background: none;
+    }
+
+    &__number {
+        padding: 0;
+        margin-right: -1.5rem;
+        text-align: center;
+
+        font-size: $font-size-md;
+        font-weight: $font-weight-light;
+
+        border: none;
+        background: transparent;
+        pointer-events: none;
+    }
+}

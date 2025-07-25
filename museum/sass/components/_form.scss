@@ -1,0 +1,44 @@
+.form {
+
+    &__purchase {
+        display: flex;
+        justify-content: space-between;
+        width: 66rem;
+    }
+
+    &__sum {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        letter-spacing: $letter-spacing-sm;
+
+        margin-bottom: $spacing-normal;
+    }
+
+    &__total {}
+
+    &__button {
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 1.2rem 3.8rem;
+
+        border: none;
+        border-radius: .2rem;
+
+        background-color: $color-black;
+        color: $color-white;
+
+        font-size: $font-size-md;
+        font-weight: $font-weight-light;
+        letter-spacing: $letter-spacing-xs;
+
+        transition: $transition-normal;
+
+        &:hover {
+            background-color: $color-secondary;
+        }
+    }
+}

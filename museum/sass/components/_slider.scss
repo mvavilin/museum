@@ -1,106 +1,121 @@
 .slider {
-    position: absolute;
-    top: 0;
-    right: 0;
-    // right: $spacing-normal;
+  position: relative;
 
-    &__container {
-        position: relative;
+  &__image-wrapper {
+    position: relative;
+    width: 100rem;
+    height: auto;
+
+    &::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: linear-gradient(
+        90deg,
+        $color-background 0%,
+        rgba(0, 0, 0, 0.5) 16.19%,
+        rgba(0, 0, 0, 0) 30.73%
+      );
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 60rem;
+    padding: 4rem 7.5rem;
+    background-color: $color-background;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+  }
+
+  &__counter {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  &__dot {
+    cursor: pointer;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: $color-white;
+    transition: $transition-normal;
+
+    &--active {
+      background-color: $color-dot-active;
+    }
+  }
+
+  &__dot,
+  &__icon {
+    &:hover {
+      background-color: $color-link-hover;
     }
 
-    &__image {
-        width: 100rem;
-        height: 75rem;
+    &:active {
+      background-color: $color-link-active;
+    }
+  }
 
-        background: linear-gradient(90deg, $color-black 0%, rgba(0, 0, 0, 0.50) 16.19%, rgba(0, 0, 0, 0.00) 30.73%), url("assets/img/slider/1.png") lightgray 50% / cover no-repeat;
+  &__navigation {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 4rem;
+  }
+
+  &__icon--prev {
+    mask-image: url("assets/img/slider/prev.svg");
+  }
+
+  &__icon--next {
+    mask-image: url("assets/img/slider/next.svg");
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .slider {
+    &__image-wrapper {
+      width: 70rem;
+      height: 52.5rem;
     }
 
     &__controls {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-
-        transform: translateY(50%);
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 60rem;
-        width: 100%;
-        padding: 4rem 7.5rem;
-
-        background-color: $color-background;
-
-        font-size: $font-size-md;
-        line-height: $line-height-md;
-    }
-
-    &__slide-counter {
-        display: flex;
-        gap: 1rem;
-    }
-
-    &__current-slide {}
-
-    &__divider {}
-
-    &__total-slides {}
-
-
-    &__pagination {
-        display: flex;
-        gap: 2.5rem;
+      justify-content: flex-end;
+      gap: 4.5rem;
+      max-width: 70rem;
+      font-size: $font-size-xs;
     }
 
     &__dot {
-        background-color: $color-white;
-
-        width: 1.6rem;
-        height: 1.6rem;
-        transition: $transition-normal;
-
-        cursor: pointer;
-
-        &--active {
-            background-color: $color-dot-active;
-        }
-
-        &:hover {
-            background-color: $color-link-hover;
-        }
+      width: 1.2rem;
+      height: 1.2rem;
     }
-
-    &__arrows {
-        display: flex;
-        gap: 2rem
-    }
-
-    &__arrow {
-        display: block;
-
-        min-width: 3rem;
-        min-height: 4rem;
-        background-color: $color-white;
-
-        cursor: pointer;
-
-        -webkit-mask-size: contain;
-        -webkit-mask-position: center center;
-        -webkit-mask-repeat: no-repeat;
-
-        transition: $transition-normal;
-
-        &:hover {
-            background-color: $color-link-hover;
-        }
-    }
-
-    &__arrow-left {
-        -webkit-mask-image: url("assets/img/slider/arrow-left.svg");
-
-    }
-
-    &__arrow-right {
-        -webkit-mask-image: url("assets/img/slider/arrow-right.svg");
-    }
+  }
 }

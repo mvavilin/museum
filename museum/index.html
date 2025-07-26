@@ -52,7 +52,7 @@
           </li>
           <li class="navigation__item">
             <a href="#contacts" class="header__link navigation__link"><span
-                Аclass="navigation__text">Contacts</span><span class="icon header__icon"></span></a>
+                class="navigation__text">Contacts</span><span class="icon header__icon"></span></a>
           </li>
         </ul>
       </nav>
@@ -60,41 +60,50 @@
   </header>
 
   <main class="main">
-    <section id="Welcome" class="section Welcome">
-      <div class="container Welcome__container">
-        <div class="Welcome__content">
-          <h1 class="section__title">Welcome<br />to the Louvre</h1>
-          <h2 class="Welcome__subtitle">From the castle to the museum</h2>
-          <div class="Welcome__link-btn">
-            <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
-              class="Welcome__link-btn-text">Discover the Louvre</a>
+    <section id="welcome" class="section welcome">
+      <div class="container container__section container__welcome">
+
+        <article class="welcome__content">
+          <h1 class="section__title welcome__title"><span>Welcome </span><span>to the Louvre</span></h1>
+          <p class="welcome__text">From the castle to the museum</p>
+          <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+            class="welcome__link"><span>Discover the Louvre</span></a>
+        </article>
+
+        <article class="welcome__slider slider">
+          <div class="slider__image-wrapper">
+            <img class="slider__image" src="assets/img/slider/1.png"
+              alt="Портрет женщины с загадочной улыбкой на фоне пейзажа, картина Леонардо да Винчи 'Мона Лиза'" />
           </div>
-        </div>
-        <div class="Welcome__slider slider">
-          <div class="slider__container">
-            <div class="slider__image"></div>
-            <div class="slider__controls">
-              <div class="slider__slide-counter">
-                <span class="slider__current-slide">01</span>
-                <span class="slider__divider">|</span>
-                <span class="slider__total-slides">05</span>
-              </div>
 
-              <div class="slider__pagination">
-                <div class="slider__dot slider__dot--active"></div>
-                <div class="slider__dot"></div>
-                <div class="slider__dot"></div>
-                <div class="slider__dot"></div>
-                <div class="slider__dot"></div>
-              </div>
+          <div class="slider__controls">
 
-              <div class="slider__arrows">
-                <button class="slider__arrow slider__arrow-left"></button>
-                <button class="slider__arrow slider__arrow-right"></button>
-              </div>
+            <div class="slider__counter">
+              <span class="slider__current-slide">01</span>
+              <span class="slider__divider">|</span>
+              <span class="slider__total-slides">05</span>
             </div>
+
+            <div class="slider__pagination">
+              <button class="slider__dot slider__dot--active"></button>
+              <button class="slider__dot"></button>
+              <button class="slider__dot"></button>
+              <button class="slider__dot"></button>
+              <button class="slider__dot"></button>
+            </div>
+
+            <div class="slider__navigation">
+              <button class="slider__btn">
+                <div class="icon slider__icon slider__icon--prev"></div>
+              </button>
+              <button class="slider__btn">
+                <div class="icon slider__icon slider__icon--next"></div>
+              </button>
+            </div>
+
           </div>
-        </div>
+        </article>
+
       </div>
     </section>
 
@@ -164,7 +173,7 @@
       </div>
     </section>
 
-    <section id="Explore" class="section Explore">
+    <!-- <section id="Explore" class="section Explore">
       <div class="container Explore__container">
         <div class="Explore__content">
           <h2 class="section__title section__title--underline">
@@ -194,7 +203,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="Video" class="section Video">
       <div class="container Video__container">
@@ -310,7 +319,7 @@
       </div>
     </section>
 
-    <section id="Tickets" class="section Tickets">
+    <!-- <section id="Tickets" class="section Tickets">
       <div class="container Tickets__container">
         <h2 class="section__title section__title--gold section__title--underline">
           Buy tickets
@@ -375,7 +384,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="parallax"></div>
 

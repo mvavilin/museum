@@ -33,12 +33,35 @@ p {
   margin: 0;
 }
 
+img {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .container {
+  position: relative;
   width: $container-max-width;
   margin: 0 auto;
   max-width: $container-max-width-xl;
   padding-left: $container-padding-xl;
   padding-right: $container-padding-xl;
+
+  &__header,
+  &__welcome {
+    color: $color-text-light;
+  }
 
   &__header {
     padding-top: 5.9rem;
@@ -46,27 +69,41 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $color-text-light;
+    gap: $spacing-normal;
+  }
+
+  &__section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+
+  &__welcome {
+    padding-top: 0;
+    padding-bottom: 6rem;
   }
 }
 
 .icon {
   display: block;
-
   background-color: $color-white;
-
   mask-size: contain;
   mask-position: center center;
   mask-repeat: no-repeat;
+  transition: $transition-normal;
 }
 
 .header {
   background-color: $color-background;
 
+  &__navigation {
+    max-width: 77.5rem;
+    flex-grow: 1;
+  }
+
   &__list {
     display: flex;
     justify-content: space-between;
-    gap: 5.6rem;
+    gap: $spacing-normal;
   }
 
   &__link {
@@ -77,7 +114,7 @@ p {
 .section {
   &__title {
     font-family: $font-primary;
-    font-size: $font-size-xxl;
+    font-size: $font-size-xxxl;
     font-weight: $font-weight-thin;
     line-height: $line-height-lg;
     letter-spacing: $letter-spacing-normal;
@@ -89,13 +126,14 @@ p {
 
     &--underline {
       position: relative;
+      margin-bottom: 2.8rem;
 
       &::after {
         content: "";
         position: absolute;
-        bottom: -2.9rem;
+        bottom: -2.8rem;
         left: 0;
-        right: 0;
+        width: 100%;
         height: 0.3rem;
         background-color: $color-primary;
       }
@@ -103,46 +141,42 @@ p {
   }
 }
 
-.Welcome {
+.welcome {
   background-color: $color-background;
-  color: $color-text-light;
-
-  &__container {
-    position: relative;
-    padding-top: 15rem;
-    padding-bottom: 27rem;
-  }
 
   &__content {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    position: absolute;
+    top: 15rem;
+    left: $container-padding-xl;
+    z-index: 1;
   }
 
-  &__subtitle {
-    margin-bottom: 5rem;
+  &__title {
+    display: flex;
+    flex-direction: column;
+  }
 
+  &__text {
+    margin-bottom: 5rem;
     font-size: $font-size-lg;
     font-weight: $font-weight-light;
     letter-spacing: $letter-spacing-xs;
   }
 
-  &__link-btn {
-  }
-
-  &__link-btn-text {
-    display: inline-block;
-    padding: 2.5rem 6.7rem;
+  &__link {
+    display: flex;
+    justify-content: center;
+    max-width: 36rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     border-radius: $border-radius-normal;
-
     background-color: $color-primary;
-
     font-size: $font-size-md;
     font-weight: $font-weight-light;
     letter-spacing: $letter-spacing-xs;
-
     transition: $transition-normal;
 
     &:hover {
@@ -155,6 +189,8 @@ p {
   }
 
   &__slider {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -162,7 +198,7 @@ p {
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 10.3rem;
+    gap: 7.5rem;
 
     padding-top: 7.6rem;
     padding-bottom: 7.6rem;
@@ -464,7 +500,6 @@ p {
     &__header {
       padding-top: 4.9rem;
       padding-bottom: 4.9rem;
-      position: relative;
     }
   }
 
@@ -503,7 +538,6 @@ p {
       justify-content: space-between;
       align-items: center;
       max-width: 12.2rem;
-      transition: $transition-normal;
 
       &:hover > .header__icon {
         background-color: $color-link-hover;
@@ -518,6 +552,40 @@ p {
       width: 1.2rem;
       height: 1.2rem;
       mask-image: url("assets/svg/menu_arrow.svg");
+    }
+  }
+
+  .section {
+    &__title {
+      font-size: $font-size-xxl;
+      font-weight: $font-weight-regular;
+
+      &--underline {
+        margin-bottom: 2.3rem;
+
+        &::after {
+          bottom: -2.3rem;
+        }
+      }
+    }
+  }
+
+  .welcome {
+    &__content {
+      top: 5rem;
+      left: $container-padding-sm;
+    }
+
+    &__text {
+      margin-bottom: 2.5rem;
+      font-size: $font-size-m;
+    }
+
+    &__link {
+      max-width: 30rem;
+      padding-top: 1.75rem;
+      padding-bottom: 1.75rem;
+      font-size: $font-size-xs;
     }
   }
 }

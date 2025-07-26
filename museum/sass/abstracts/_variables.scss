@@ -1,6 +1,7 @@
+// Базовые настройки
 $html-font-size: 10px;
-$container-max-width: 144rem;
 
+// Цвета
 $color-white: #ffffff;
 $color-black: #000000;
 $color-primary: #710707;
@@ -17,15 +18,19 @@ $color-player-control-unit-hover: #989898;
 $color-player-pagination-unit: #999999;
 $color-player-pagination-unit-hover: #710707;
 
-$font-primary: 'Forum', serif;
-$font-secondary: 'Roboto', sans-serif;
+// Шрифты
+$font-primary: "Forum", serif;
+$font-secondary: "Roboto", sans-serif;
 
+// Размеры шрифтов
 $font-size-base: 1.8rem;
+$font-size-xs: 2rem;
 $font-size-md: 2.2rem;
 $font-size-lg: 2.8rem;
 $font-size-xl: 3.2rem;
 $font-size-xxl: 8rem;
 
+// Насыщенность шрифтов
 $font-weight-thin: 100;
 $font-weight-extra-light: 200;
 $font-weight-light: 300;
@@ -36,16 +41,19 @@ $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
+// Межстрочные интервалы
 $line-height-base: normal;
 $line-height-xs: 2.2rem;
 $line-height-sm: 3.85rem;
 $line-height-md: 4rem;
 $line-height-lg: 9rem;
 
-$letter-spacing-normal: .5rem;
-$letter-spacing-xs: .2rem;
-$letter-spacing-sm: .165rem;
+// Межбуквенные интервалы
+$letter-spacing-normal: 0.5rem;
+$letter-spacing-xs: 0.2rem;
+$letter-spacing-sm: 0.165rem;
 
+// Отступы
 $spacing-normal: 1rem;
 // $spacing-xs: ;
 // $spacing-sm: ;
@@ -53,19 +61,30 @@ $spacing-normal: 1rem;
 // $spacing-lg: ;
 // $spacing-xl: ;
 
-// $shadow-sm: ;
-// $shadow-md: ;
-// $shadow-lg: ;
-
+// Скругления
 $border-radius-normal: 1rem;
 $border-radius-full: 999.9rem;
 
-// $transition-fast: 0.15s ease;
+// Анимации
+$transition-fast: 0.15s ease;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.5s ease;
 
-// $breakpoint-xs: 0;
-// $breakpoint-sm: 42rem;
-// $breakpoint-md: 76.8rem;
-// $breakpoint-lg: 102.4rem;
-// $breakpoint-xl: 192rem;
+// Брейкпоинты
+$breakpoint-sm: 42rem;
+$breakpoint-md: 76.8rem;
+$breakpoint-lg: 102.4rem;
+$breakpoint-xl: 192rem;
+
+// Максимальная ширина контейнера
+$container-max-width: 100%;
+$container-max-width-sm: 42rem;
+$container-max-width-md: 76.8rem;
+$container-max-width-lg: 102.4rem;
+$container-max-width-xl: 192rem;
+
+// Отступы контейнера
+$container-padding-sm: 2rem;
+$container-padding-md: 2rem;
+$container-padding-lg: 2rem;
+$container-padding-xl: 24rem;

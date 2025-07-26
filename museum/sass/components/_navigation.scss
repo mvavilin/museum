@@ -1,20 +1,83 @@
 .navigation {
+  &__link {
+    font-size: $font-size-md;
+    letter-spacing: $letter-spacing-xs;
+    transition: $transition-normal;
 
-    &__list {}
-
-    &__item {}
-
-    &__link {
-        font-size: $font-size-md;
-        letter-spacing: .2rem;
-        transition: $transition-normal;
-
-        &:hover {
-            color: $color-link-hover;
-        }
-
-        &:active {
-            color: $color-link-active;
-        }
+    &:hover {
+      color: $color-link-hover;
     }
+
+    &:active {
+      color: $color-link-active;
+    }
+  }
+}
+
+.burger {
+  cursor: pointer;
+  position: relative;
+  width: 3.2rem;
+  height: 1.8rem;
+  display: none;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: $transition-normal;
+  }
+
+  &__line {
+    display: block;
+  }
+
+  &::before,
+  &__line,
+  &::after {
+    width: 100%;
+    height: 0.2rem;
+    background-color: $color-white;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &--active {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    .burger__line {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      width: 3.5rem;
+      left: 50%;
+    }
+
+    &::before {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      bottom: 50%;
+      transform: translate(-50%, 50%) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .burger {
+    display: flex;
+  }
 }

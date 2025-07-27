@@ -35,6 +35,7 @@ p {
 
 img {
   display: block;
+  object-fit: cover;
 }
 
 button {
@@ -73,13 +74,19 @@ button {
   }
 
   &__section {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
   }
 
   &__welcome {
     padding-top: 0;
-    padding-bottom: 6rem;
+    padding-bottom: $spacing-lg;
+  }
+
+  &__visiting {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
   }
 }
 
@@ -116,7 +123,7 @@ button {
     font-family: $font-primary;
     font-size: $font-size-xxxl;
     font-weight: $font-weight-thin;
-    line-height: $line-height-lg;
+    line-height: $line-height-xl;
     letter-spacing: $letter-spacing-normal;
     text-transform: uppercase;
 
@@ -163,7 +170,7 @@ button {
     margin-bottom: 5rem;
     font-size: $font-size-lg;
     font-weight: $font-weight-light;
-    letter-spacing: $letter-spacing-xs;
+    letter-spacing: $letter-spacing-sm;
   }
 
   &__link {
@@ -176,7 +183,7 @@ button {
     background-color: $color-primary;
     font-size: $font-size-md;
     font-weight: $font-weight-light;
-    letter-spacing: $letter-spacing-xs;
+    letter-spacing: $letter-spacing-sm;
     transition: $transition-normal;
 
     &:hover {
@@ -194,16 +201,6 @@ button {
   }
 }
 
-.Visiting {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    gap: 7.5rem;
-
-    padding-top: 7.6rem;
-    padding-bottom: 7.6rem;
-  }
-}
 
 .Explore {
   background-color: $color-background;
@@ -213,7 +210,7 @@ button {
     justify-content: space-between;
     gap: 6.1rem;
 
-    padding-top: 7.5rem;
+    padding-top: $spacing-xl;
     padding-bottom: 7.3rem;
 
     color: $color-text-light;
@@ -237,11 +234,11 @@ button {
 
 .Video {
   &__container {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
     display: flex;
     flex-direction: column;
-    gap: 7.5rem;
+    gap: $spacing-xl;
   }
 
   &__content {
@@ -249,7 +246,7 @@ button {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 7.5rem;
+    gap: $spacing-xl;
   }
 
   &__desc {
@@ -281,9 +278,9 @@ button {
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 7.5rem;
+    gap: $spacing-xl;
 
-    padding-top: 7.5rem;
+    padding-top: $spacing-xl;
   }
 
   &__image-container {
@@ -330,7 +327,7 @@ button {
 
 .Tickets {
   &__container {
-    padding-top: 7.5rem;
+    padding-top: $spacing-xl;
     padding-bottom: 7.1rem;
 
     display: flex;
@@ -341,7 +338,7 @@ button {
   &__content {
     display: flex;
     justify-content: space-between;
-    gap: 6rem;
+    gap: $spacing-lg;
   }
 
   &__image-wrapper {
@@ -371,8 +368,8 @@ button {
 
 .Contacts {
   &__container {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
 
     display: flex;
     flex-direction: column;
@@ -476,7 +473,7 @@ button {
     font-size: $font-size-md;
     font-weight: $font-weight-thin;
     line-height: $line-height-xs;
-    letter-spacing: $letter-spacing-xs;
+    letter-spacing: $letter-spacing-sm;
 
     text-align: center;
 
@@ -500,6 +497,20 @@ button {
     &__header {
       padding-top: 4.9rem;
       padding-bottom: 4.9rem;
+    }
+
+    &__section {
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+    }
+
+    &__welcome {
+      padding-top: 0;
+      padding-bottom: $spacing-lg;
+    }
+
+    &__visiting {
+      gap: $spacing-lg;
     }
   }
 
@@ -558,7 +569,7 @@ button {
   .section {
     &__title {
       font-size: $font-size-xxl;
-      font-weight: $font-weight-regular;
+      line-height: $line-height-lg;
 
       &--underline {
         margin-bottom: 2.3rem;
@@ -571,6 +582,10 @@ button {
   }
 
   .welcome {
+    &__title {
+      line-height: $line-height-xl;
+    }
+
     &__content {
       top: 5rem;
       left: $container-padding-sm;

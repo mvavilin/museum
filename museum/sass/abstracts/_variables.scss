@@ -24,6 +24,7 @@ $font-secondary: "Roboto", sans-serif;
 
 // Размеры шрифтов
 $font-size-base: 1.8rem;
+$font-size-xxs: 1.6rem;
 $font-size-xs: 2rem;
 $font-size-md: 2.2rem;
 $font-size-m: 2.4rem;
@@ -48,20 +49,22 @@ $line-height-base: normal;
 $line-height-xs: 2.2rem;
 $line-height-sm: 3.85rem;
 $line-height-md: 4rem;
-$line-height-lg: 9rem;
+$line-height-lg: 7.5rem;
+$line-height-xl: 9rem;
 
 // Межбуквенные интервалы
 $letter-spacing-normal: 0.5rem;
-$letter-spacing-xs: 0.2rem;
-$letter-spacing-sm: 0.165rem;
+$letter-spacing-xs: 0.165rem;
+$letter-spacing-sm: 0.2rem;
+$letter-spacing-md: 0.3rem;
 
 // Отступы
 $spacing-normal: 1rem;
 // $spacing-xs: ;
 // $spacing-sm: ;
 // $spacing-md: ;
-// $spacing-lg: ;
-// $spacing-xl: ;
+$spacing-lg: 6rem;
+$spacing-xl: 7.5rem;
 
 // Скругления
 $border-radius-normal: 1rem;

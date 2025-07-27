@@ -1,61 +1,89 @@
 .cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 7.5rem 6rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $spacing-xl $spacing-lg;
 }
 
 .card {
+  &:hover .card__title--underline::after {
+    width: 100%;
+  }
 
-    &:hover .card__title--underline::after {
-        width: 100%;
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-normal;
+  }
+
+  &__img {
+    width: D;
+    height: 28.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-thin;
+    letter-spacing: $letter-spacing-normal;
+    text-transform: uppercase;
+
+    &--underline {
+      position: relative;
+      margin-bottom: 1.2rem;
     }
 
-    &__link {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-normal;
-    }
+    &--underline::after {
+      content: "";
+      position: absolute;
+      width: 30rem;
+      bottom: -1.2rem;
+      left: 0;
+      right: 0;
+      height: 0.2rem;
+      background-color: $color-primary;
 
-    &__image {
-        display: block;
-        max-width: 44rem;
-        max-height: 28.5rem;
+      transition: $transition-normal;
+    }
+  }
+
+  &__label {
+    font-weight: $font-weight-extra-light;
+
+    &--large {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .cards {
+    justify-content: space-evenly;
+    gap: $spacing-lg 0;
+  }
+
+  .card {
+    &__img {
+      width: 33rem;
+      height: 21.5rem;
     }
 
     &__title {
-        font-family: $font-primary;
-        font-size: $font-size-xl;
-        font-weight: $font-weight-thin;
-        letter-spacing: $letter-spacing-normal;
-        text-transform: uppercase;
+      font-size: $font-size-lg;
+      letter-spacing: $letter-spacing-md;
 
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-
-        &--underline {
-            position: relative;
-        }
-
-        &--underline::after {
-            content: "";
-            position: absolute;
-            width: 68%;
-            bottom: -1.2rem;
-            left: 0;
-            right: 0;
-            height: .2rem;
-            background-color: $color-primary;
-
-            transition: $transition-normal;
-        }
+      &--underline::after {
+        width: 15rem;
+      }
     }
 
     &__label {
-        font-weight: $font-weight-extra-light;
-    }
+      font-size: $font-size-xxs;
 
-    &__label--1 {
-        font-size: $font-size-md;
+      &--large {
+        font-size: $font-size-xs;
+      }
     }
+  }
 }

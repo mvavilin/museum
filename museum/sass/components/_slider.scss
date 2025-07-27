@@ -1,7 +1,7 @@
 .slider {
   position: relative;
 
-  &__image-wrapper {
+  &__img-wrapper {
     position: relative;
     width: 100rem;
     height: auto;
@@ -24,7 +24,7 @@
     }
   }
 
-  &__image {
+  &__img {
     display: block;
     width: 100%;
     height: 100%;
@@ -101,7 +101,7 @@
 
 @media (max-width: $breakpoint-lg) {
   .slider {
-    &__image-wrapper {
+    &__img-wrapper {
       width: 70rem;
       height: 52.5rem;
     }

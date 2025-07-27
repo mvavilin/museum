@@ -18,7 +18,7 @@
 
 .navigation__link {
   font-size: 2.2rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.165rem;
   transition: 0.3s ease;
 }
 .navigation__link:hover {
@@ -84,12 +84,12 @@
 .slider {
   position: relative;
 }
-.slider__image-wrapper {
+.slider__img-wrapper {
   position: relative;
   width: 100rem;
   height: auto;
 }
-.slider__image-wrapper::after {
+.slider__img-wrapper::after {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -100,7 +100,7 @@
   z-index: 0;
   background: linear-gradient(90deg, #030303 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
 }
-.slider__image {
+.slider__img {
   display: block;
   width: 100%;
   height: 100%;
@@ -164,7 +164,7 @@
 }
 
 @media (max-width: 1024px) {
-  .slider__image-wrapper {
+  .slider__img-wrapper {
     width: 70rem;
     height: 52.5rem;
   }
@@ -181,7 +181,7 @@
 }
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 7.5rem 6rem;
 }
@@ -194,10 +194,10 @@
   flex-direction: column;
   gap: 1rem;
 }
-.card__image {
-  display: block;
-  max-width: 44rem;
-  max-height: 28.5rem;
+.card__img {
+  width: D;
+  height: 28.5rem;
+  margin-bottom: 1.5rem;
 }
 .card__title {
   font-family: "Forum", serif;
@@ -205,16 +205,15 @@
   font-weight: 100;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
 }
 .card__title--underline {
   position: relative;
+  margin-bottom: 1.2rem;
 }
 .card__title--underline::after {
   content: "";
   position: absolute;
-  width: 68%;
+  width: 30rem;
   bottom: -1.2rem;
   left: 0;
   right: 0;
@@ -225,10 +224,33 @@
 .card__label {
   font-weight: 200;
 }
-.card__label--1 {
+.card__label--large {
   font-size: 2.2rem;
 }
 
+@media (max-width: 1024px) {
+  .cards {
+    justify-content: space-evenly;
+    gap: 6rem 0;
+  }
+  .card__img {
+    width: 33rem;
+    height: 21.5rem;
+  }
+  .card__title {
+    font-size: 2.8rem;
+    letter-spacing: 0.3rem;
+  }
+  .card__title--underline::after {
+    width: 15rem;
+  }
+  .card__label {
+    font-size: 1.6rem;
+  }
+  .card__label--large {
+    font-size: 2rem;
+  }
+}
 .desc {
   font-size: 2.2rem;
   font-weight: 300;
@@ -482,7 +504,7 @@
   color: #ffffff;
   font-size: 2.2rem;
   font-weight: 300;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.165rem;
   transition: 0.3s ease;
 }
 .form__button:hover {
@@ -625,6 +647,8 @@ p {
 
 img {
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 button {
@@ -666,6 +690,11 @@ button {
 .container__welcome {
   padding-top: 0;
   padding-bottom: 6rem;
+}
+.container__visiting {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
 }
 
 .icon {
@@ -765,14 +794,6 @@ button {
 .welcome__slider {
   display: flex;
   justify-content: flex-end;
-}
-
-.Visiting__container {
-  display: flex;
-  flex-direction: column;
-  gap: 7.5rem;
-  padding-top: 7.6rem;
-  padding-bottom: 7.6rem;
 }
 
 .Explore {
@@ -1000,6 +1021,17 @@ button {
     padding-top: 4.9rem;
     padding-bottom: 4.9rem;
   }
+  .container__section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  .container__welcome {
+    padding-top: 0;
+    padding-bottom: 6rem;
+  }
+  .container__visiting {
+    gap: 6rem;
+  }
   .header__navigation {
     position: absolute;
     top: 100%;
@@ -1046,13 +1078,16 @@ button {
   }
   .section__title {
     font-size: 5rem;
-    font-weight: 400;
+    line-height: 7.5rem;
   }
   .section__title--underline {
     margin-bottom: 2.3rem;
   }
   .section__title--underline::after {
     bottom: -2.3rem;
+  }
+  .welcome__title {
+    line-height: 9rem;
   }
   .welcome__content {
     top: 5rem;

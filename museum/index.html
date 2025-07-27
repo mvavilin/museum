@@ -175,35 +175,37 @@
       </div>
     </section>
 
-    <section id="Explore" class="section Explore">
-      <div class="container Explore__container">
-        <div class="Explore__content">
-          <h2 class="section__title section__title--underline">
-            Picture explore
-          </h2>
-          <div class="Explore__desc">
-            <p class="desc">
-              Las Meninas is a 1656 painting by Diego Velázquez, the leading
-              artist of the Spanish Golden Age.
-            </p>
-            <p class="desc">
-              It was cleaned in 1984 to remove a
-              <span class="desc__marker">"yellow veil"</span> of dust that had
-              gathered since the previous restoration in the 19th century.
-            </p>
-            <p class="desc">
-              The cleaning provoked furious protests, not because the picture
-              had been damaged in any way, but because it looked different.
-            </p>
+    <section id="explore" class="section explore">
+      <div class="container container__section container__explore">
+        <article class="explore__content">
+          <h2 class="section__title section__title--underline">Picture explore</h2>
+          <div class="explore__desc">
+            <span class="explore__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the
+              Spanish Golden Age.</span>
+            <span class="explore__text">It was cleaned in 1984 to remove a <span
+                class="explore__text--highlight">"yellow veil"</span> of dust that had gathered since the
+              previous
+              restoration in the 19th century.</span>
+            <span class="explore__text explore__text--hidden">The cleaning provoked furious protests, not because the
+              picture had been
+              damaged in any way, but because it looked different.</span>
           </div>
-        </div>
-        <div class="Explore__slider-comparison slider-comparison">
-          <div class="slider-comparison__control-unit">
-            <div class="slider-comparison__line-top"></div>
-            <div class="slider-comparison__line-thumb"></div>
-            <div class="slider-comparison__line-bottom"></div>
+        </article>
+
+        <article class="explore__slider-comparison slider-comparison">
+          <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--before">
+            <img class="slider-comparison__img" src="assets/img/slider-comparison/before.jpg" alt="До">
           </div>
-        </div>
+          <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--after">
+            <img class="slider-comparison__img" src="assets/img/slider-comparison/after.jpg" alt="После">
+          </div>
+          <input type="range" class="slider-comparison__control" min="0" max="100" value="61">
+          <div class="slider-comparison__handle handle">
+            <div class="handle__top"></div>
+            <div class="handle__thumb"></div>
+            <div class="handle__bottom"></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -445,7 +447,7 @@
               </li>
 
               <li class="footer__navigation-item navigation__item">
-                <a href="#Explore" class="footer__navigation-link navigation__link">Explore</a>
+                <a href="#explore" class="footer__navigation-link navigation__link">explore</a>
               </li>
               <li class="footer__navigation-item navigation__item">
                 <a href="#Tickets" class="footer__navigation-link navigation__link">Tickets</a>

@@ -16,6 +16,9 @@
   text-transform: uppercase;
 }
 
+.navigation {
+  overflow: hidden;
+}
 .navigation__link {
   font-size: 2.2rem;
   letter-spacing: 0.165rem;
@@ -101,11 +104,8 @@
   background: linear-gradient(90deg, #030303 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
 }
 .slider__img {
-  display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .slider__controls {
   position: absolute;
@@ -195,7 +195,7 @@
   gap: 1rem;
 }
 .card__img {
-  width: D;
+  width: 44rem;
   height: 28.5rem;
   margin-bottom: 1.5rem;
 }
@@ -251,6 +251,55 @@
     font-size: 2rem;
   }
 }
+.slider-comparison {
+  --width-percent: 61.3%;
+  position: relative;
+  padding-bottom: 100px;
+}
+.slider-comparison__img-wrapper, .slider-comparison__control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.slider-comparison__img-wrapper--after {
+  width: var(--width-percent);
+}
+.slider-comparison__control {
+  cursor: ew-resize;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  left: var(--width-percent);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.handle__top, .handle__bottom {
+  flex-grow: 1;
+  width: 0.5rem;
+  background-color: #ffffff;
+}
+.handle__thumb {
+  width: 4rem;
+  height: 4rem;
+  border: 0.5rem solid #ffffff;
+  border-radius: 999.9rem;
+}
+
 .desc {
   font-size: 2.2rem;
   font-weight: 300;
@@ -258,36 +307,6 @@
 }
 .desc__marker {
   color: #caaa7d;
-}
-
-.slider-comparison {
-  position: relative;
-  min-width: 72rem;
-  min-height: 70rem;
-  background: url("assets/img/slider-comparison/new.png") no-repeat, url("assets/img/slider-comparison/old.png") no-repeat;
-  margin-top: 1.6rem;
-}
-.slider-comparison__control-unit {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 61.3%;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-.slider-comparison__line-top, .slider-comparison__line-bottom {
-  flex-grow: 1;
-  width: 0.5rem;
-  background-color: #ffffff;
-}
-.slider-comparison__line-thumb {
-  width: 4rem;
-  height: 4rem;
-  border: 0.5rem solid #ffffff;
-  border-radius: 999.9rem;
 }
 
 .player__video {
@@ -672,7 +691,7 @@ button {
   padding-left: 24rem;
   padding-right: 24rem;
 }
-.container__header, .container__welcome {
+.container__header, .container__welcome, .container__explore {
   color: #ffffff;
 }
 .container__header {
@@ -695,6 +714,11 @@ button {
   display: flex;
   flex-direction: column;
   gap: 7.5rem;
+}
+.container__explore {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
 }
 
 .icon {
@@ -796,27 +820,35 @@ button {
   justify-content: flex-end;
 }
 
-.Explore {
+.explore {
   background-color: #030303;
 }
-.Explore__container {
-  display: flex;
-  justify-content: space-between;
-  gap: 6.1rem;
-  padding-top: 7.5rem;
-  padding-bottom: 7.3rem;
-  color: #ffffff;
-}
-.Explore__content {
+.explore__content {
   display: flex;
   flex-direction: column;
-  gap: 10.3rem;
+  gap: 6rem;
 }
-.Explore__desc {
+.explore__desc {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  max-width: 66rem;
 }
+.explore__text {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 3.85rem;
+}
+.explore__text--highlight {
+  color: #caaa7d;
+}
+.explore__slider-comparison {
+  align-self: center;
+  margin-top: 1.5rem;
+  width: 72rem;
+  height: 70rem;
+}
+
 .Video__container {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
@@ -1032,6 +1064,10 @@ button {
   .container__visiting {
     gap: 6rem;
   }
+  .container__explore {
+    display: flex;
+    flex-direction: column;
+  }
   .header__navigation {
     position: absolute;
     top: 100%;
@@ -1102,6 +1138,23 @@ button {
     padding-top: 1.75rem;
     padding-bottom: 1.75rem;
     font-size: 2rem;
+  }
+  .explore__content {
+    gap: 6rem;
+  }
+  .explore__desc {
+    gap: 0;
+    max-width: 100%;
+  }
+  .explore__text {
+    font-size: 2rem;
+    line-height: 3.65rem;
+  }
+  .explore__text--hidden {
+    display: none;
+  }
+  .explore__slider-comparison {
+    margin-top: 0;
   }
 }
 @media (max-width: 768px) {

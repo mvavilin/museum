@@ -60,7 +60,8 @@ button {
   padding-right: $container-padding-xl;
 
   &__header,
-  &__welcome {
+  &__welcome,
+  &__explore {
     color: $color-text-light;
   }
 
@@ -87,6 +88,12 @@ button {
     display: flex;
     flex-direction: column;
     gap: $spacing-xl;
+  }
+
+  &__explore {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-lg;
   }
 }
 
@@ -201,34 +208,37 @@ button {
   }
 }
 
-
-.Explore {
+.explore {
   background-color: $color-background;
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    gap: 6.1rem;
-
-    padding-top: $spacing-xl;
-    padding-bottom: 7.3rem;
-
-    color: $color-text-light;
-  }
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 10.3rem;
+    gap: $spacing-lg;
   }
 
   &__desc {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    max-width: 66rem;
+  }
+
+  &__text {
+    font-size: $font-size-md;
+    font-weight: $font-weight-light;
+    line-height: $line-height-sm;
+
+    &--highlight {
+      color: $color-desc-marker;
+    }
   }
 
   &__slider-comparison {
+    align-self: center;
+    margin-top: 1.5rem;
+    width: 72rem;
+    height: 70rem;
   }
 }
 
@@ -512,6 +522,11 @@ button {
     &__visiting {
       gap: $spacing-lg;
     }
+
+    &__explore {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .header {
@@ -601,6 +616,30 @@ button {
       padding-top: 1.75rem;
       padding-bottom: 1.75rem;
       font-size: $font-size-xs;
+    }
+  }
+
+  .explore {
+    &__content {
+      gap: $spacing-lg;
+    }
+
+    &__desc {
+      gap: 0;
+      max-width: 100%;
+    }
+
+    &__text {
+      font-size: $font-size-xs;
+      line-height: calc($line-height-sm - 0.2rem);
+
+      &--hidden {
+        display: none;
+      }
+    }
+
+    &__slider-comparison {
+      margin-top: 0;
     }
   }
 }

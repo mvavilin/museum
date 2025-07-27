@@ -43,7 +43,7 @@
                 class="icon header__icon"></span></a>
           </li>
           <li class="navigation__item">
-            <a href="#gallery" class="header__link navigation__link"><span class="navigation__text">gallery</span><span
+            <a href="#gallery" class="header__link navigation__link"><span class="navigation__text">Gallery</span><span
                 class="icon header__icon"></span></a>
           </li>
           <li class="navigation__item">
@@ -208,7 +208,7 @@
       </div>
     </section>
 
-    <section id="value" class="section video">
+    <section id="video" class="section video">
       <div class="container container__section container__video">
         <div class="video__content">
           <h2 class="section__title section__title--gold">Video journey</h2>
@@ -361,20 +361,21 @@
       </div>
     </section>
 
-    <section id="Tickets" class="section Tickets">
-      <div class="container Tickets__container">
-        <h2 class="section__title section__title--gold section__title--underline">
-          Buy tickets
-        </h2>
+    <section id="tickets" class="section tickets">
+      <div class="container container__section container__tickets tickets__container">
+        <h2 class="section__title section__title--gold section__title--underline">Buy tickets</h2>
 
-        <div class="Tickets__content">
-          <div class="Tickets__image-wrapper">
-            <img src="assets/img/picture.png" alt="На картине изображена сцена, в которой мужчина в римском доспехе передает щит обнаженной женщине" class="Tickets__image">
+        <div class="tickets__content">
+          <div class="tickets__img-wrapper">
+            <img src="assets/img/antique_painting.png"
+              alt="На картине изображена сцена, в которой мужчина в римском доспехе передает щит обнаженной женщине"
+              class="tickets__img">
           </div>
-          <form action="#" class="Tickets__form form">
-            <div class="form__purchase purchase">
-              <div class="purchase__ticket-type ticket-type">
-                <h3 class="ticket-type__title">Ticket Type</h3>
+
+          <form action="#" class="tickets__form form">
+            <div class="form__wrapper">
+              <fieldset class="form__ticket-type form__ticket-type--hidden ticket-type">
+                <legend class="ticket-type__title">Ticket Type</legend>
                 <label class="ticket-type__item">Permanent exhibition
                   <input type="radio" checked="checked" name="radio" class="ticket-type__input">
                   <span class="ticket-type__checkmark"></span>
@@ -387,42 +388,34 @@
                   <input type="radio" name="radio" class="ticket-type__input">
                   <span class="ticket-type__checkmark"></span>
                 </label>
-              </div>
+              </fieldset>
 
-              <div class="purchase__amount amount">
-                <h3 class="amount__title">Amount</h3>
-
+              <fieldset class="form__amount amount">
+                <legend class="amount__title">Amount</legend>
                 <p class="amount__item">Basic 18+</p>
                 <div class="amount__counter">
-                  <button type="button" onclick="this.nextElementSibling.stepDown()" class="amount__button">
-                    –
-                  </button>
-                  <input type="number" min="0" max="999" value="1" readonly class="amount__number">
-                  <button type="button" onclick="this.previousElementSibling.stepUp()" class="amount__button">
-                    +
-                  </button>
+                  <button type="button" onclick="this.nextElementSibling.stepDown()" class="amount__btn">–<span
+                      class="icon amount__icon amount__icon--minus"></span></button>
+                  <input tabindex="-1" type="number" min="0" max="99" value="1" readonly class="amount__number">
+                  <button type="button" onclick="this.previousElementSibling.stepUp()" class="amount__btn">+<span
+                      class="icon amount__icon amount__icon--plus"></span></button>
                 </div>
 
                 <p class="amount__item">Senior 65+</p>
                 <div class="amount__counter">
-                  <button type="button" onclick="this.nextElementSibling.stepDown()" class="amount__button">
-                    –
-                  </button>
-                  <input type="number" min="0" max="999" value="1" readonly class="amount__number">
-                  <button type="button" onclick="this.previousElementSibling.stepUp()" class="amount__button">
-                    +
-                  </button>
+                  <button type="button" onclick="this.nextElementSibling.stepDown()" class="amount__btn">–<span
+                      class="icon amount__icon amount__icon--minus"></span></button>
+                  <input tabindex="-1" type="number" min="0" max="99" value="1" readonly class="amount__number">
+                  <button type="button" onclick="this.previousElementSibling.stepUp()" class="amount__btn">+<span
+                      class="icon amount__icon amount__icon--plus"></span></button>
                 </div>
-              </div>
+
+                <div class="form__sum"><span class="form__caption">Total €</span><span class="form__total">220</span>
+                </div>
+              </fieldset>
             </div>
 
-            <div class="form__sum">
-              Total €<span class="form__total">220</span>
-            </div>
-
-            <button type="button" class="form__button">
-              <span>Buy Now</span>
-            </button>
+            <button type="submit" class="form__btn"><span class="form__btn-caption">Buy Now</span></button>
           </form>
         </div>
       </div>
@@ -488,7 +481,7 @@
                 <a href="#explore" class="footer__navigation-link navigation__link">explore</a>
               </li>
               <li class="footer__navigation-item navigation__item">
-                <a href="#Tickets" class="footer__navigation-link navigation__link">Tickets</a>
+                <a href="#tickets" class="footer__navigation-link navigation__link">tickets</a>
               </li>
 
               <li class="footer__navigation-item navigation__item">

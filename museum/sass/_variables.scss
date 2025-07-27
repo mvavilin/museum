@@ -16,7 +16,8 @@ $color-desc-marker: #caaa7d;
 $color-player-control-unit: #b3b3b3;
 $color-player-control-unit-hover: #989898;
 $color-player-pagination-unit: #999999;
-$color-player-pagination-unit-hover: #710707;
+$color-videoslider-pagination-unit-hover: #710707;
+$color-videoslider-pagination-unit-active: #333333;
 
 // Шрифты
 $font-primary: "Forum", serif;
@@ -60,9 +61,9 @@ $letter-spacing-md: 0.3rem;
 
 // Отступы
 $spacing-normal: 1rem;
-// $spacing-xs: ;
-// $spacing-sm: ;
-// $spacing-md: ;
+$spacing-xs: 2rem;
+$spacing-sm: 4rem;
+$spacing-md: 5rem;
 $spacing-lg: 6rem;
 $spacing-xl: 7.5rem;
 

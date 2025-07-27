@@ -1,17 +1,17 @@
 // Прогресс-бар плеера
-const progressBar = document.querySelector(".control-unit__progress-bar");
+const progress = document.querySelector(".video-controller__progress");
 
-progressBar.addEventListener("input", function () {
+progress.addEventListener("input", function () {
   const value = this.value;
   this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, white 100%)`;
 });
 
 // Громкость плеера
-const volumeSlider = document.querySelector(".control-unit__volume-slider");
+const volume = document.querySelector(".video-controller__volume");
 
-volumeSlider.addEventListener("input", function () {
-  const value = this.value;
-  this.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, white 100%)`;
+volume.addEventListener("input", function () {
+  const value = volume.value;
+  volume.style.background = `linear-gradient(to right, #710707 0%, #710707 ${value}%, #fff ${value}%, white 100%)`;
 });
 
 // Бургер-меню и навигация

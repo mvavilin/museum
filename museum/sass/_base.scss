@@ -95,6 +95,12 @@ button {
     justify-content: space-between;
     gap: $spacing-lg;
   }
+
+  &__video {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
 }
 
 .icon {
@@ -214,7 +220,7 @@ button {
   &__content {
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
+    gap: $spacing-xl;
   }
 
   &__desc {
@@ -222,16 +228,6 @@ button {
     flex-direction: column;
     gap: 2.5rem;
     max-width: 66rem;
-  }
-
-  &__text {
-    font-size: $font-size-md;
-    font-weight: $font-weight-light;
-    line-height: $line-height-sm;
-
-    &--highlight {
-      color: $color-desc-marker;
-    }
   }
 
   &__slider-comparison {
@@ -242,42 +238,23 @@ button {
   }
 }
 
-.Video {
-  &__container {
-    padding-top: $spacing-xl;
-    padding-bottom: $spacing-xl;
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-xl;
-  }
-
+.video {
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: $spacing-xl;
+    gap: $spacing-normal;
   }
 
   &__desc {
     max-width: 72rem;
   }
 
-  &__player {
+  &__media {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-  }
-
-  &__slider {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  &__pagination {
-    max-width: 20rem;
-    margin: 0 auto;
+    gap: $spacing-sm;
   }
 }
 
@@ -527,6 +504,10 @@ button {
       display: flex;
       flex-direction: column;
     }
+
+    &__video {
+      gap: $spacing-sm;
+    }
   }
 
   .header {
@@ -627,15 +608,6 @@ button {
     &__desc {
       gap: 0;
       max-width: 100%;
-    }
-
-    &__text {
-      font-size: $font-size-xs;
-      line-height: calc($line-height-sm - 0.2rem);
-
-      &--hidden {
-        display: none;
-      }
     }
 
     &__slider-comparison {

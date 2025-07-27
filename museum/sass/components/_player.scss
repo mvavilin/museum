@@ -1,189 +1,147 @@
 .player {
+  &__video {
+    position: relative;
+    max-height: 65rem;
+  }
 
-    &__container {}
+  &__preview {
+    width: 100%;
+    height: auto;
+  }
 
-    &__video {
-        cursor: pointer;
+  &__btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        position: relative;
-
-        width: 100%;
-        height: 65rem;
-
-        background-image: url("assets/svg/player/preview.png");
-
-        &--paused {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            width: 22rem;
-            height: 22rem;
-
-            border: 1rem solid $color-white;
-            border-radius: $border-radius-full;
-
-            background-color: $color-white;
-
-            -webkit-mask-image: url("assets/svg/player/paused.svg");
-            -webkit-mask-size: contain;
-            -webkit-mask-position: center center;
-            -webkit-mask-repeat: no-repeat;
-        }
+  &__icon {
+    &--paused {
+      width: 15.3%;
+      height: 100%;
+      mask-image: url("assets/svg/player/paused.svg");
     }
-
-
-    &__slider {}
-
-    &__wrapper {
-        display: flex;
-        justify-content: space-between;
-
-    }
-
-    &__slide {
-        flex-grow: 1;
-        max-width: 45.2rem;
-        height: 25.2rem;
-    }
-
-    &__iframe {
-        width: 100%;
-        height: 100%;
-    }
-
-    &__pagination,
-    &__dots {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    &__nav,
-    &__dot {
-        cursor: pointer;
-
-        width: 1.2rem;
-        height: 1.2rem;
-
-        background-color: $color-player-pagination-unit;
-
-        -webkit-mask-size: contain;
-        -webkit-mask-position: center center;
-        -webkit-mask-repeat: no-repeat;
-
-        transition: $transition-normal;
-
-        &:hover {
-            background-color: $color-player-pagination-unit-hover;
-        }
-    }
-
-    &__nav {
-
-        &--prev {
-            -webkit-mask-image: url("assets/svg/player/prev.svg");
-        }
-
-        &--next {
-            -webkit-mask-image: url("assets/svg/player/next.svg");
-        }
-    }
-
-    &__dot {
-        border-radius: $border-radius-full;
-
-        &--active {
-            background-color: $color-player-pagination-unit-hover;
-        }
-    }
+  }
 }
 
-.control-unit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5rem;
+.video-controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: 2.5rem 3rem;
+  background-color: $color-black;
 
-    padding: 2.6rem 3rem;
+  &__icon {
+    cursor: pointer;
 
-    background-color: $color-black;
+    &--play {
+      width: 2.3rem;
+      height: 3.1rem;
+      mask-image: url("assets/svg/player/play.svg");
+    }
+    &--volume {
+      width: 3.8rem;
+      height: 3.1rem;
+      mask-image: url("assets/svg/player/volume.svg");
+    }
+    &--fullscreen {
+      width: 3.5rem;
+      height: 3.5rem;
+      mask-image: url("assets/svg/player/fullscreen.svg");
+    }
+  }
 
-    &__progress-bar,
-    &__volume-slider {
-        height: .8rem;
-        transition: background $transition-slow;
-        -webkit-appearance: none;
+  &__progress,
+  &__volume {
+    flex-grow: 1;
+    height: 0.8rem;
+    transition: $transition-slow;
+    appearance: none;
 
-        &::-webkit-slider-thumb {
-            cursor: ew-resize;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 50%;
-            -webkit-appearance: none;
-            background: $color-white;
-        }
+    &::-webkit-slider-thumb {
+      cursor: ew-resize;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      appearance: none;
+      background: $color-white;
+    }
+  }
+
+  &__progress {
+    min-width: $spacing-sm * 4;
+    max-width: 92.9rem;
+    background: linear-gradient(
+      to right,
+      $color-primary 0%,
+      $color-primary 54%,
+      $color-white 54%,
+      $color-white 100%
+    );
+  }
+
+  &__volume {
+    min-width: $spacing-sm;
+    max-width: 15.5rem;
+    background: linear-gradient(
+      to right,
+      $color-primary 0%,
+      $color-primary 42%,
+      $color-white 42%,
+      $color-white 100%
+    );
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .player {
+    &__preview {
+      max-height: 44.4rem;
+    }
+  }
+
+  .video-controller {
+    gap: $spacing-xs;
+    padding: 1.5rem 4rem;
+
+    &__icon {
+      &--play {
+        height: 3rem;
+      }
+      &--volume {
+        width: 2.6rem;
+        height: 2rem;
+      }
+      &--fullscreen {
+        width: 2.6rem;
+        height: 2.6rem;
+      }
     }
 
-    &__play-button,
-    &__progress-bar,
-    &__volume-icon,
-    &__volume-slider,
-    &__fullscreen-button {
-        cursor: pointer;
+    &__progress,
+    &__volume {
+      height: 0.5rem;
+
+      &::-webkit-slider-thumb {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
     }
 
-    &__play-button,
-    &__volume-icon,
-    &__fullscreen-button {
-        background-color: $color-player-control-unit;
-
-        -webkit-mask-size: contain;
-        -webkit-mask-position: center center;
-        -webkit-mask-repeat: no-repeat;
-
-        transition: $transition-normal;
-
-        &:hover {
-            background-color: $color-player-control-unit-hover;
-        }
+    &__progress {
+      min-width: $spacing-xs * 4;
+      max-width: 56.4rem;
     }
 
-    &__play-button {
-        width: 2.3rem;
-        height: 3.1rem;
-
-        -webkit-mask-image: url("assets/svg/player/play.svg");
+    &__volume {
+      min-width: $spacing-xs;
+      max-width: 14.3rem;
     }
-
-    &__progress-bar {
-        flex-grow: 1;
-        max-width: 92.9rem;
-
-        background: linear-gradient(to right, $color-primary 0%, $color-primary 54%, #fff 54%, #fff 100%);
-    }
-
-    &__volume-icon {
-        width: 3.8rem;
-        height: 3.1rem;
-
-        -webkit-mask-image: url("assets/svg/player/volume.svg");
-    }
-
-    &__volume-slider {
-        flex-grow: 1;
-        max-width: 15.5rem;
-
-        background: linear-gradient(to right, $color-primary 0%, $color-primary 42%, #fff 42%, #fff 100%);
-    }
-
-    &__fullscreen-button {
-        width: 3.5rem;
-        height: 3.5rem;
-
-        -webkit-mask-image: url("assets/svg/player/fullscreen.svg");
-    }
+  }
 }

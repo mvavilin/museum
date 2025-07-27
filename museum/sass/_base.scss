@@ -34,6 +34,7 @@ p {
 }
 
 img {
+  width: 100%;
   display: block;
   object-fit: cover;
 }
@@ -61,7 +62,8 @@ button {
 
   &__header,
   &__welcome,
-  &__explore {
+  &__explore,
+  &__gallery {
     color: $color-text-light;
   }
 
@@ -75,31 +77,31 @@ button {
   }
 
   &__section {
+    display: flex;
     padding-top: $spacing-xl;
     padding-bottom: $spacing-xl;
   }
 
   &__welcome {
+    display: block;
     padding-top: 0;
     padding-bottom: $spacing-lg;
   }
 
-  &__visiting {
-    display: flex;
+  &__visiting,
+  &__video,
+  &__gallery {
     flex-direction: column;
     gap: $spacing-xl;
   }
 
   &__explore {
-    display: flex;
     justify-content: space-between;
     gap: $spacing-lg;
   }
 
-  &__video {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-xl;
+  &__gallery {
+    padding-bottom: 0;
   }
 }
 
@@ -258,34 +260,26 @@ button {
   }
 }
 
-.Gallery {
+.gallery {
   background-color: $color-black;
-  color: $color-white;
 
   &__container {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-xl;
-
-    padding-top: $spacing-xl;
-  }
-
-  &__image-container {
+    pointer-events: none;
+    position: relative;
     max-height: 196rem;
     overflow-y: hidden;
-
-    position: relative;
-    z-index: 0;
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 36rem;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
-      pointer-events: none;
-      z-index: 10; // Увеличиваем z-index чтобы быть уверенным, что градиент поверх других элементов
+      height: 18.5%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        $color-background 100%
+      );
     }
   }
 
@@ -294,21 +288,18 @@ button {
     column-gap: 3.6rem;
   }
 
-  &__image-wrapper {
+  &__img-wrapper {
     max-width: 45.6rem;
-
     margin-bottom: 2.5rem;
-
-    &:nth-child(1),
-    &:nth-child(11) {
-      padding-top: 5rem;
-    }
   }
 
-  &__image {
-    display: block;
+  &__img {
     width: 100%;
     object-fit: contain;
+
+    &--indent {
+      padding-top: $spacing-md;
+    }
   }
 }
 
@@ -501,12 +492,16 @@ button {
     }
 
     &__explore {
-      display: flex;
       flex-direction: column;
     }
 
     &__video {
       gap: $spacing-sm;
+    }
+
+    &__gallery {
+      gap: $spacing-lg;
+      padding-bottom: 0;
     }
   }
 
@@ -612,6 +607,12 @@ button {
 
     &__slider-comparison {
       margin-top: 0;
+    }
+  }
+
+  .gallery {
+    &__container {
+      max-height: 126.5rem;
     }
   }
 }

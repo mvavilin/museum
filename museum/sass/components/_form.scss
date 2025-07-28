@@ -181,11 +181,30 @@
     }
 
     &__item {
-      margin-bottom: -2rem;
+      margin-bottom: -$spacing-xs;
     }
 
     &__counter {
       width: 17.5rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .form {
+    &__sum {
+      margin-top: 0.8rem;
+    }
+  }
+
+  .amount {
+    &__title {
+      margin-bottom: 3.9rem;
+    }
+
+    &__item {
+      line-height: 1;
+      margin-bottom: -1.5rem;
     }
   }
 }

@@ -151,9 +151,9 @@ fieldset {
 .section {
   &__title {
     font-family: $font-primary;
-    font-size: $font-size-xxxl;
+    font-size: $font-size-xxxxl;
     font-weight: $font-weight-thin;
-    line-height: $line-height-xl;
+    line-height: $line-height-xxl;
     letter-spacing: $letter-spacing-normal;
     text-transform: uppercase;
 
@@ -306,15 +306,16 @@ fieldset {
   &__img-wrapper {
     max-width: 45.6rem;
     margin-bottom: 2.5rem;
+
+    &:nth-child(1),
+    &:nth-child(11) {
+      padding-top: $spacing-md;
+    }
   }
 
   &__img {
     width: 100%;
     object-fit: contain;
-
-    &--indent {
-      padding-top: $spacing-md;
-    }
   }
 }
 
@@ -585,8 +586,8 @@ fieldset {
 
   .section {
     &__title {
-      font-size: $font-size-xxl;
-      line-height: $line-height-lg;
+      font-size: $font-size-xxxl;
+      line-height: $line-height-xl;
 
       &--underline {
         margin-bottom: 2.3rem;
@@ -600,7 +601,7 @@ fieldset {
 
   .welcome {
     &__title {
-      line-height: $line-height-xl;
+      line-height: $line-height-xxl;
     }
 
     &__content {
@@ -728,6 +729,138 @@ fieldset {
     max-width: $container-max-width-md;
     padding-left: $container-padding-md;
     padding-right: $container-padding-md;
+
+    &__header {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+
+    &__section {
+      padding-top: $font-size-xxl;
+      padding-bottom: $font-size-xxl;
+    }
+
+    &__visiting,
+    &__explore,
+    &__gallery,
+    &__tickets,
+    &__contacts {
+      gap: $spacing-sm;
+    }
+
+    &__visiting,
+    &__video {
+      padding-bottom: $spacing-xxl;
+    }
+
+    &__welcome {
+      padding-top: 0;
+      padding-bottom: 10rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__video {
+      gap: $spacing-xs;
+    }
+
+    &__footer {
+      padding-bottom: 0;
+    }
+  }
+
+  .header {
+    &__logo {
+      margin-top: 1rem;
+    }
+  }
+
+  .section {
+    &__title {
+      font-size: $font-size-xxl;
+      line-height: $line-height-lg;
+    }
+  }
+
+  .welcome {
+    &__content {
+      align-items: center;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    &__title {
+      align-items: center;
+    }
+
+    &__text {
+      font-size: $font-size-xs;
+    }
+
+    &__link {
+      display: none;
+    }
+
+    &__slider {
+      justify-content: inherit;
+    }
+  }
+
+  .explore {
+    &__desc {
+      &--hidden {
+        display: none;
+      }
+    }
+
+    &__slider-comparison {
+      width: 72.8rem;
+      height: 70.5rem;
+    }
+  }
+
+  .video {
+    &__media {
+      gap: $spacing-xs;
+    }
+  }
+
+  .gallery {
+    &__container {
+      max-height: 104rem;
+    }
+
+    &__inner-container {
+      columns: 2 auto;
+      column-gap: 2.4rem;
+    }
+
+    &__img-wrapper {
+      &:nth-child(11) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .tickets {
+    &__content {
+      gap: $spacing-lg;
+    }
+
+    &__img-wrapper {
+      max-width: 44.4rem;
+      max-height: 34rem;
+    }
+
+    &__form {
+      gap: $spacing-sm;
+    }
+  }
+
+  .parallax {
+    height: 30rem;
   }
 }
 

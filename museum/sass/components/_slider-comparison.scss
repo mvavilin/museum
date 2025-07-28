@@ -10,6 +10,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     overflow: hidden;
   }
 
@@ -20,7 +21,11 @@
   }
 
   &__img {
-    width: auto;
+    height: 100%;
+
+    &--after {
+      width: auto;
+    }
   }
 
   &__control {

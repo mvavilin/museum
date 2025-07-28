@@ -87,3 +87,26 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-md) {
+  .cards {
+    row-gap: $spacing-sm - 0.1rem;
+  }
+
+  .card {
+    &__img {
+      width: 28rem;
+      height: 18rem;
+    }
+
+    &__title {
+      font-size: $font-size-md;
+    }
+
+    &__label {
+      &--large {
+        font-size: $font-size-base;
+      }
+    }
+  }
+}

@@ -145,3 +145,47 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-md) {
+  .player {
+    &__icon {
+      &--paused {
+        width: 11.3%;
+      }
+    }
+  }
+
+  .video-controller {
+    position: relative;
+    padding: 1.3rem 3rem;
+
+    &__icon {
+      &--play {
+        height: 2.9rem;
+      }
+
+      &--volume {
+        width: 2.7rem;
+        height: 2.1rem;
+      }
+
+      &--fullscreen {
+        width: 2.7rem;
+        height: 2.7rem;
+      }
+    }
+
+    &__progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      transform: translateY(-100%);
+    }
+
+    &__volume {
+      max-width: 48.6rem;
+    }
+  }
+}

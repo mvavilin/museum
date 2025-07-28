@@ -71,3 +71,23 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-md) {
+  .videoslider {
+    row-gap: $spacing-xs;
+
+    &__wrapper {
+      column-gap: $spacing-xs;
+    }
+
+    &__slide {
+      min-width: 35.4rem;
+      height: 19.9rem;
+    }
+
+    &__navigation,
+    &__pagination {
+      gap: $spacing-xs - 0.2rem;
+    }
+  }
+}

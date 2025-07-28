@@ -268,13 +268,13 @@ fieldset {
   max-width: 45.6rem;
   margin-bottom: 2.5rem;
 }
+.gallery__img-wrapper:nth-child(1), .gallery__img-wrapper:nth-child(11) {
+  padding-top: 5rem;
+}
 .gallery__img {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-}
-.gallery__img--indent {
-  padding-top: 5rem;
 }
 
 .tickets__content {
@@ -604,6 +604,93 @@ fieldset {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  .container__header {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .container__section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .container__visiting, .container__explore, .container__gallery, .container__tickets, .container__contacts {
+    gap: 4rem;
+  }
+  .container__visiting, .container__video {
+    padding-bottom: 8rem;
+  }
+  .container__welcome {
+    padding-top: 0;
+    padding-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .container__video {
+    gap: 2rem;
+  }
+  .container__footer {
+    padding-bottom: 0;
+  }
+  .header__logo {
+    margin-top: 1rem;
+  }
+  .section__title {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+  .welcome__content {
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .welcome__title {
+    align-items: center;
+  }
+  .welcome__text {
+    font-size: 2rem;
+  }
+  .welcome__link {
+    display: none;
+  }
+  .welcome__slider {
+    justify-content: inherit;
+  }
+  .explore__desc--hidden {
+    display: none;
+  }
+  .explore__slider-comparison {
+    width: 72.8rem;
+    height: 70.5rem;
+  }
+  .video__media {
+    gap: 2rem;
+  }
+  .gallery__container {
+    max-height: 104rem;
+  }
+  .gallery__inner-container {
+    -moz-columns: 2 auto;
+         columns: 2 auto;
+    -moz-column-gap: 2.4rem;
+         column-gap: 2.4rem;
+  }
+  .gallery__img-wrapper:nth-child(11) {
+    padding-top: 0;
+  }
+  .tickets__content {
+    gap: 6rem;
+  }
+  .tickets__img-wrapper {
+    max-width: 44.4rem;
+    max-height: 34rem;
+  }
+  .tickets__form {
+    gap: 4rem;
+  }
+  .parallax {
+    height: 30rem;
+  }
 }
 @media (max-width: 420px) {
   .container {
@@ -792,6 +879,23 @@ fieldset {
     height: 1.2rem;
   }
 }
+@media (max-width: 768px) {
+  .slider__img-wrapper {
+    width: 100%;
+    height: 54.6rem;
+  }
+  .slider__img-wrapper::after {
+    display: none;
+  }
+  .slider__controls {
+    transform: translateY(100%);
+    justify-content: center;
+    max-width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: transparent;
+  }
+}
 .cards {
   display: flex;
   justify-content: center;
@@ -864,6 +968,21 @@ fieldset {
     font-size: 2rem;
   }
 }
+@media (max-width: 768px) {
+  .cards {
+    row-gap: 3.9rem;
+  }
+  .card__img {
+    width: 28rem;
+    height: 18rem;
+  }
+  .card__title {
+    font-size: 2.2rem;
+  }
+  .card__label--large {
+    font-size: 1.8rem;
+  }
+}
 .slider-comparison {
   --width-percent: 61.3%;
   position: relative;
@@ -874,12 +993,16 @@ fieldset {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 .slider-comparison__img-wrapper--after {
   width: var(--width-percent);
 }
 .slider-comparison__img {
+  height: 100%;
+}
+.slider-comparison__img--after {
   width: auto;
 }
 .slider-comparison__control {
@@ -1051,6 +1174,37 @@ fieldset {
     max-width: 14.3rem;
   }
 }
+@media (max-width: 768px) {
+  .player__icon--paused {
+    width: 11.3%;
+  }
+  .video-controller {
+    position: relative;
+    padding: 1.3rem 3rem;
+  }
+  .video-controller__icon--play {
+    height: 2.9rem;
+  }
+  .video-controller__icon--volume {
+    width: 2.7rem;
+    height: 2.1rem;
+  }
+  .video-controller__icon--fullscreen {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+  .video-controller__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    transform: translateY(-100%);
+  }
+  .video-controller__volume {
+    max-width: 48.6rem;
+  }
+}
 .videoslider {
   display: flex;
   flex-direction: column;
@@ -1112,6 +1266,22 @@ fieldset {
   .videoslider__slide {
     min-width: 30rem;
     height: 17rem;
+  }
+}
+@media (max-width: 768px) {
+  .videoslider {
+    row-gap: 2rem;
+  }
+  .videoslider__wrapper {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+  .videoslider__slide {
+    min-width: 35.4rem;
+    height: 19.9rem;
+  }
+  .videoslider__navigation, .videoslider__pagination {
+    gap: 1.8rem;
   }
 }
 .form__wrapper {
@@ -1266,6 +1436,18 @@ fieldset {
   }
   .amount__counter {
     width: 17.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .form__sum {
+    margin-top: 0.8rem;
+  }
+  .amount__title {
+    margin-bottom: 3.9rem;
+  }
+  .amount__item {
+    line-height: 1;
+    margin-bottom: -1.5rem;
   }
 }
 .social {

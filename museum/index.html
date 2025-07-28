@@ -17,8 +17,8 @@
 <body>
   <header class="header">
     <div class="container container__header">
-      <div class="logo">
-        <a href="#" class="logo__link">
+      <div class="header__logo logo">
+        <a href="index.html" class="logo__link">
           <span class="icon logo__icon"></span>
           <span class="logo__title">Louvre</span>
         </a>
@@ -66,7 +66,8 @@
         <div class="welcome__content">
           <h1 class="section__title welcome__title"><span>Welcome </span><span>to the Louvre</span></h1>
           <p class="welcome__text">From the castle to the museum</p>
-          <a href="https://clck.ru/3NKotY" class="welcome__link"><span>Discover the Louvre</span></a>
+          <a href="https://clck.ru/3NKotY" class="welcome__link welcome__link--hidden"><span>Discover the
+              Louvre</span></a>
         </div>
 
         <div class="welcome__slider slider">
@@ -178,7 +179,7 @@
       <div class="container container__section container__explore">
         <div class="explore__content">
           <h2 class="section__title section__title--underline">Picture explore</h2>
-          <div class="explore__desc desc">
+          <div class="explore__desc explore__desc--hidden desc">
             <span class="desc__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the
               Spanish Golden Age.</span>
             <span class="desc__text">It was cleaned in 1984 to remove a <span class="desc__text--highlight">"yellow
@@ -193,10 +194,12 @@
 
         <div class="explore__slider-comparison slider-comparison">
           <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--before">
-            <img class="slider-comparison__img" src="assets/img/slider-comparison/before.jpg" alt="До">
+            <img class="slider-comparison__img slider-comparison__img--before"
+              src="assets/img/slider-comparison/before.jpg" alt="До">
           </div>
           <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--after">
-            <img class="slider-comparison__img" src="assets/img/slider-comparison/after.jpg" alt="После">
+            <img class="slider-comparison__img slider-comparison__img--after"
+              src="assets/img/slider-comparison/after.jpg" alt="После">
           </div>
           <input type="range" class="slider-comparison__control" min="0" max="100" value="61">
           <div class="slider-comparison__handle handle">
@@ -287,7 +290,7 @@
           <div class="gallery__inner-container">
             <div class="gallery__img-wrapper">
               <img src="assets/img/gallery/2.jpg" alt="На мраморной скульптуре изображена женщина, охотящаяся на оленя"
-                class="gallery__img gallery__img--indent">
+                class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
               <img src="assets/img/gallery/9.jpg"
@@ -336,8 +339,7 @@
 
             <div class="gallery__img-wrapper">
               <img src="assets/img/gallery/7.jpg"
-                alt="На изображении представлена знаменитая картина Леонардо да Винчи 'Мона Лиза'"
-                class="gallery__img gallery__img--indent">
+                alt="На изображении представлена знаменитая картина Леонардо да Винчи 'Мона Лиза'" class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
               <img src="assets/img/gallery/10.jpg" alt="Изображение показывает часть здания Лувра в Париже, Франция"

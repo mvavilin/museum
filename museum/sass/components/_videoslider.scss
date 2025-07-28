@@ -44,10 +44,10 @@
   &__icon {
     background-color: $color-player-pagination-unit;
     &--next {
-      mask-image: url("assets/svg/videoslider/next.svg");
+      mask-image: url("../assets/svg/videoslider/next.svg");
     }
     &--prev {
-      mask-image: url("assets/svg/videoslider/prev.svg");
+      mask-image: url("../assets/svg/videoslider/prev.svg");
     }
   }
 

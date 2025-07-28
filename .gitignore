@@ -105,3 +105,4 @@ dist
 
 # Sass/SCSS generated files
 *.css.map
+style.css

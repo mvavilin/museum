@@ -143,6 +143,7 @@ fieldset {
   }
 
   &__link {
+    font-size: $font-size-md;
     font-weight: $font-weight-thin;
     letter-spacing: $letter-spacing-xs;
   }
@@ -347,7 +348,8 @@ fieldset {
 .parallax {
   width: 100%;
   height: 40rem;
-  background-image: url("assets/img/parallax_background.png");
+  background-image: url("../assets/img/parallax_background.jpg");
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -371,9 +373,6 @@ fieldset {
     font-weight: $font-weight-medium;
     display: flex;
     flex-direction: column;
-  }
-
-  &__text {
   }
 
   &__item {
@@ -407,7 +406,7 @@ fieldset {
   &::after {
     content: "";
     position: absolute;
-    bottom: 31%;
+    bottom: 2 * ($spacing-sm + 1rem) + $font-size-md;
     left: 0;
     width: 100%;
     height: 0.3rem;
@@ -449,6 +448,7 @@ fieldset {
   }
 
   &__link {
+    font-size: $font-size-md;
     font-weight: $font-weight-extra-light;
     letter-spacing: $letter-spacing-sm;
   }
@@ -465,402 +465,37 @@ fieldset {
   }
 
   &__desc {
+    display: block;
     font-size: $font-size-md;
     font-weight: $font-weight-thin;
     line-height: $line-height-xs;
     letter-spacing: $letter-spacing-sm;
     text-align: center;
+    transition: $transition-normal;
 
     &:first-child {
       text-align: left;
+
+      &:hover {
+        color: inherit;
+      }
+
+      &:active {
+        color: inherit;
+      }
     }
 
     &:last-child {
       text-align: right;
     }
-  }
-}
 
-@media (max-width: $breakpoint-lg) {
-  .container {
-    max-width: $container-max-width-lg;
-    padding-left: $container-padding-lg;
-    padding-right: $container-padding-lg;
-
-    &__header {
-      padding-top: 4.9rem;
-      padding-bottom: 4.9rem;
+    &:hover {
+      color: $color-link-hover;
     }
 
-    &__section {
-      padding-top: $spacing-lg;
-      padding-bottom: $spacing-lg;
+    &:active {
+      color: $color-link-active;
     }
-
-    &__welcome {
-      padding-top: 0;
-      padding-bottom: $spacing-lg;
-    }
-
-    &__visiting {
-      gap: $spacing-lg;
-    }
-
-    &__explore {
-      flex-direction: column;
-    }
-
-    &__video {
-      gap: $spacing-sm;
-    }
-
-    &__gallery {
-      gap: $spacing-lg;
-      padding-bottom: 0;
-    }
-
-    &__tickets {
-      gap: $spacing-lg;
-    }
-
-    &__contacts {
-      gap: $spacing-lg;
-    }
-
-    &__footer {
-      padding-bottom: 0;
-    }
-  }
-
-  .header {
-    &__navigation {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 10;
-      overflow-x: hidden;
-      max-width: 29.7rem;
-      width: 100%;
-      height: 100vh;
-    }
-
-    &__list {
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 2.4rem;
-      padding-top: 3.5rem;
-      padding-left: 5.5rem;
-      height: 100%;
-      background-color: $color-background;
-      transform: translateX(-100%);
-      transition: $transition-normal;
-
-      &--active {
-        transform: translateX(0);
-      }
-    }
-
-    &__link {
-      font-size: $font-size-xs;
-      font-weight: $font-weight-light;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 12.2rem;
-
-      &:hover > .header__icon {
-        background-color: $color-link-hover;
-      }
-
-      &:active > .header__icon {
-        background-color: $color-link-active;
-      }
-    }
-
-    &__icon {
-      width: 1.2rem;
-      height: 1.2rem;
-      mask-image: url("assets/svg/menu_arrow.svg");
-    }
-  }
-
-  .section {
-    &__title {
-      font-size: $font-size-xxxl;
-      line-height: $line-height-xl;
-
-      &--underline {
-        margin-bottom: 2.3rem;
-
-        &::after {
-          bottom: -2.3rem;
-        }
-      }
-    }
-  }
-
-  .welcome {
-    &__title {
-      line-height: $line-height-xxl;
-    }
-
-    &__content {
-      top: 5rem;
-      left: $container-padding-sm;
-    }
-
-    &__text {
-      margin-bottom: 2.5rem;
-      font-size: $font-size-m;
-    }
-
-    &__link {
-      max-width: 30rem;
-      padding-top: 1.75rem;
-      padding-bottom: 1.75rem;
-      font-size: $font-size-xs;
-    }
-  }
-
-  .explore {
-    &__content {
-      gap: $spacing-lg;
-    }
-
-    &__desc {
-      gap: 0;
-      max-width: 100%;
-    }
-
-    &__slider-comparison {
-      margin-top: 0;
-    }
-  }
-
-  .gallery {
-    &__container {
-      max-height: 126.5rem;
-    }
-  }
-
-  .tickets {
-    &__content {
-      gap: $spacing-xxl;
-    }
-
-    &__img-wrapper {
-      max-width: 70rem;
-      max-height: 44rem;
-    }
-
-    &__form {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: $spacing-lg;
-    }
-  }
-
-  .contacts {
-    &__content {
-      gap: $spacing-normal;
-    }
-
-    &__list {
-      gap: 1.5rem;
-    }
-
-    &__subtitle {
-      margin-bottom: 1.5rem;
-      font-size: $font-size-m;
-    }
-
-    &__item {
-      font-size: $font-size-xs;
-    }
-
-    &__map-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 69.4rem;
-      height: 45.4rem;
-    }
-
-    &__img {
-      height: 150%;
-    }
-  }
-
-  .footer {
-    &::after {
-      bottom: 33%;
-    }
-
-    &__upper {
-      column-gap: $spacing-normal;
-    }
-
-    &__logo {
-      margin-top: 0.5rem;
-    }
-
-    &__wrapper {
-      max-width: 74.5rem;
-      gap: 1rem;
-    }
-
-    &__navigation {
-      margin-top: 0.5rem;
-    }
-
-    &__list {
-      column-gap: $spacing-normal;
-    }
-
-    &__social {
-      margin-bottom: 2.5rem;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-md) {
-  .container {
-    max-width: $container-max-width-md;
-    padding-left: $container-padding-md;
-    padding-right: $container-padding-md;
-
-    &__header {
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
-    }
-
-    &__section {
-      padding-top: $font-size-xxl;
-      padding-bottom: $font-size-xxl;
-    }
-
-    &__visiting,
-    &__explore,
-    &__gallery,
-    &__tickets,
-    &__contacts {
-      gap: $spacing-sm;
-    }
-
-    &__visiting,
-    &__video {
-      padding-bottom: $spacing-xxl;
-    }
-
-    &__welcome {
-      padding-top: 0;
-      padding-bottom: 10rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    &__video {
-      gap: $spacing-xs;
-    }
-
-    &__footer {
-      padding-bottom: 0;
-    }
-  }
-
-  .header {
-    &__logo {
-      margin-top: 1rem;
-    }
-  }
-
-  .section {
-    &__title {
-      font-size: $font-size-xxl;
-      line-height: $line-height-lg;
-    }
-  }
-
-  .welcome {
-    &__content {
-      align-items: center;
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-
-    &__title {
-      align-items: center;
-    }
-
-    &__text {
-      font-size: $font-size-xs;
-    }
-
-    &__link {
-      display: none;
-    }
-
-    &__slider {
-      justify-content: inherit;
-    }
-  }
-
-  .explore {
-    &__desc {
-      &--hidden {
-        display: none;
-      }
-    }
-
-    &__slider-comparison {
-      width: 72.8rem;
-      height: 70.5rem;
-    }
-  }
-
-  .video {
-    &__media {
-      gap: $spacing-xs;
-    }
-  }
-
-  .gallery {
-    &__container {
-      max-height: 104rem;
-    }
-
-    &__inner-container {
-      columns: 2 auto;
-      column-gap: 2.4rem;
-    }
-
-    &__img-wrapper {
-      &:nth-child(11) {
-        padding-top: 0;
-      }
-    }
-  }
-
-  .tickets {
-    &__content {
-      gap: $spacing-lg;
-    }
-
-    &__img-wrapper {
-      max-width: 44.4rem;
-      max-height: 34rem;
-    }
-
-    &__form {
-      gap: $spacing-sm;
-    }
-  }
-
-  .parallax {
-    height: 30rem;
   }
 }
 

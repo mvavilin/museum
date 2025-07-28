@@ -24,7 +24,7 @@
     &--paused {
       width: 15.3%;
       height: 100%;
-      mask-image: url("assets/svg/player/paused.svg");
+      mask-image: url("../assets/svg/player/paused.svg");
     }
   }
 }
@@ -43,17 +43,17 @@
     &--play {
       width: 2.3rem;
       height: 3.1rem;
-      mask-image: url("assets/svg/player/play.svg");
+      mask-image: url("../assets/svg/player/play.svg");
     }
     &--volume {
       width: 3.8rem;
       height: 3.1rem;
-      mask-image: url("assets/svg/player/volume.svg");
+      mask-image: url("../assets/svg/player/volume.svg");
     }
     &--fullscreen {
       width: 3.5rem;
       height: 3.5rem;
-      mask-image: url("assets/svg/player/fullscreen.svg");
+      mask-image: url("../assets/svg/player/fullscreen.svg");
     }
   }
 

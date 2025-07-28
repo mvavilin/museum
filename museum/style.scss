@@ -4,6 +4,11 @@
 // Базовые стили
 @import "sass/base";
 
+// Адаптив
+@import "sass/media/desktop";
+@import "sass/media/tablet";
+@import "sass/media/mobile";
+
 // Компоненты интерфейса
 // Header
 @import "sass/components/logo";

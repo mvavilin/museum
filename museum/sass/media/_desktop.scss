@@ -1,0 +1,238 @@
+@media (max-width: $breakpoint-lg) {
+  .container {
+    max-width: $container-max-width-lg;
+    padding-left: $container-padding-lg;
+    padding-right: $container-padding-lg;
+
+    &__header {
+      padding-top: 4.9rem;
+      padding-bottom: 4.9rem;
+    }
+
+    &__section {
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+    }
+
+    &__welcome {
+      padding-top: 0;
+      padding-bottom: $spacing-lg;
+    }
+
+    &__visiting {
+      gap: $spacing-lg;
+    }
+
+    &__explore {
+      flex-direction: column;
+    }
+
+    &__video {
+      gap: $spacing-sm;
+    }
+
+    &__gallery {
+      gap: $spacing-lg;
+      padding-bottom: 0;
+    }
+
+    &__tickets {
+      gap: $spacing-lg;
+    }
+
+    &__contacts {
+      gap: $spacing-lg;
+    }
+
+    &__footer {
+      padding-bottom: 0;
+    }
+  }
+
+  .header {
+    &__navigation {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      overflow-x: hidden;
+      max-width: 29.7rem;
+      width: 100%;
+      height: 100vh;
+    }
+
+    &__list {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2.4rem;
+      padding-top: 3.5rem;
+      padding-left: 5.5rem;
+      height: 100%;
+      background-color: $color-background;
+      transform: translateX(-100%);
+      transition: $transition-normal;
+
+      &--active {
+        transform: translateX(0);
+      }
+    }
+
+    &__link {
+      font-size: $font-size-xs;
+      font-weight: $font-weight-light;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 12.2rem;
+
+      &:hover > .header__icon {
+        background-color: $color-link-hover;
+      }
+
+      &:active > .header__icon {
+        background-color: $color-link-active;
+      }
+    }
+
+    &__icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      mask-image: url("assets/svg/menu_arrow.svg");
+    }
+  }
+
+  .section {
+    &__title {
+      font-size: $font-size-xxxl;
+      line-height: $line-height-xl;
+
+      &--underline {
+        margin-bottom: 2.3rem;
+
+        &::after {
+          bottom: -2.3rem;
+        }
+      }
+    }
+  }
+
+  .welcome {
+    &__title {
+      line-height: $line-height-xxl;
+    }
+
+    &__content {
+      top: 5rem;
+      left: $container-padding-sm;
+    }
+
+    &__text {
+      margin-bottom: 2.5rem;
+      font-size: $font-size-m;
+    }
+
+    &__link {
+      max-width: 30rem;
+      padding-top: 1.75rem;
+      padding-bottom: 1.75rem;
+      font-size: $font-size-xs;
+    }
+  }
+
+  .explore {
+    &__content {
+      gap: $spacing-lg;
+    }
+
+    &__desc {
+      gap: 0;
+      max-width: 100%;
+    }
+
+    &__slider-comparison {
+      margin-top: 0;
+    }
+  }
+
+  .gallery {
+    &__container {
+      max-height: 126.5rem;
+    }
+  }
+
+  .tickets {
+    &__content {
+      gap: $spacing-xxl;
+    }
+
+    &__img-wrapper {
+      max-width: 70rem;
+      max-height: 44rem;
+    }
+
+    &__form {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: $spacing-lg;
+    }
+  }
+
+  .contacts {
+    &__content {
+      gap: $spacing-normal;
+    }
+
+    &__list {
+      gap: 1.5rem;
+    }
+
+    &__subtitle {
+      margin-bottom: 1.5rem;
+      font-size: $font-size-m;
+    }
+
+    &__item {
+      font-size: $font-size-xs;
+    }
+
+    &__map-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 69.4rem;
+      height: 45.4rem;
+    }
+
+    &__img {
+      height: 150%;
+    }
+  }
+
+  .footer {
+    &__upper {
+      column-gap: $spacing-normal;
+    }
+
+    &__logo {
+      margin-top: 0.5rem;
+    }
+
+    &__wrapper {
+      max-width: 74.5rem;
+      gap: 1rem;
+    }
+
+    &__navigation {
+      margin-top: 0.5rem;
+    }
+
+    &__list {
+      column-gap: $spacing-normal;
+    }
+
+    &__social {
+      margin-bottom: 2.5rem;
+    }
+  }
+}

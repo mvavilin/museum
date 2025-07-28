@@ -18,3 +18,22 @@
     text-transform: uppercase;
   }
 }
+
+@media (max-width: $breakpoint-sm) {
+  .logo {
+    &__icon {
+      width: 2.9rem;
+      height: 1.6rem;
+    }
+
+    &__title {
+      font-size: $font-size-xxs;
+    }
+
+    &__link {
+      &--narrow {
+        column-gap: 2rem;
+      }
+    }
+  }
+}

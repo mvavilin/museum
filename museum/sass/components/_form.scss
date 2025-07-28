@@ -24,7 +24,7 @@
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-xs;
     white-space: nowrap;
-    margin-top: 4rem;
+    margin-top: 3.7rem;
   }
 
   &__btn {
@@ -124,7 +124,7 @@
   }
 
   &__item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   &__counter {
@@ -132,7 +132,7 @@
     justify-content: space-between;
     align-items: center;
     width: 15rem;
-    padding: 0.2rem 1.2rem;
+    padding: 0.3rem 1.2rem;
     border: 0.3rem solid $color-black;
   }
 
@@ -160,7 +160,7 @@
     }
 
     &__amount {
-      gap: 2.9rem;
+      gap: 2.5rem;
     }
 
     &__sum {
@@ -170,7 +170,7 @@
     }
 
     &__btn {
-      align-self: self-start;
+      align-self: start;
     }
   }
 
@@ -181,7 +181,7 @@
     }
 
     &__item {
-      margin-bottom: -$spacing-xs;
+      margin-bottom: -1.5rem;
     }
 
     &__counter {
@@ -201,10 +201,46 @@
     &__title {
       margin-bottom: 3.9rem;
     }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .form {
+    &__btn {
+      font-size: $font-size-xxs;
+      align-self: auto;
+      padding-top: 1.6rem;
+      padding-bottom: 1.6rem;
+    }
+
+    &__amount {
+      gap: 2rem;
+    }
+
+    &__sum {
+      margin-top: 2rem;
+      align-self: center;
+      font-size: $font-size-xxs;
+      letter-spacing: 0;
+      column-gap: 0;
+    }
+  }
+
+  .amount {
+    &__title {
+      font-size: $font-size-xxs;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
     &__item {
-      line-height: 1;
-      margin-bottom: -1.5rem;
+      font-size: $font-size-xxs;
+      margin-bottom: -0.5rem;
+    }
+
+    &__counter {
+      padding-top: 0.3rem;
+      padding-bottom: 0.3rem;
     }
   }
 }

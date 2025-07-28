@@ -58,6 +58,15 @@ fieldset {
   border: none;
 }
 
+.icon {
+  display: block;
+  background-color: $color-white;
+  mask-size: contain;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  transition: $transition-normal;
+}
+
 .container {
   position: relative;
   width: $container-max-width;
@@ -117,15 +126,6 @@ fieldset {
     flex-direction: column;
     padding-bottom: 0;
   }
-}
-
-.icon {
-  display: block;
-  background-color: $color-white;
-  mask-size: contain;
-  mask-position: center center;
-  mask-repeat: no-repeat;
-  transition: $transition-normal;
 }
 
 .header {
@@ -251,7 +251,8 @@ fieldset {
   &__slider-comparison {
     align-self: center;
     margin-top: 1.5rem;
-    width: 72rem;
+    width: 100%;
+    max-width: 72rem;
     height: 70rem;
   }
 }
@@ -496,13 +497,5 @@ fieldset {
     &:active {
       color: $color-link-active;
     }
-  }
-}
-
-@media (max-width: $breakpoint-sm) {
-  .container {
-    max-width: $container-max-width-sm;
-    padding-left: $container-padding-sm;
-    padding-right: $container-padding-sm;
   }
 }

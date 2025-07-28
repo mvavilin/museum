@@ -110,3 +110,27 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-sm) {
+  .cards {
+    row-gap: $spacing-sm;
+  }
+
+  .card {
+    &__img {
+      max-width: 28rem;
+      margin-bottom: 1.6rem;
+    }
+
+    &__title {
+      font-size: $font-size-base;
+      letter-spacing: $letter-spacing-normal;
+    }
+
+    &__label {
+      &--large {
+        font-size: $font-size-xxs;
+      }
+    }
+  }
+}

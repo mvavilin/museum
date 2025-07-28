@@ -56,3 +56,9 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-sm) {
+  .social {
+    gap: 0.5rem;
+  }
+}

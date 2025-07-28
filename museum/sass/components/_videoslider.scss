@@ -91,3 +91,25 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-sm) {
+  .videoslider {
+    row-gap: $spacing-sm;
+
+    &__slide {
+      min-width: 18rem;
+      height: 10.1rem;
+    }
+
+    &__navigation,
+    &__pagination {
+      gap: $spacing-xs;
+    }
+
+    &__icon,
+    &__dot {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
+}

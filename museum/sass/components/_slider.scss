@@ -139,3 +139,35 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-sm) {
+  .slider {
+    &__img-wrapper {
+      height: 28.5rem;
+    }
+
+    &__controls {
+      gap: 2.5rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      font-size: $font-size-xxs;
+    }
+
+    &__counter {
+      gap: 0.5rem;
+    }
+
+    &__pagination {
+      gap: 1rem;
+    }
+
+    &__dot {
+      width: 0.7rem;
+      height: 0.7rem;
+    }
+
+    &__icon {
+      width: 1.7rem;
+    }
+  }
+}

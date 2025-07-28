@@ -40,7 +40,7 @@
     }
 
     &__contacts {
-      padding-bottom: $line-height-lg + 0.7rem;
+      padding-bottom: $spacing-lg + 0.7rem;
     }
 
     &__footer {
@@ -94,7 +94,7 @@
     }
 
     &__slider-comparison {
-      width: 72.8rem;
+      max-width: 72.8rem;
       height: 70.5rem;
     }
   }
@@ -184,10 +184,13 @@
       max-width: 43rem;
       flex-direction: column;
       row-gap: 2.5rem;
+      overflow: hidden;
     }
 
     &__list {
-      column-gap: $font-size-xxxxl;
+      max-width: 39.3rem;
+      column-gap: 11.5rem;
+      text-align: justify;
     }
 
     &__link {
@@ -202,6 +205,7 @@
     &__lower {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       columns: auto;
       padding-top: 4rem;
       padding-bottom: 4rem;

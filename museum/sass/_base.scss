@@ -69,7 +69,8 @@ fieldset {
   &__header,
   &__welcome,
   &__explore,
-  &__gallery {
+  &__gallery,
+  &__footer {
     color: $color-text-light;
   }
 
@@ -111,6 +112,11 @@ fieldset {
   &__gallery {
     padding-bottom: 0;
   }
+
+  &__footer {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
 }
 
 .icon {
@@ -138,6 +144,7 @@ fieldset {
 
   &__link {
     font-weight: $font-weight-thin;
+    letter-spacing: $letter-spacing-xs;
   }
 }
 
@@ -394,81 +401,76 @@ fieldset {
 
 .footer {
   background-color: $color-black;
-  color: $color-white;
+  position: relative;
 
-  &__container {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 31%;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: $color-footer-line;
   }
 
-  &__head {
-    padding-top: 8.5rem;
-    padding-bottom: 5rem;
-
+  &__upper {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-
-    width: 69.6rem;
+    padding-bottom: 2.5rem;
+    column-gap: $spacing-xs;
   }
 
   &__logo {
+    margin-top: 1rem;
   }
 
-  &__logo-link {
+  &__wrapper {
+    flex-grow: 1;
+    max-width: 110rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
   }
 
   &__navigation {
+    flex-grow: 1;
+    margin-top: 1rem;
   }
 
-  &__navigation-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem 15.2rem;
-    align-content: flex-start;
+  &__list {
+    columns: 2;
+    column-gap: $spacing-xs;
+    max-width: 49.5rem;
   }
 
-  &__navigation-item {
+  &__item {
+    margin-bottom: 2.5rem;
   }
 
-  &__navigation-link {
+  &__link {
     font-weight: $font-weight-extra-light;
+    letter-spacing: $letter-spacing-sm;
   }
 
-  &__social-list {
-    display: flex;
-    gap: 2.5rem;
-    align-items: end;
-
-    padding-bottom: 0.5rem;
+  &__social {
+    align-self: flex-end;
+    margin-bottom: 3rem;
   }
 
-  &__additional {
-    position: relative;
-
+  &__lower {
+    columns: 3;
     padding-top: 5rem;
-    padding-bottom: 5.2rem;
-
-    border-top: 0.3rem solid $color-player-pagination-unit;
-
-    display: flex;
-    justify-content: space-between;
+    padding-bottom: 5rem;
   }
 
   &__desc {
-    flex-grow: 1;
-
     font-size: $font-size-md;
     font-weight: $font-weight-thin;
     line-height: $line-height-xs;
     letter-spacing: $letter-spacing-sm;
-
     text-align: center;
 
     &:first-child {
-      margin-right: 3.5rem;
       text-align: left;
     }
 
@@ -522,6 +524,10 @@ fieldset {
 
     &__contacts {
       gap: $spacing-lg;
+    }
+
+    &__footer {
+      padding-bottom: 0;
     }
   }
 
@@ -682,6 +688,37 @@ fieldset {
 
     &__img {
       height: 150%;
+    }
+  }
+
+  .footer {
+    &::after {
+      bottom: 33%;
+    }
+
+    &__upper {
+      column-gap: $spacing-normal;
+    }
+
+    &__logo {
+      margin-top: 0.5rem;
+    }
+
+    &__wrapper {
+      max-width: 74.5rem;
+      gap: 1rem;
+    }
+
+    &__navigation {
+      margin-top: 0.5rem;
+    }
+
+    &__list {
+      column-gap: $spacing-normal;
+    }
+
+    &__social {
+      margin-bottom: 2.5rem;
     }
   }
 }

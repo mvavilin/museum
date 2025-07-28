@@ -1588,6 +1588,7 @@ iframe {
   height: 25.2rem;
 }
 .videoslider__preview {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   border: none;

@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="css/index.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="assets/fonts/Forum-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Roboto-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf" as="font" type="font/ttf"
+    crossorigin>
   <title>Museum</title>
 </head>
 
@@ -84,17 +86,18 @@
           <div class="nav__content">
             <div class="nav__pic">
               <div class="nav__img-wrapper nav__img-wrapper--main">
-                <img src="assets/img/nav/louvre-exterior.png" alt="Фасад Лувра с пирамидой и статуей"
+                <img loading="lazy" src="assets/img/nav/louvre-exterior.webp" alt="Фасад Лувра с пирамидой и статуей"
                   class="nav__img nav__img--main">
               </div>
 
               <div class="nav__img-row">
                 <div class="nav__img-wrapper">
-                  <img src="assets/img/nav/louvre-hall.png" alt="Внутренний зал Лувра с аркой и статуями"
-                    class="nav__img">
+                  <img loading="lazy" src="assets/img/nav/louvre-hall.webp"
+                    alt="Внутренний зал Лувра с аркой и статуями" class="nav__img">
                 </div>
                 <div class="nav__img-wrapper">
-                  <img src="assets/img/nav/louvre-pyramid.png" alt="Двор Лувра с пирамидой на закате" class="nav__img">
+                  <img loading="lazy" src="assets/img/nav/louvre-pyramid.webp" alt="Двор Лувра с пирамидой на закате"
+                    class="nav__img">
                 </div>
               </div>
             </div>
@@ -102,27 +105,32 @@
 
             <ul class="nav__social social">
               <li class="social__item">
-                <a href="https://clck.ru/3NKw6A" class="social__link">
+                <a href="https://clck.ru/3NKw6A" class="social__link" aria-label="YouTube" target="_blank"
+                  rel="noopener">
                   <span class="icon social__icon social__icon--youtube"></span>
                 </a>
               </li>
               <li class="social__item">
                 <a href="https://clck.ru/3NKw76" class="social__link">
-                  <span class="icon social__icon social__icon--instagram"></span>
+                  <span class="icon social__icon social__icon--instagram" aria-label="Instagram" target="_blank"
+                    rel="noopener"></span>
                 </a>
               </li>
               <li class="social__item">
                 <a href="https://clck.ru/3NKw7P" class="social__link">
-                  <span class="icon social__icon social__icon--facebook"></span>
+                  <span class="icon social__icon social__icon--facebook" aria-label="Facebook" target="_blank"
+                    rel="noopener"></span>
                 </a>
               </li>
               <li class="social__item">
                 <a href="https://clck.ru/3NKw7e" class="social__link">
-                  <span class="icon social__icon social__icon--twitter"></span>
+                  <span class="icon social__icon social__icon--twitter" aria-label="Twitter" target="_blank"
+                    rel="noopener"></span>
                 </a>
               </li>
               <li class="social__item">
-                <a href="https://clck.ru/3NKw8Y" class="social__link">
+                <a href="https://clck.ru/3NKw8Y" class="social__link" aria-label="Pinterest" target="_blank"
+                  rel="noopener">
                   <span class="icon social__icon social__icon--pinterest"></span>
                 </a>
               </li>
@@ -146,7 +154,7 @@
 
         <div class="welcome__slider slider">
           <div class="slider__img-wrapper">
-            <img class="slider__img" src="assets/img/slider/1.jpg"
+            <img loading="lazy" fetchpriority="high" class="slider__img" src="assets/img/slider/1.webp"
               alt="Портрет женщины с загадочной улыбкой на фоне пейзажа, картина Леонардо да Винчи 'Мона Лиза'">
           </div>
 
@@ -159,18 +167,18 @@
             </div>
 
             <div class="slider__pagination">
-              <button class="slider__dot slider__dot--active"></button>
-              <button class="slider__dot"></button>
-              <button class="slider__dot"></button>
-              <button class="slider__dot"></button>
-              <button class="slider__dot"></button>
+              <button id="sliderDot1" aria-label="Перейти к слайду 1" class="slider__dot slider__dot--active"></button>
+              <button id="sliderDot2" aria-label="Перейти к слайду 2" class="slider__dot"></button>
+              <button id="sliderDot3" aria-label="Перейти к слайду 3" class="slider__dot"></button>
+              <button id="sliderDot4" aria-label="Перейти к слайду 4" class="slider__dot"></button>
+              <button id="sliderDot5" aria-label="Перейти к слайду 5" class="slider__dot"></button>
             </div>
 
             <div class="slider__nav">
-              <button class="slider__btn">
+              <button id="sliderPrevBtn" aria-label="Предыдущий слайд" class="slider__btn">
                 <span class="icon slider__icon slider__icon--prev"></span>
               </button>
-              <button class="slider__btn">
+              <button id="sliderNextBtn" aria-label="Следующий слайд" class="slider__btn">
                 <span class="icon slider__icon slider__icon--next"></span>
               </button>
             </div>
@@ -187,7 +195,7 @@
         <ul class="cards">
           <li class="card">
             <a href="https://clck.ru/3NKLn5" class="card__link">
-              <img src="assets/img/cards/1.jpg"
+              <img loading="lazy" src="assets/img/cards/1.webp"
                 alt="Золотое барочное убранство с двумя ангелами, держащими герб, в интерьере церкви или дворца"
                 class="card__img">
               <h3 class="card__title card__title--underline">Royal Palace</h3>
@@ -197,7 +205,7 @@
           </li>
           <li class="card">
             <a href="https://clck.ru/3NKLph" class="card__link">
-              <img src="assets/img/cards/2.jpg"
+              <img loading="lazy" src="assets/img/cards/2.webp"
                 alt="Две женщины сидят на скамье и рассматривают крупные классические картины в музейном зале"
                 class="card__img">
               <h3 class="card__title card__title--underline">Denon Wing</h3>
@@ -207,7 +215,7 @@
           </li>
           <li class="card">
             <a href="https://clck.ru/3NKLqN" class="card__link">
-              <img src="assets/img/cards/3.jpg"
+              <img loading="lazy" src="assets/img/cards/3.webp"
                 alt="Барочная религиозная живопись с ангелами на небесах и людьми, протягивающими руки вверх"
                 class="card__img">
               <h3 class="card__title card__title--underline">Colonnade Perrault</h3>
@@ -217,7 +225,7 @@
           </li>
           <li class="card">
             <a href="https://clck.ru/3NKLqh" class="card__link">
-              <img src="assets/img/cards/4.jpg"
+              <img loading="lazy" src="assets/img/cards/4.webp"
                 alt="Бронзовая скульптура мужчины с длинными развевающимися волосами в музее, на фоне классической архитектуры с окнами"
                 class="card__img">
               <h3 class="card__title card__title--underline">Greek hall</h3>
@@ -227,7 +235,7 @@
           </li>
           <li class="card">
             <a href="https://clck.ru/3NKLrS" class="card__link">
-              <img src="assets/img/cards/5.jpg"
+              <img loading="lazy" src="assets/img/cards/5.webp"
                 alt="Частичный вид картины Мона Лиза Леонардо да Винчи в позолоченной раме, фрагмент верхней части лица и фона"
                 class="card__img">
               <h3 class="card__title card__title--underline">Mona Lisa</h3>
@@ -237,7 +245,7 @@
           </li>
           <li class="card">
             <a href="https://clck.ru/3NKLru" class="card__link">
-              <img src="assets/img/cards/6.jpg"
+              <img loading="lazy" src="assets/img/cards/6.webp"
                 alt="Религиозная живопись с изображением ангелов и людей, смотрящих вверх на фигуру в небе, окутанную облаками и светом"
                 class="card__img">
               <h3 class="card__title card__title--underline">Night Palace</h3>
@@ -268,14 +276,15 @@
 
         <div class="explore__slider-comparison slider-comparison">
           <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--before">
-            <img class="slider-comparison__img slider-comparison__img--before"
-              src="assets/img/slider-comparison/before.jpg" alt="До">
+            <img loading="lazy" class="slider-comparison__img slider-comparison__img--before"
+              src="assets/img/slider-comparison/before.webp" alt="До">
           </div>
           <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--after">
-            <img class="slider-comparison__img slider-comparison__img--after"
-              src="assets/img/slider-comparison/after.jpg" alt="После">
+            <img loading="lazy" class="slider-comparison__img slider-comparison__img--after"
+              src="assets/img/slider-comparison/after.webp" alt="После">
           </div>
-          <input type="range" class="slider-comparison__control" min="0" max="100" value="61">
+          <input id="sliderCompareRange" aria-label="Сравнение изображений" type="range"
+            class="slider-comparison__control" min="0" max="100" value="61">
           <div class="slider-comparison__handle handle">
             <div class="handle__top"></div>
             <div class="handle__thumb"></div>
@@ -298,23 +307,25 @@
         <div class="video__media">
           <div class="video__player player">
             <div class="player__video">
-              <img src="assets/svg/player/preview.png"
+              <img loading="lazy" src="assets/svg/player/preview.webp"
                 alt="Панорамный вид на дворцовый комплекс Лувра в Париже с гладкой, покрытой брусчаткой площадью и стеклянной пирамидой"
                 class="player__preview">
-              <button class="player__btn">
+              <button id="playerPaused" aria-label="Приостановить" class="player__btn">
                 <span class="icon player__icon player__icon--paused"></span>
               </button>
             </div>
             <div class="player__video-controller video-controller">
-              <button class="video-controller__btn">
+              <button id="videoPlayBtn" aria-label="Play video" class="video-controller__btn">
                 <span class="icon video-controller__icon video-controller__icon--play"></span>
               </button>
-              <input type="range" value="54" min="0" max="100" step="1" class="video-controller__progress">
-              <button class="video-controller__btn">
+              <input id="videoProgressRange" aria-label="Прогресс воспроизведения видео" type="range" value="54" min="0"
+                max="100" step="1" class="video-controller__progress">
+              <button id="videoVolumeBtn" aria-label="Toggle sound" class="video-controller__btn">
                 <span class="icon video-controller__icon video-controller__icon--volume"></span>
               </button>
-              <input type="range" value="42" min="0" max="100" step="1" class="video-controller__volume">
-              <button class="video-controller__btn">
+              <input id="videoVolumeRange" aria-label="Громкость видео" type="range" value="42" min="0" max="100"
+                step="1" class="video-controller__volume">
+              <button id="videoFullscreenBtn" aria-label="Fullscreen mode" class="video-controller__btn">
                 <span class="icon video-controller__icon video-controller__icon--fullscreen"></span>
               </button>
             </div>
@@ -324,20 +335,20 @@
             <div class="videoslider__wrapper">
               <div class="videoslider__slide">
                 <iframe class="videoslider__preview" src="https://www.youtube.com/embed/aWmJ5DgyWPI?si=SeS7ehARWATIXvjB"
-                  frameborder="0" allowfullscreen></iframe>
+                  title="Видео: Лувр — обзор музея" allowfullscreen></iframe>
               </div>
               <div class="videoslider__slide">
                 <iframe class="videoslider__preview" src="https://www.youtube.com/embed/2OR0OCr6uRE?si=Z7IslbK_UmGUjHhU"
-                  frameborder="0" allowfullscreen></iframe>
+                  title="Видео: Экспозиции Лувра" allowfullscreen></iframe>
               </div>
               <div class="videoslider__slide">
                 <iframe class="videoslider__preview" src="https://www.youtube.com/embed/NOhDysLnTvY?si=WYJDa9aBiYhkgTz2"
-                  frameborder="0" allowfullscreen></iframe>
+                  title="Видео: Архитектура Лувра" allowfullscreen></iframe>
               </div>
             </div>
 
             <div class="videoslider__nav">
-              <button class="videoslider__btn">
+              <button id="sliderPrevBtn" aria-label="Previous video" class="videoslider__btn">
                 <span class="icon videoslider__icon videoslider__icon--prev"></span>
               </button>
               <ul class="videoslider__pagination">
@@ -347,7 +358,7 @@
                 <li class="videoslider__dot"></li>
                 <li class="videoslider__dot"></li>
               </ul>
-              <button class="videoslider__btn">
+              <button id="sliderNextBtn" aria-label="Next video" class="videoslider__btn">
                 <span class="icon videoslider__icon videoslider__icon--next"></span>
               </button>
             </div>
@@ -363,73 +374,73 @@
         <div class="gallery__container">
           <div class="gallery__inner-container">
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/2.jpg" alt="На мраморной скульптуре изображена женщина, охотящаяся на оленя"
-                class="gallery__img">
+              <img loading="lazy" src="assets/img/gallery/2.webp"
+                alt="На мраморной скульптуре изображена женщина, охотящаяся на оленя" class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/9.jpg"
+              <img loading="lazy" src="assets/img/gallery/9.webp"
                 alt="На изображении представлен интерьер, в котором находятся три белые скульптуры"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/4.jpg"
+              <img loading="lazy" src="assets/img/gallery/4.webp"
                 alt="На фотографии изображена статуя крылатой победы, выполненная из белого мрамора"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/6.jpg"
+              <img loading="lazy" src="assets/img/gallery/6.webp"
                 alt="На изображении представлена картина 'Святая Анна с Мадонной и младенцем Христом' Леонардо да Винчи"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/11.jpg" alt="Картина Эжена Делакруа 'Свобода, ведущая народ'"
+              <img loading="lazy" src="assets/img/gallery/11.webp" alt="Картина Эжена Делакруа 'Свобода, ведущая народ'"
                 class="gallery__img">
             </div>
 
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/1.jpg"
+              <img loading="lazy" src="assets/img/gallery/1.webp"
                 alt="На мраморной статуе изображен поцелуй Амура и Психеи, классический сюжет, изображающий романтическую связь"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/8.jpg"
+              <img loading="lazy" src="assets/img/gallery/8.webp"
                 alt="На фотографии изображен интерьер величественного здания с классической архитектурой"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/3.jpg"
+              <img loading="lazy" src="assets/img/gallery/3.webp"
                 alt="Внутренний двор музея с несколькими скульптурами, расположенными перед аркой" class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/5.jpg"
+              <img loading="lazy" src="assets/img/gallery/5.webp"
                 alt="Изящная статуя обнаженной женщины, выполненная из белого мрамора, запечатлевает античную красоту"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/13.jpg"
+              <img loading="lazy" src="assets/img/gallery/13.webp"
                 alt="На изображении представлена белая мраморная скульптура лежащей обнаженной женщины"
                 class="gallery__img">
             </div>
 
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/7.jpg"
+              <img loading="lazy" src="assets/img/gallery/7.webp"
                 alt="На изображении представлена знаменитая картина Леонардо да Винчи 'Мона Лиза'" class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/10.jpg" alt="Изображение показывает часть здания Лувра в Париже, Франция"
-                class="gallery__img">
+              <img loading="lazy" src="assets/img/gallery/10.webp"
+                alt="Изображение показывает часть здания Лувра в Париже, Франция" class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/15.jpg" alt="На изображении видна площадь перед Лувром в Париже"
-                class="gallery__img">
+              <img loading="lazy" src="assets/img/gallery/15.webp"
+                alt="На изображении видна площадь перед Лувром в Париже" class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/12.jpg"
+              <img loading="lazy" src="assets/img/gallery/12.webp"
                 alt="Изображение демонстрирует интерьер здания с несколькими скульптурами и деревьями"
                 class="gallery__img">
             </div>
             <div class="gallery__img-wrapper">
-              <img src="assets/img/gallery/14.jpg"
+              <img loading="lazy" src="assets/img/gallery/14.webp"
                 alt="На изображении представлен портрет молодой женщины на темном фоне" class="gallery__img">
             </div>
           </div>
@@ -443,7 +454,7 @@
 
         <div class="tickets__content">
           <div class="tickets__img-wrapper">
-            <img src="assets/img/antique-painting.jpg"
+            <img loading="lazy" src="assets/img/antique-painting.webp"
               alt="На картине изображена сцена, в которой мужчина в римском доспехе передает щит обнаженной женщине"
               class="tickets__img">
           </div>
@@ -453,15 +464,18 @@
               <fieldset class="form__ticket-type form__ticket-type--hidden ticket-type">
                 <legend class="ticket-type__title">Ticket Type</legend>
                 <label class="ticket-type__item">Permanent exhibition
-                  <input type="radio" checked="checked" name="radio" class="ticket-type__input">
+                  <input id="radioPermanent" aria-label="Постоянная выставка" type="radio" checked="checked"
+                    name="radio" class="ticket-type__input">
                   <span class="ticket-type__checkmark"></span>
                 </label>
                 <label class="ticket-type__item">Temporary exhibition
-                  <input type="radio" name="radio" class="ticket-type__input">
+                  <input id="radioTemporary" aria-label="Временная выставка" type="radio" name="radio"
+                    class="ticket-type__input">
                   <span class="ticket-type__checkmark"></span>
                 </label>
                 <label class="ticket-type__item">Combined Admission
-                  <input type="radio" name="radio" class="ticket-type__input">
+                  <input id="radioCombined" aria-label="Комбинированный билет" type="radio" name="radio"
+                    class="ticket-type__input">
                   <span class="ticket-type__checkmark"></span>
                 </label>
               </fieldset>
@@ -470,19 +484,25 @@
                 <legend class="amount__title">Amount</legend>
                 <p class="amount__item">Basic 18+</p>
                 <div class="amount__counter">
-                  <button type="button" onclick="this.nextElementSibling.stepDown()" class="amount__btn">–<span
+                  <button id="adultDecrementBtn" aria-label="Decrease adult count" type="button"
+                    onclick="this.nextElementSibling.stepDown()" class="amount__btn">–<span
                       class="icon amount__icon amount__icon--minus"></span></button>
-                  <input tabindex="-1" type="number" min="0" max="99" value="1" readonly class="amount__number">
-                  <button type="button" onclick="this.previousElementSibling.stepUp()" class="amount__btn">+<span
+                  <input id="adultCount" aria-label="Количество взрослых" tabindex="-1" type="number" min="0" max="99"
+                    value="1" readonly class="amount__number">
+                  <button id="adultIncrementBtn" aria-label="Increase adult count" type="button"
+                    onclick="this.previousElementSibling.stepUp()" class="amount__btn">+<span
                       class="icon amount__icon amount__icon--plus"></span></button>
                 </div>
 
                 <p class="amount__item">Senior 65+</p>
                 <div class="amount__counter">
-                  <button type="button" onclick="this.nextElementSibling.stepDown()" class="amount__btn">–<span
+                  <button id="seniorDecrementBtn" aria-label="Decrease senior count" type="button"
+                    onclick="this.nextElementSibling.stepDown()" class="amount__btn">–<span
                       class="icon amount__icon amount__icon--minus"></span></button>
-                  <input tabindex="-1" type="number" min="0" max="99" value="1" readonly class="amount__number">
-                  <button type="button" onclick="this.previousElementSibling.stepUp()" class="amount__btn">+<span
+                  <input id="seniorCount" aria-label="Количество пожилых" tabindex="-1" type="number" min="0" max="99"
+                    value="1" readonly class="amount__number">
+                  <button id="seniorIncrementBtn" aria-label="Increase senior coun" type="button"
+                    onclick="this.previousElementSibling.stepUp()" class="amount__btn">+<span
                       class="icon amount__icon amount__icon--plus"></span></button>
                 </div>
 
@@ -491,7 +511,9 @@
               </fieldset>
             </div>
 
-            <button type="submit" class="form__btn"><span class="form__btn-caption">Buy Now</span></button>
+            <button id="buyNowBtn" aria-label="Buy ticket now" type="submit" class="form__btn"><span
+                class="form__btn-caption">Buy
+                Now</span></button>
           </form>
         </div>
       </div>
@@ -518,7 +540,7 @@
           </ul>
 
           <div class="contacts__map-wrapper">
-            <img src="assets/img/map.png" alt="map" class="contacts__img">
+            <img loading="lazy" src="assets/img/map.webp" alt="map" class="contacts__img">
           </div>
         </div>
       </div>
@@ -562,26 +584,31 @@
           <ul class="footer__social social">
             <li class="social__item">
               <a href="https://clck.ru/3NKw6A" class="social__link">
-                <span class="icon social__icon social__icon--youtube"></span>
+                <span class="icon social__icon social__icon--youtube" aria-label="YouTube" target="_blank"
+                  rel="noopener"></span>
               </a>
             </li>
             <li class="social__item">
               <a href="https://clck.ru/3NKw76" class="social__link">
-                <span class="icon social__icon social__icon--instagram"></span>
+                <span class="icon social__icon social__icon--instagram" aria-label="Instagram" target="_blank"
+                  rel="noopener"></span>
               </a>
             </li>
             <li class="social__item">
               <a href="https://clck.ru/3NKw7P" class="social__link">
-                <span class="icon social__icon social__icon--facebook"></span>
+                <span class="icon social__icon social__icon--facebook" aria-label="Facebook" target="_blank"
+                  rel="noopener"></span>
               </a>
             </li>
             <li class="social__item">
               <a href="https://clck.ru/3NKw7e" class="social__link">
-                <span class="icon social__icon social__icon--twitter"></span>
+                <span class="icon social__icon social__icon--twitter" aria-label="Twitter" target="_blank"
+                  rel="noopener"></span>
               </a>
             </li>
             <li class="social__item">
-              <a href="https://clck.ru/3NKw8Y" class="social__link">
+              <a href="https://clck.ru/3NKw8Y" class="social__link" aria-label="Pinterest" target="_blank"
+                rel="noopener">
                 <span class="icon social__icon social__icon--pinterest"></span>
               </a>
             </li>

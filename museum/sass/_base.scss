@@ -71,9 +71,9 @@ fieldset {
   position: relative;
   width: $container-max-width;
   margin: 0 auto;
-  max-width: $container-max-width-xl;
-  padding-left: $container-padding-xl;
-  padding-right: $container-padding-xl;
+  max-width: $container-max-width-xl + 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   &__header,
   &__welcome,
@@ -131,7 +131,7 @@ fieldset {
 .header {
   background-color: $color-background;
 
-  &__navigation {
+  &__nav {
     max-width: 77.5rem;
     flex-grow: 1;
   }
@@ -140,6 +140,7 @@ fieldset {
     display: flex;
     justify-content: space-between;
     gap: $spacing-normal;
+    flex-wrap: wrap;
   }
 
   &__link {
@@ -188,7 +189,6 @@ fieldset {
     gap: 2.5rem;
     position: absolute;
     top: 15rem;
-    left: $container-padding-xl;
     z-index: 1;
   }
 
@@ -349,7 +349,7 @@ fieldset {
 .parallax {
   width: 100%;
   height: 40rem;
-  background-image: url("../assets/img/parallax_background.jpg");
+  background-image: url("../assets/img/parallax-background.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -433,7 +433,7 @@ fieldset {
     gap: 2.5rem;
   }
 
-  &__navigation {
+  &__nav {
     flex-grow: 1;
     margin-top: 1rem;
   }

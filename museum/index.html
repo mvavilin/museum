@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="assets/svg/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/index.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -28,33 +28,107 @@
         <div class="burger__line"></div>
       </div>
 
-      <nav class="header__navigation navigation">
-        <ul class="header__list navigation__list">
-          <li class="navigation__item">
-            <a href="#visiting" class="header__link navigation__link"><span
-                class="navigation__text">Visiting</span><span class="icon header__icon"></span></a>
-          </li>
-          <li class="navigation__item">
-            <a href="#explore" class="header__link navigation__link"><span class="navigation__text">Explore</span><span
-                class="icon header__icon"></span></a>
-          </li>
-          <li class="navigation__item">
-            <a href="#video" class="header__link navigation__link"><span class="navigation__text">Video</span><span
-                class="icon header__icon"></span></a>
-          </li>
-          <li class="navigation__item">
-            <a href="#gallery" class="header__link navigation__link"><span class="navigation__text">Gallery</span><span
-                class="icon header__icon"></span></a>
-          </li>
-          <li class="navigation__item">
-            <a href="#tickets" class="header__link navigation__link"><span class="navigation__text">Tickets</span><span
-                class="icon header__icon"></span></a>
-          </li>
-          <li class="navigation__item">
-            <a href="#contacts" class="header__link navigation__link"><span
-                class="navigation__text">Contacts</span><span class="icon header__icon"></span></a>
-          </li>
-        </ul>
+      <nav class="header__nav nav">
+        <div class="header__nav-wrapper">
+          <ul class="header__list nav__list">
+            <li class="nav__item">
+              <a href="#visiting" class="header__link nav__link">
+                <span class="header__link-wrapper">
+                  <span class="nav__text">Visiting</span>
+                  <span class="icon header__icon"></span>
+                </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#explore" class="header__link nav__link">
+                <span class="header__link-wrapper">
+                  <span class="nav__text">Explore</span>
+                  <span class="icon header__icon"></span>
+                </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#video" class="header__link nav__link">
+                <span class="header__link-wrapper">
+                  <span class="nav__text">Video</span>
+                  <span class="icon header__icon"></span>
+                </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#gallery" class="header__link nav__link">
+                <span class="header__link-wrapper">
+                  <span class="nav__text">Gallery</span>
+                  <span class="icon header__icon"></span>
+                </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#tickets" class="header__link nav__link">
+                <span class="header__link-wrapper">
+                  <span class="nav__text">Tickets</span>
+                  <span class="icon header__icon"></span>
+                </span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacts" class="header__link nav__link">
+                <span class="header__link-wrapper">
+                  <span class="nav__text">Contacts</span>
+                  <span class="icon header__icon"></span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="nav__content">
+            <div class="nav__pic">
+              <div class="nav__img-wrapper nav__img-wrapper--main">
+                <img src="assets/img/nav/louvre-exterior.png" alt="Фасад Лувра с пирамидой и статуей"
+                  class="nav__img nav__img--main">
+              </div>
+
+              <div class="nav__img-row">
+                <div class="nav__img-wrapper">
+                  <img src="assets/img/nav/louvre-hall.png" alt="Внутренний зал Лувра с аркой и статуями"
+                    class="nav__img">
+                </div>
+                <div class="nav__img-wrapper">
+                  <img src="assets/img/nav/louvre-pyramid.png" alt="Двор Лувра с пирамидой на закате" class="nav__img">
+                </div>
+              </div>
+            </div>
+
+
+            <ul class="nav__social social">
+              <li class="social__item">
+                <a href="https://clck.ru/3NKw6A" class="social__link">
+                  <span class="icon social__icon social__icon--youtube"></span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="https://clck.ru/3NKw76" class="social__link">
+                  <span class="icon social__icon social__icon--instagram"></span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="https://clck.ru/3NKw7P" class="social__link">
+                  <span class="icon social__icon social__icon--facebook"></span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="https://clck.ru/3NKw7e" class="social__link">
+                  <span class="icon social__icon social__icon--twitter"></span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="https://clck.ru/3NKw8Y" class="social__link">
+                  <span class="icon social__icon social__icon--pinterest"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -92,7 +166,7 @@
               <button class="slider__dot"></button>
             </div>
 
-            <div class="slider__navigation">
+            <div class="slider__nav">
               <button class="slider__btn">
                 <span class="icon slider__icon slider__icon--prev"></span>
               </button>
@@ -262,7 +336,7 @@
               </div>
             </div>
 
-            <div class="videoslider__navigation">
+            <div class="videoslider__nav">
               <button class="videoslider__btn">
                 <span class="icon videoslider__icon videoslider__icon--prev"></span>
               </button>
@@ -369,7 +443,7 @@
 
         <div class="tickets__content">
           <div class="tickets__img-wrapper">
-            <img src="assets/img/antique_painting.jpg"
+            <img src="assets/img/antique-painting.jpg"
               alt="На картине изображена сцена, в которой мужчина в римском доспехе передает щит обнаженной женщине"
               class="tickets__img">
           </div>
@@ -462,25 +536,25 @@
         </div>
 
         <div class="footer__wrapper">
-          <nav class="footer__navigation navigation">
-            <ul class="footer__list navigation__list">
-              <li class="footer__item navigation__item">
-                <a href="#visiting" class="footer__link navigation__link">Visiting</a>
+          <nav class="footer__nav nav">
+            <ul class="footer__list nav__list">
+              <li class="footer__item nav__item">
+                <a href="#visiting" class="footer__link nav__link">Visiting</a>
               </li>
-              <li class="footer__item navigation__item">
-                <a href="#explore" class="footer__link navigation__link">Explore</a>
+              <li class="footer__item nav__item">
+                <a href="#explore" class="footer__link nav__link">Explore</a>
               </li>
-              <li class="footer__item navigation__item">
-                <a href="#Video" class="footer__link navigation__link">Video</a>
+              <li class="footer__item nav__item">
+                <a href="#Video" class="footer__link nav__link">Video</a>
               </li>
-              <li class="footer__item navigation__item">
-                <a href="#gallery" class="footer__link navigation__link">Gallery</a>
+              <li class="footer__item nav__item">
+                <a href="#gallery" class="footer__link nav__link">Gallery</a>
               </li>
-              <li class="footer__item navigation__item">
-                <a href="#tickets" class="footer__link navigation__link">Tickets</a>
+              <li class="footer__item nav__item">
+                <a href="#tickets" class="footer__link nav__link">Tickets</a>
               </li>
-              <li class="footer__item navigation__item">
-                <a href="#contacts" class="footer__link navigation__link">Contacts</a>
+              <li class="footer__item nav__item">
+                <a href="#contacts" class="footer__link nav__link">Contacts</a>
               </li>
             </ul>
           </nav>

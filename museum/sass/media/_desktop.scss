@@ -50,7 +50,7 @@
   }
 
   .header {
-    &__navigation {
+    &__nav {
       position: absolute;
       top: 100%;
       left: 0;
@@ -61,43 +61,49 @@
       height: 100vh;
     }
 
-    &__list {
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 2.4rem;
-      padding-top: 3.5rem;
-      padding-left: 5.5rem;
+    &__nav-wrapper {
       height: 100%;
+      padding-left: 5.5rem;
+      padding-right: 5.5rem;
       background-color: $color-background;
       transform: translateX(-100%);
       transition: $transition-normal;
-
       &--active {
         transform: translateX(0);
       }
     }
 
+    &__list {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2.4rem;
+    }
+
     &__link {
+      &:hover .header__icon {
+        background-color: $color-link-hover;
+      }
+
+      &:active .header__icon {
+        background-color: $color-link-active;
+      }
+    }
+
+    &__link-wrapper {
       font-size: $font-size-xs;
       font-weight: $font-weight-light;
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 12.2rem;
-
-      &:hover > .header__icon {
-        background-color: $color-link-hover;
-      }
-
-      &:active > .header__icon {
-        background-color: $color-link-active;
-      }
     }
 
     &__icon {
       width: 1.2rem;
       height: 1.2rem;
-      mask-image: url("assets/svg/menu_arrow.svg");
+      mask-image: url("../assets/svg/menu_arrow.svg");
     }
   }
 
@@ -223,7 +229,7 @@
       gap: 1rem;
     }
 
-    &__navigation {
+    &__nav {
       margin-top: 0.5rem;
     }
 

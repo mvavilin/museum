@@ -1,7 +1,3 @@
-alert(
-  "Уважаемый проверяющий, к сожалению, я не успеваю завершить задачу в установленный срок. Прошу перенести дедлайн твоей проверки на 29 июля. Благодарю за понимание! :)"
-);
-
 // Прогресс-бар плеера
 const progress = document.querySelector(".video-controller__progress");
 
@@ -20,11 +16,30 @@ volume.addEventListener("input", function () {
 
 // Бургер-меню и навигация
 const burger = document.querySelector(".burger");
-const headerNavigation = document.querySelector(".header__list");
+const headerNavWrapper = document.querySelector(".header__nav-wrapper");
+const headerLinks = document.querySelectorAll(".header__link");
 
-burger.addEventListener("click", function () {
+burger.addEventListener("click", function (e) {
+  e.stopPropagation();
   burger.classList.toggle("burger--active");
-  headerNavigation.classList.toggle("header__list--active");
+  headerNavWrapper.classList.toggle("header__nav-wrapper--active");
+});
+
+headerLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("burger--active");
+    headerNavWrapper.classList.remove("header__nav-wrapper--active");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  const target = e.target;
+  const clickInsideNav = headerNavWrapper.contains(target);
+
+  if (!clickInsideNav) {
+    burger.classList.remove("burger--active");
+    headerNavWrapper.classList.remove("header__nav-wrapper--active");
+  }
 });
 
 // Управление шириной верхнего изображения

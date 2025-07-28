@@ -21,7 +21,7 @@
     border: none;
   }
 
-  &__navigation,
+  &__nav,
   &__pagination {
     display: flex;
     justify-content: center;
@@ -85,7 +85,7 @@
       height: 19.9rem;
     }
 
-    &__navigation,
+    &__nav,
     &__pagination {
       gap: $spacing-xs - 0.2rem;
     }
@@ -101,7 +101,7 @@
       height: 10.1rem;
     }
 
-    &__navigation,
+    &__nav,
     &__pagination {
       gap: $spacing-xs;
     }

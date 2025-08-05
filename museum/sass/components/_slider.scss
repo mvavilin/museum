@@ -2,6 +2,7 @@
   --slider-width: 69.4%;
   --slider-height: 75rem;
   --slides-left: -100%;
+  --slides-cursor: grab;
   position: relative;
 
   &__wrapper {
@@ -30,6 +31,7 @@
   }
 
   &__slides {
+    cursor: var(--slides-cursor);
     display: flex;
     position: relative;
     top: 0;

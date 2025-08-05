@@ -3,9 +3,15 @@ import { slide } from './js/slider.js';
 // Слайдер в секции Welcome
 const slides = document.getElementById('slides'),
   sliderPrevBtn = document.getElementById('sliderPrevBtn'),
-  sliderNextBtn = document.getElementById('sliderNextBtn');
+  sliderNextBtn = document.getElementById('sliderNextBtn'),
+  sliderPagination = document.querySelector('.slider__pagination'),
+  sliderDots = document.querySelectorAll('.slider__dot'),
+  sliderCurrentSlide = document.querySelector('.slider__current-slide'),
+  sliderTotalSlides = document.querySelector('.slider__total-slides');
 
-slide(slides, sliderPrevBtn, sliderNextBtn);
+  
+
+slide(slides, sliderPrevBtn, sliderNextBtn, sliderPagination, sliderDots, sliderCurrentSlide, sliderTotalSlides);
 
 // Прогресс-бар плеера
 const progress = document.querySelector('.video-controller__progress');
@@ -25,18 +31,21 @@ volume.addEventListener('input', function () {
 
 // Бургер-меню и навигация
 const burger = document.querySelector('.burger');
+const headerNav = document.querySelector('.header__nav');
 const headerNavWrapper = document.querySelector('.header__nav-wrapper');
 const headerLinks = document.querySelectorAll('.header__link');
 
 burger.addEventListener('click', function (e) {
   e.stopPropagation();
   burger.classList.toggle('burger--active');
+  headerNav.classList.toggle('header__nav--visibility');
   headerNavWrapper.classList.toggle('header__nav-wrapper--active');
 });
 
 headerLinks.forEach((link) => {
   link.addEventListener('click', () => {
     burger.classList.remove('burger--active');
+    headerNav.classList.toggle('header__nav--visibility');
     headerNavWrapper.classList.remove('header__nav-wrapper--active');
   });
 });

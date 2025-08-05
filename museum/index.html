@@ -152,14 +152,20 @@
               Louvre</span></a>
         </div>
 
-        <div class="welcome__slider slider">
-          <div class="slider__img-wrapper">
-            <img fetchpriority="high" class="slider__img" src="assets/img/slider/1.webp"
-              alt="Портрет женщины с загадочной улыбкой на фоне пейзажа, картина Леонардо да Винчи 'Мона Лиза'">
+        <div id="slider" class="welcome__slider slider">
+          <div class="slider__wrapper">
+            <div id="slides" class="slider__slides">
+              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/1.webp"
+                alt="Портрет женщины с загадочной улыбкой на фоне пейзажа, картина Леонардо да Винчи 'Мона Лиза'">
+              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/2.jpg" alt="">
+              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/3.jpg" alt="">
+              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/4.jpg" alt="">
+              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/5.jpg" alt="">
+              </img>
+            </div>
           </div>
 
           <div class="slider__controls">
-
             <div class="slider__counter">
               <span class="slider__current-slide">01</span>
               <span class="slider__divider">|</span>
@@ -182,7 +188,6 @@
                 <span class="icon slider__icon slider__icon--next"></span>
               </button>
             </div>
-
           </div>
         </div>
 
@@ -629,7 +634,7 @@
     </div>
   </footer>
 
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 
 </html>

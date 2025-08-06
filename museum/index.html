@@ -312,25 +312,25 @@
         <div class="video__media">
           <div class="video__player player">
             <div class="player__wrapper">
-              <div class="player__video">
-                <video id="player" class="player__preview" poster="assets/poster/poster0.jpg">
-                  <source src="assets/video/video0.mp4" type="video/mp4">
-                  Ваш браузер не поддерживает тег &lt;video&gt;.
-                </video>
-                <button id="playerPaused" aria-label="Приостановить" class="player__btn">
-                  <span class="icon player__icon player__icon--paused"></span>
-                </button>
-              </div>
+              <video id="player" class="player__video" poster="assets/poster/poster0.jpg" preload="auto">
+                <source src="assets/video/video0.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег &lt;video&gt;.
+              </video>
+
+              <button id="playerPaused" aria-label="Приостановить" class="player__btn">
+                <span class="icon player__icon player__icon--paused"></span>
+              </button>
+
               <div class="player__video-controller video-controller">
                 <button id="videoPlayBtn" aria-label="Play video" class="video-controller__btn">
                   <span class="icon video-controller__icon video-controller__icon--play"></span>
                 </button>
-                <input id="videoProgressRange" aria-label="Прогресс воспроизведения видео" type="range" value="54"
+                <input id="videoProgressRange" aria-label="Прогресс воспроизведения видео" type="range" value="0"
                   min="0" max="100" step="1" class="video-controller__progress">
                 <button id="videoVolumeBtn" aria-label="Toggle sound" class="video-controller__btn">
                   <span class="icon video-controller__icon video-controller__icon--volume"></span>
                 </button>
-                <input id="videoVolumeRange" aria-label="Громкость видео" type="range" value="42" min="0" max="100"
+                <input id="videoVolumeRange" aria-label="Громкость видео" type="range" value="54" min="0" max="100"
                   step="1" class="video-controller__volume">
                 <button id="videoFullscreenBtn" aria-label="Fullscreen mode" class="video-controller__btn">
                   <span class="icon video-controller__icon video-controller__icon--fullscreen"></span>

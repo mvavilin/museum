@@ -80,7 +80,7 @@
     width: 1.6rem;
     height: 1.6rem;
     background-color: $color-white;
-    transition: $transition-normal;
+    transition: all $transition-normal;
 
     &--active {
       background-color: $color-dot-active;

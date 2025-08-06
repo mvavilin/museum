@@ -160,9 +160,8 @@
   }
 
   .gallery {
-    &__container {
-      max-height: 126.5rem;
-    }
+    --imgWrapperWidth: 31%;
+    --galleryContainerHeight: 126.5rem;
   }
 
   .tickets {

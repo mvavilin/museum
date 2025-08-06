@@ -1,21 +1,26 @@
 // Кастомный видеоплеер в секции Video
 export function initVideoPlayer() {
-    const video = document.getElementById('player'),
-
+    const
+        video = document.getElementById('player'),
+        playerWrapper = document.querySelector('.player__wrapper'),
         bigPlayBtn = document.getElementById('playerPaused'),
         bigPlayIcon = bigPlayBtn.querySelector('.player__icon'),
-
         smallPlayBtn = document.getElementById('videoPlayBtn'),
         smallPlayIcon = smallPlayBtn.querySelector('.video-controller__icon'),
-
         progressRange = document.getElementById('videoProgressRange'),
-
+        videoProgressRangeProperty = '--videoProgressRange',
+        videoVolumeRangeProperty = '--videoVolumeRange',
         volumeRange = document.getElementById('videoVolumeRange'),
         volumeBtn = document.getElementById('videoVolumeBtn'),
         volumeIcon = volumeBtn.querySelector('.video-controller__icon--volume'),
-
         fullscreenBtn = document.getElementById('videoFullscreenBtn'),
-        fullscreenIcon = fullscreenBtn.querySelector('.video-controller__icon--fullscreen');
+        fullscreenIcon = fullscreenBtn.querySelector('.video-controller__icon--fullscreen'),
+        speedPopup = playerWrapper.querySelector('.player__speed-info');
+
+    let speedPopupTimeout;
+
+    // Инициализация
+    updateVolumeRange();
 
     // Функции управления воспроизведением
     function togglePlay() {
@@ -45,20 +50,20 @@ export function initVideoPlayer() {
     });
 
     // Функции управления прогрессом видео
-    function updateRangeStyle(range) {
+    function updateRangeStyle(range, property) {
         const val = range.value;
-        range.style.background = `linear-gradient(to right, #710707 0%, #710707 ${val}%, #fff ${val}%, white 100%)`;
+        range.style.setProperty(property, `${val}%`);
     }
 
     video.addEventListener('timeupdate', () => {
         const percent = (video.currentTime / video.duration) * 100;
         progressRange.value = percent;
-        updateRangeStyle(progressRange);
+        updateRangeStyle(progressRange, videoProgressRangeProperty);
     });
     progressRange.addEventListener('input', () => {
         const newTime = (progressRange.value / 100) * video.duration;
         video.currentTime = newTime;
-        updateRangeStyle(progressRange);
+        updateRangeStyle(progressRange, videoProgressRangeProperty);
     });
 
     // Функции управления звуком
@@ -67,7 +72,7 @@ export function initVideoPlayer() {
         video.volume = volume;
         video.muted = volume === 0;
         updateVolumeIcon(volume);
-        updateRangeStyle(volumeRange);
+        updateRangeStyle(volumeRange, videoVolumeRangeProperty);
     }
     function updateVolumeIcon(vol) {
         volumeIcon.classList.toggle(`video-controller__icon--mute`, !vol);
@@ -83,8 +88,6 @@ export function initVideoPlayer() {
             updateVolumeIcon(!video.muted);
         }
     });
-
-    updateVolumeRange();
 
     // Функции управления полноэкранным режимом
     fullscreenBtn.addEventListener('click', () => {
@@ -106,4 +109,49 @@ export function initVideoPlayer() {
             video.classList.toggle('player__video--fullscreen', isPortrait);
         }
     });
+
+    // Функции управления с клавиатуры
+    document.addEventListener('keydown', (e) => {
+        const key = e.key.toLowerCase();
+        const shift = e.shiftKey;
+
+        switch (key) {
+            case ' ':
+                e.preventDefault();
+                togglePlay();
+                break;
+            case 'а':
+            case 'f':
+                fullscreenBtn.click();
+                break;
+            case 'ь':
+            case 'm':
+                volumeBtn.click();
+                break;
+            case 'б':
+            case '<':
+                if (shift) changePlaybackSpeed(-0.25);
+                break;
+            case 'ю':
+            case '>':
+                if (shift) changePlaybackSpeed(0.25);
+                break;
+        }
+    });
+
+    // Функции управления скоростью воспроизведения
+    function changePlaybackSpeed(delta) {
+        speedPopup.classList.remove('player__speed-info--hidden')
+        let newRate = Math.max(0.25, Math.min(2, video.playbackRate + delta));
+        video.playbackRate = newRate;
+        showSpeedPopup(newRate);
+    }
+    function showSpeedPopup(rate) {
+        speedPopup.textContent = `${rate.toFixed(2)}x`;
+
+        clearTimeout(speedPopupTimeout);
+        speedPopupTimeout = setTimeout(() => {
+            speedPopup.classList.add('player__speed-info--hidden');
+        }, 800);
+    }
 }

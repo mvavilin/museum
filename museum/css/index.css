@@ -1649,22 +1649,41 @@ iframe {
   }
 }
 .videoslider {
-  --videoslideWidth: 31.5%;
-  --videoslidesHeight: 25.4rem;
-  --videoslidesColumnGap: 4.2rem;
+  --videoslideWidth: 31.6%;
+  --videoslideMarginRight: 4rem;
+  --videoslidesHeight: 100%;
   --wrapperRowGap: 4rem;
   --paginationColumnGap: 2rem;
-}
-.videoslider__wrapper {
+  --videoslidesCursor: pointer;
+  --wrapperWidth: 100%;
+  --wrapperHeight: 25.4rem;
+  --videoSlidesCount: 3;
+  --videoslidesLeft: calc(
+    -1 * (var(--videoSlidesCount) - 1) * (var(--videoslideWidth) +
+          var(--videoslideMarginRight))
+  );
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: var(--wrapperRowGap);
 }
-.videoslider__videoslides {
+.videoslider__wrapper {
   overflow: hidden;
-  display: flex;
-  column-gap: var(--videoslidesColumnGap);
+  position: relative;
+  width: var(--wrapperWidth);
+  height: var(--wrapperHeight);
+}
+.videoslider__videoslides {
+  cursor: var(--videoslidesCursor);
   height: var(--videoslidesHeight);
+  display: flex;
+  position: relative;
+  top: 0;
+  left: var(--videoslidesLeft);
+}
+.videoslider__videoslides--shifting {
+  pointer-events: none;
+  transition: 0.5s ease;
 }
 .videoslider__videoslide {
   min-width: var(--videoslideWidth);
@@ -1702,7 +1721,7 @@ iframe {
 }
 
 .videoslide {
-  cursor: pointer;
+  margin-right: var(--videoslideMarginRight);
 }
 .videoslide__wrapper {
   position: relative;
@@ -1761,16 +1780,16 @@ iframe {
 
 @media (max-width: 1024px) {
   .videoslider {
-    --videoslideWidth: 30.5%;
-    --videoslidesColumnGap: 4.1rem;
-    --videoslidesHeight: 17rem;
+    --videoslideWidth: 30.6%;
+    --videoslideMarginRight: 4rem;
+    --wrapperHeight: 17rem;
   }
 }
 @media (max-width: 768px) {
   .videoslider {
-    --videoslideWidth: 48.7%;
-    --videoslidesHeight: 20rem;
-    --videoslidesColumnGap: 2rem;
+    --videoslideWidth: 48.6%;
+    --wrapperHeight: 20rem;
+    --videoslideMarginRight: 2rem;
     --wrapperRowGap: 2rem;
   }
   .videoslider__dot {
@@ -1780,8 +1799,8 @@ iframe {
 }
 @media (max-width: 420px) {
   .videoslider {
-    --videoslideWidth: 48%;
-    --videoslidesHeight: 10.1rem;
+    --videoslideWidth: 47.6%;
+    --wrapperHeight: 10.1rem;
     --wrapperRowGap: 4rem;
   }
   .videoslider__icon, .videoslider__dot {

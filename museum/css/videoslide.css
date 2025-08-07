@@ -1,0 +1,96 @@
+/* Стили прелоадера видео */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: normal;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+iframe {
+  border: none;
+}
+
+.icon {
+  display: block;
+  background-color: #ffffff;
+  mask-size: contain;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  transition: 0.3s ease;
+}
+
+.videoslide__wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  padding: 1.5rem 1rem;
+}
+.videoslide__logo-wrapper {
+  z-index: 1;
+  min-width: 4rem;
+  height: 4rem;
+  flex: 0 1 4rem;
+  border-radius: 999.9rem;
+  overflow: hidden;
+}
+.videoslide__title {
+  z-index: 1;
+  flex-grow: 1;
+  text-wrap: nowrap;
+  overflow: hidden;
+  color: #ffffff;
+}
+.videoslide__icon {
+  z-index: 1;
+}
+.videoslide__icon--kebab {
+  width: 0.4rem;
+  height: 1.6rem;
+  padding: 1rem 2.5rem;
+  mask-image: url('../assets/svg/videoslider/kebab.svg');
+}
+.videoslide__link {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.videoslide__youtube-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.videoslide__youtube-icon--rect {
+  width: 6.8rem;
+  height: 4.8rem;
+  background-color: #212121;
+  mask-image: url('../assets/svg/videoslider/youtube/rect.svg');
+}
+.videoslide__youtube-icon--pyramid {
+  width: 1.8rem;
+  height: 2rem;
+  mask-image: url('../assets/svg/videoslider/youtube/pyramid.svg');
+}

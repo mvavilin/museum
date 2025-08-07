@@ -1,11 +1,11 @@
 // Слайдер в секции Video
-export function initVideoslider() {
+export function initVideoslider(updateMainVideoCallback) {
 	const videosInfo = [
-		{ videoId: "aWmJ5DgyWPI", poster: "poster0.jpg", video: "video0.mp3", title: "Exposition - Le Corps et l'Âme. De Donatello à Michel-Ange. Sculptures italiennes de la Renaissance" },
-		{ videoId: "2OR0OCr6uRE", poster: "poster1.jpg", video: "video1.mp3", title: "Petits contes de Printemps - La ruse du Renard 🦊" },
-		{ videoId: "NOhDysLnTvY", poster: "poster2.jpg", video: "video2.mp3", title: "Promenade dans les collections mésopotamiennes avec Ariane Thomas" },
-		{ videoId: "Vi5D6FKhRmo", poster: "poster3.jpg", video: "video3.mp3", title: "Au Louvre ! La Vénus de Milo" },
-		{ videoId: "zp1BXPX8jcU", poster: "poster4.jpg", video: "video4.mp3", title: "Welcome to the Louvre - Bienvenue au Louvre - Musée du Louvre" }
+		{ videoId: "aWmJ5DgyWPI", poster: "poster0.jpg", video: "video0.mp4", title: "Exposition - Le Corps et l'Âme. De Donatello à Michel-Ange. Sculptures italiennes de la Renaissance" },
+		{ videoId: "2OR0OCr6uRE", poster: "poster1.jpg", video: "video1.mp4", title: "Petits contes de Printemps - La ruse du Renard 🦊" },
+		{ videoId: "NOhDysLnTvY", poster: "poster2.jpg", video: "video2.mp4", title: "Promenade dans les collections mésopotamiennes avec Ariane Thomas" },
+		{ videoId: "Vi5D6FKhRmo", poster: "poster3.jpg", video: "video3.mp4", title: "Au Louvre ! La Vénus de Milo" },
+		{ videoId: "zp1BXPX8jcU", poster: "poster4.jpg", video: "video4.mp4", title: "Welcome to the Louvre - Bienvenue au Louvre - Musée du Louvre" }
 	];
 	const videosCont = document.querySelector(".videoslider__videoslides");
 	videosCont.isDragging = false;
@@ -63,6 +63,7 @@ export function initVideoslider() {
 		clickedPoster.replaceWith(newVideoFrame);
 		currentPoster = clickedPoster;
 		currentFrame = newVideoFrame;
+		updateMainVideoCallback();
 	}
 
 	const videosliderPrevBtn = document.getElementById('videosliderPrevBtn'),
@@ -175,6 +176,7 @@ export function initVideoslider() {
 			allowShift = true;
 			updateActiveDot();
 			closeCurrentVideo();
+			updateMainVideoCallback(videosInfo[index]);
 		}
 		// Обновление активной точки
 		function updateActiveDot() {

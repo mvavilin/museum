@@ -1,5 +1,5 @@
 import { slide } from './js/slider.js';
-import { initVideoPlayer } from './js/videoPlayer.js';
+import { initVideoPlayer, updateMainVideo } from './js/videoPlayer.js';
 import { initHeaderNav } from './js/headerNav.js';
 import { initSliderComparison } from './js/sliderComparison.js';
 import { initGallery } from './js/gallery.js';
@@ -30,4 +30,4 @@ initVideoPlayer();
 initGallery();
 
 // Инициализация cлайдера в секции Video
-initVideoslider();
+initVideoslider(updateMainVideo);

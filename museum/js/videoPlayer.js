@@ -167,8 +167,7 @@ export function updateMainVideo(videoInfo = null) {
 		updateRangeStyle(progressRange, videoProgressRangeProperty);
 	}
 	if (videoInfo) {
-		// 
-		// video.setAttribute('poster', `assets/img/poster/${videoInfo.poster}`);
+		video.setAttribute('poster', `assets/img/poster/${videoInfo.poster}`);
 		video.setAttribute('src', `assets/video/${videoInfo.video}`);
 		video.load();
 		video.addEventListener('loadedmetadata', () => { video.currentTime = 0; });

@@ -16,15 +16,15 @@
   }
 
   &__amount {
-    gap: 1rem;
+    flex-grow: 1;
   }
 
   &__sum {
+    align-self: self-end;
     font-size: $font-size-lg;
     font-weight: $font-weight-bold;
     letter-spacing: $letter-spacing-xs;
     white-space: nowrap;
-    margin-top: 3.7rem;
   }
 
   &__btn {
@@ -101,7 +101,7 @@
     border: 0.2rem solid $color-black;
 
     &::after {
-      content: "";
+      content: '';
       display: none;
       position: absolute;
       top: 50%;
@@ -116,15 +116,30 @@
 }
 
 .amount {
+  --amountWrapperAlignSelf: self-end;
+  --amountWrapperMarginBottom: 5rem;
+  --amountWrapperGap: 1rem;
+  --amountTitleAlignSelf: self-end;
+  --amountTitleMarginBottom: 1.5rem;
+  --amountItemMarginBottom: 0.5rem;
+
+  &__wrapper {
+    align-self: var(--amountWrapperAlignSelf);
+    margin-bottom: var(--amountWrapperMarginBottom);
+    gap: var(--amountWrapperGap);
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
+    align-items: var(--amountTitleAlignSelf);
+    margin-bottom: var(--amountTitleMarginBottom);
     font-size: $font-size-lg;
     font-weight: $font-weight-bold;
-    text-align: right;
-    margin-bottom: 2.5rem;
   }
 
   &__item {
-    margin-bottom: 0.3rem;
+    margin-bottom: var(--amountItemMarginBottom);
   }
 
   &__counter {
@@ -160,10 +175,11 @@
     }
 
     &__amount {
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     &__sum {
+      align-self: self-start;
       margin-top: 0;
       display: flex;
       column-gap: 1.3rem;
@@ -175,14 +191,12 @@
   }
 
   .amount {
-    &__title {
-      text-align: left;
-      margin-bottom: 2.9rem;
-    }
-
-    &__item {
-      margin-bottom: -1.5rem;
-    }
+    --amountWrapperAlignSelf: self-start;
+    --amountWrapperMarginBottom: 0;
+    --amountWrapperGap: 2.5rem;
+    --amountTitleAlignSelf: self-start;
+    --amountTitleMarginBottom: 0;
+    --amountItemMarginBottom: -1.5rem;
 
     &__counter {
       width: 17.5rem;
@@ -191,16 +205,9 @@
 }
 
 @media (max-width: $breakpoint-md) {
-  .form {
-    &__sum {
-      margin-top: 0.8rem;
-    }
-  }
-
   .amount {
-    &__title {
-      margin-bottom: 3.9rem;
-    }
+    --amountTitleMarginBottom: 1.4rem;
+    --amountWrapperMarginBottom: 1.4rem;
   }
 }
 
@@ -213,12 +220,7 @@
       padding-bottom: 1.6rem;
     }
 
-    &__amount {
-      gap: 2rem;
-    }
-
     &__sum {
-      margin-top: 2rem;
       align-self: center;
       font-size: $font-size-xxs;
       letter-spacing: 0;
@@ -227,15 +229,18 @@
   }
 
   .amount {
+    --amountWrapperMarginBottom: 2rem;
+    --amountWrapperGap: 2rem;
+    --amountTitleMarginBottom: 0;
+    --amountItemMarginBottom: -0.5rem;
+
     &__title {
       font-size: $font-size-xxs;
       text-align: center;
-      margin-bottom: 2rem;
     }
 
     &__item {
       font-size: $font-size-xxs;
-      margin-bottom: -0.5rem;
     }
 
     &__counter {

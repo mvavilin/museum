@@ -4,6 +4,7 @@ import { initHeaderNav } from './js/headerNav.js';
 import { initSliderComparison } from './js/sliderComparison.js';
 import { initGallery } from './js/gallery.js';
 import { initVideoslider } from './js/videoslider.js';
+import { initTicketCalculator } from './js/ticketСalculator.js';
 
 // Инициализация бургер-меню и навигации
 initHeaderNav();
@@ -31,3 +32,6 @@ initGallery();
 
 // Инициализация cлайдера в секции Video
 initVideoslider(updateMainVideo);
+
+// Инициализация калькулятора продажи билетов в секции Tickets
+initTicketCalculator();

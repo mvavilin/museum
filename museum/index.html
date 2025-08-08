@@ -13,6 +13,10 @@
   <link rel="preload" href="assets/fonts/Roboto-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf" as="font" type="font/ttf"
     crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <title>Museum</title>
 </head>
 
@@ -490,7 +494,7 @@
                     <button id="adultDecrementBtn" aria-label="Decrease adult count" type="button"
                       class="amount__btn">–<span class="icon amount__icon amount__icon--minus"></span></button>
                     <input id="adultCount" aria-label="Количество взрослых" tabindex="-1" type="number" min="0" max="99"
-                      value="1" readonly class="amount__number">
+                      value="0" readonly class="amount__number">
                     <button id="adultIncrementBtn" aria-label="Increase adult count" type="button"
                       class="amount__btn">+<span class="icon amount__icon amount__icon--plus"></span></button>
                   </div>
@@ -500,7 +504,7 @@
                     <button id="seniorDecrementBtn" aria-label="Decrease senior count" type="button"
                       class="amount__btn">–<span class="icon amount__icon amount__icon--minus"></span></button>
                     <input id="seniorCount" aria-label="Количество пожилых" tabindex="-1" type="number" min="0" max="99"
-                      value="1" readonly class="amount__number">
+                      value="0" readonly class="amount__number">
                     <button id="seniorIncrementBtn" aria-label="Increase senior coun" type="button"
                       class="amount__btn">+<span class="icon amount__icon amount__icon--plus"></span></button>
                   </div>
@@ -540,7 +544,7 @@
           </ul>
 
           <div class="contacts__map-wrapper">
-            <img loading="lazy" src="assets/img/map.webp" alt="map" class="contacts__img">
+            <div id="map" class="contacts__map"></div>
           </div>
         </div>
       </div>

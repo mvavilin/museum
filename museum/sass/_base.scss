@@ -443,15 +443,22 @@ iframe {
   }
 
   &__map-wrapper {
+    flex-grow: 1;
     max-width: 96rem;
     height: 62rem;
     overflow: hidden;
   }
 
-  &__img {
+  &__map {
+    // filter: grayscale(100%);
+    width: 100%;
     height: 100%;
   }
 }
+
+// .leaflet-control-attribution {
+//   display: none !important;
+// }
 
 .footer {
   background-color: $color-black;

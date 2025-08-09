@@ -38,4 +38,5 @@ initVideoslider(updateMainVideo);
 initTicketCalculator();
 
 // Инициализация интерактивной карты в секции Contacts
-initInteractiveMap();
+const prices = { permanent: { basic: 20, senior: 10 }, temporary: { basic: 25, senior: 12.5 }, combined: { basic: 40, senior: 20 }, };
+initInteractiveMap(prices);

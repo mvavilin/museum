@@ -2071,4 +2071,337 @@ iframe {
   .social {
     gap: 0.5rem;
   }
+}
+.popup {
+  --black: #030303;
+  --border: 0.1rem solid var(--black);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  left: 0;
+  transition: left 0.8s ease;
+  color: var(--black);
+}
+.popup--close {
+  left: -100%;
+}
+.popup__container {
+  position: relative;
+  flex-grow: 1;
+  background-color: #ffffff;
+  max-width: 75%;
+  padding: 4.75% 12.25%;
+}
+.popup__close {
+  cursor: pointer;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.popup__close::before, .popup__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 0.1rem;
+  background-color: #000000;
+}
+.popup__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.popup__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.popup__form {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+.popup__booking {
+  flex-grow: 1;
+  max-width: 41.26%;
+}
+.popup__overview {
+  flex-grow: 1;
+  max-width: 53rem;
+  padding: 2.5rem 3rem;
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.popup__btn {
+  align-self: end;
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  font-size: 2.2rem;
+  font-weight: 400;
+  background-color: #710707;
+  color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.booking__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.booking__content {
+  margin-bottom: 10%;
+}
+.booking__icon {
+  background-color: #9d8665;
+}
+.booking__icon--logo {
+  width: 8.5rem;
+  height: 4.1rem;
+  mask-image: url("../assets/svg/logo.svg");
+}
+.booking__title {
+  color: #9d8665;
+  font-family: "Forum", serif;
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin-bottom: 3.375%;
+}
+.booking__subtitle {
+  color: #710707;
+  padding-bottom: 1.75%;
+  border-bottom: 0.3rem solid #710707;
+}
+.booking__datetime {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 2rem;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+}
+.booking__input-container {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  border: var(--border);
+}
+.booking__input-date, .booking__input-time {
+  flex-shrink: 0;
+  flex-basis: 19rem;
+}
+.booking__date, .booking__time, .booking__ticket-type {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  z-index: 1;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+}
+.booking__input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.booking__input-icon-wrapper {
+  position: relative;
+  padding: 2.15rem 2.25rem;
+}
+.booking__input-icon {
+  --rotate-angle: 0deg;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--rotate-angle));
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--black);
+}
+.booking__dropdown--active {
+  --rotate-angle: 180deg;
+}
+.booking__input-icon--date {
+  mask-image: url("../assets/svg/popup/date.svg");
+}
+.booking__input, .booking__input-header {
+  flex-grow: 1;
+}
+.booking__input {
+  border: none;
+  outline: none;
+  background-color: white;
+  padding: 0;
+  padding-right: 1.5rem;
+}
+.booking__input::placeholder {
+  color: var(--black);
+}
+.booking__input-icon--down-arrow {
+  width: 1.7rem;
+  height: 1.7rem;
+  mask-image: url("../assets/svg/popup/down-arrow.svg");
+}
+.booking__time-option {
+  text-align: center;
+}
+.booking__ticket-type-option {
+  appearance: none;
+}
+.booking__input-icon--time {
+  mask-image: url("../assets/svg/popup/date.svg");
+}
+.booking__input-icon--person {
+  mask-image: url("../assets/svg/popup/person.svg");
+}
+.booking__input-icon--email {
+  mask-image: url("../assets/svg/popup/email.svg");
+}
+.booking__input-icon--tel {
+  mask-image: url("../assets/svg/popup/tel.svg");
+}
+.booking__input-icon--ballot {
+  mask-image: url("../assets/svg/popup/ballot.svg");
+}
+.booking__time {
+  width: 100%;
+}
+.booking__ticket-type {
+  appearance: none;
+  padding-left: 4.3rem;
+}
+.booking__entry-ticket {
+  padding: 1.5rem;
+  border: var(--border);
+}
+
+.entry-ticket__title {
+  margin-top: -0.5rem;
+  text-transform: capitalize;
+  color: #9d8665;
+  font-family: "Forum", serif;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid #710707;
+  margin-bottom: 1.5rem;
+}
+.entry-ticket__item-title {
+  display: flex;
+  text-wrap: nowrap;
+}
+.entry-ticket__type {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.8rem;
+}
+.entry-ticket__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+.entry-ticket__count {
+  display: flex;
+}
+.entry-ticket__btn {
+  width: 3.5rem;
+  height: 2.5rem;
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--black);
+}
+.entry-ticket__number {
+  border: var(--border);
+  outline: none;
+  background-color: white;
+  padding: 0;
+  text-align: center;
+  width: 3.5rem;
+}
+
+.overview__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.overview__info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  margin-bottom: 2.2rem;
+}
+.overview__title {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin-bottom: -0.5rem;
+}
+.overview__subtitle {
+  color: #710707;
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.overview__item {
+  display: flex;
+  column-gap: 1.5rem;
+  font-weight: 300;
+}
+.overview__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--black);
+}
+.overview__icon--date {
+  mask-image: url("../assets/svg/popup/date.svg");
+}
+.overview__icon--time {
+  mask-image: url("../assets/svg/popup/time.svg");
+}
+.overview__icon--check {
+  mask-image: url("../assets/svg/popup/check.svg");
+}
+.overview__img {
+  width: 100%;
+  max-width: 15rem;
+  max-height: 12rem;
+}
+.overview__tickets {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 0.2rem solid #710707;
+}
+.overview__ticket-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.2rem;
+}
+.overview__count {
+  display: inline-block;
+  color: #a4a4a3;
+  font-size: 1.8rem;
+  background-color: var(--black);
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  width: 3.2rem;
+  text-align: center;
+  line-height: normal;
+}
+.overview__total-cost {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 3.2rem;
+}
+.overview__bank-card {
+  margin-bottom: 2.6rem;
 }/*# sourceMappingURL=index.css.map */

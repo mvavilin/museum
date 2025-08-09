@@ -1,6 +1,5 @@
-export function initTicketCalculator() {
+export function initTicketCalculator(prices) {
     // Калькулятор продажи билетов в секции Tickets
-    const prices = { permanent: { basic: 20, senior: 10 }, temporary: { basic: 25, senior: 12.5 }, combined: { basic: 40, senior: 20 }, };
     const adultCount = document.getElementById('adultCount');
     const seniorCount = document.getElementById('seniorCount');
     const totalSum = document.querySelector('.form__total');

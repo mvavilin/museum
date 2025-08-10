@@ -486,6 +486,49 @@ iframe {
   color: #7e6c51;
 }
 
+.return-to-top {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  width: 8rem;
+  height: 8rem;
+  background-color: #000000;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 999.9rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5rem);
+  }
+}
+.return-to-top--active {
+  opacity: 1;
+  visibility: visible;
+  animation: float 5s ease-in-out infinite;
+}
+.return-to-top:hover {
+  background-color: #b3b3b3;
+  transform: scale(1.05);
+}
+.return-to-top:hover .return-to-top__icon {
+  background-color: #333333;
+}
+.return-to-top__icon {
+  width: 4rem;
+  height: 4rem;
+  mask-image: url(../assets/svg/arrow-top.svg);
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 102.4rem;

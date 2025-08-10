@@ -1,440 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="assets/svg/favicon.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/index.min.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" href="assets/fonts/Forum-Regular.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="preload" href="assets/fonts/Roboto-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="preload" href="assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<title>Museum</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="assets/svg/favicon.svg" type="image/x-icon">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/index.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="assets/fonts/Forum-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="assets/fonts/Roboto-VariableFont_wdth,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf" as="font" type="font/ttf"
-    crossorigin>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <title>Museum</title>
-</head>
+	<body>
+		<header class="header">
+			<div class="container container__header">
+				<div class="header__logo logo">
+					<a href="index.html" class="logo__link">
+						<span class="icon logo__icon"></span>
+						<span class="logo__title">Louvre</span>
+					</a>
+				</div>
+				<div class="burger">
+					<div class="burger__line"></div>
+				</div>
+				<nav class="header__nav nav">
+					<div class="header__nav-wrapper">
+						<ul class="header__list nav__list">
+							<li class="nav__item">
+								<a href="#visiting" class="header__link nav__link">
+									<span class="header__link-wrapper">
+										<span class="nav__text">Visiting</span>
+										<span class="icon header__icon"></span>
+									</span>
+								</a>
+							</li>
+							<li class="nav__item">
+								<a href="#explore" class="header__link nav__link">
+									<span class="header__link-wrapper">
+										<span class="nav__text">Explore</span>
+										<span class="icon header__icon"></span>
+									</span>
+								</a>
+							</li>
+							<li class="nav__item">
+								<a href="#video" class="header__link nav__link">
+									<span class="header__link-wrapper">
+										<span class="nav__text">Video</span>
+										<span class="icon header__icon"></span>
+									</span>
+								</a>
+							</li>
+							<li class="nav__item">
+								<a href="#gallery" class="header__link nav__link">
+									<span class="header__link-wrapper">
+										<span class="nav__text">Gallery</span>
+										<span class="icon header__icon"></span>
+									</span>
+								</a>
+							</li>
+							<li class="nav__item">
+								<a href="#tickets" class="header__link nav__link">
+									<span class="header__link-wrapper">
+										<span class="nav__text">Tickets</span>
+										<span class="icon header__icon"></span>
+									</span>
+								</a>
+							</li>
+							<li class="nav__item">
+								<a href="#contacts" class="header__link nav__link">
+									<span class="header__link-wrapper">
+										<span class="nav__text">Contacts</span>
+										<span class="icon header__icon"></span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<div class="nav__content">
+							<div class="nav__pic">
+								<div class="nav__img-wrapper nav__img-wrapper--main">
+									<img loading="lazy" src="assets/img/nav/louvre-exterior.webp" alt="Фасад Лувра с пирамидой и статуей" class="nav__img nav__img--main" />
+								</div>
+								<div class="nav__img-row">
+									<div class="nav__img-wrapper">
+										<img loading="lazy" src="assets/img/nav/louvre-hall.webp" alt="Внутренний зал Лувра с аркой и статуями" class="nav__img" />
+									</div>
+									<div class="nav__img-wrapper">
+										<img loading="lazy" src="assets/img/nav/louvre-pyramid.webp" alt="Двор Лувра с пирамидой на закате" class="nav__img" />
+									</div>
+								</div>
+							</div>
+							<ul class="nav__social social">
+								<li class="social__item">
+									<a href="https://clck.ru/3NKw6A" class="social__link" aria-label="YouTube" target="_blank" rel="noopener">
+										<span class="icon social__icon social__icon--youtube"></span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="https://clck.ru/3NKw76" class="social__link" aria-label="Instagram" target="_blank" rel="noopener">
+										<span class="icon social__icon social__icon--instagram"></span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="https://clck.ru/3NKw7P" class="social__link" aria-label="Facebook" target="_blank" rel="noopener">
+										<span class="icon social__icon social__icon--facebook"></span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="https://clck.ru/3NKw7e" class="social__link" aria-label="Twitter" target="_blank" rel="noopener">
+										<span class="icon social__icon social__icon--twitter"></span>
+									</a>
+								</li>
+								<li class="social__item">
+									<a href="https://clck.ru/3NKw8Y" class="social__link" aria-label="Pinterest" target="_blank" rel="noopener">
+										<span class="icon social__icon social__icon--pinterest"></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
 
-<body>
-  <header class="header">
-    <div class="container container__header">
-      <div class="header__logo logo">
-        <a href="index.html" class="logo__link">
-          <span class="icon logo__icon"></span>
-          <span class="logo__title">Louvre</span>
-        </a>
-      </div>
+		<main class="main">
+			<section id="welcome" class="section welcome">
+				<div class="container container__section container__welcome">
+					<div class="welcome__content">
+						<h1 class="section__title welcome__title"><span>Welcome </span><span>to the Louvre</span></h1>
+						<p class="welcome__text">From the castle to the museum</p>
+						<a href="https://clck.ru/3NKotY" class="welcome__link welcome__link--hidden"><span>Discover the Louvre</span></a>
+					</div>
+					<div id="slider" class="welcome__slider slider">
+						<div class="slider__wrapper">
+							<div id="slides" class="slider__slides">
+								<img fetchpriority="high" class="slider__slide" src="assets/img/slider/1.webp" alt="Портрет женщины с загадочной улыбкой на фоне пейзажа, картина Леонардо да Винчи 'Мона Лиза'" />
+								<img fetchpriority="high" class="slider__slide" src="assets/img/slider/2.jpg" alt="" />
+								<img fetchpriority="high" class="slider__slide" src="assets/img/slider/3.jpg" alt="" />
+								<img fetchpriority="high" class="slider__slide" src="assets/img/slider/4.jpg" alt="" />
+								<img fetchpriority="high" class="slider__slide" src="assets/img/slider/5.jpg" alt="" />
+							</div>
+						</div>
+						<div class="slider__controls">
+							<div class="slider__counter">
+								<span class="slider__current-slide"></span>
+								<span class="slider__divider">|</span>
+								<span class="slider__total-slides"></span>
+							</div>
+							<div class="slider__pagination">
+								<button id="slideDot1" data-slide="0" aria-label="Перейти к слайду 1" class="slider__dot"></button>
+								<button id="slideDot2" data-slide="1" aria-label="Перейти к слайду 2" class="slider__dot"></button>
+								<button id="slideDot3" data-slide="2" aria-label="Перейти к слайду 3" class="slider__dot"></button>
+								<button id="slideDot4" data-slide="3" aria-label="Перейти к слайду 4" class="slider__dot"></button>
+								<button id="slideDot5" data-slide="4" aria-label="Перейти к слайду 5" class="slider__dot"></button>
+							</div>
+							<div class="slider__nav">
+								<button id="sliderPrevBtn" aria-label="Предыдущий слайд" class="slider__btn">
+									<span class="icon slider__icon slider__icon--prev"></span>
+								</button>
+								<button id="sliderNextBtn" aria-label="Следующий слайд" class="slider__btn">
+									<span class="icon slider__icon slider__icon--next"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <div class="burger">
-        <div class="burger__line"></div>
-      </div>
+			<section id="visiting" class="section visiting">
+				<div class="container container__section container__visiting">
+					<h2 class="section__title section__title--gold section__title--underline">Virtual tour</h2>
+					<ul class="cards">
+						<li class="card">
+							<a href="https://clck.ru/3NKLn5" class="card__link">
+								<img loading="lazy" src="assets/img/cards/1.webp" alt="Золотое барочное убранство с двумя ангелами, держащими герб, в интерьере церкви или дворца" class="card__img" />
+								<h3 class="card__title card__title--underline">Royal Palace</h3>
+								<p class="card__label card__label--large">360° Virtual Tour</p>
+								<p class="card__label">Google Street Panorama View</p>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://clck.ru/3NKLph" class="card__link">
+								<img loading="lazy" src="assets/img/cards/2.webp" alt="Две женщины сидят на скамье и рассматривают крупные классические картины в музейном зале" class="card__img" />
+								<h3 class="card__title card__title--underline">Denon Wing</h3>
+								<p class="card__label card__label--large">360° Virtual Tour</p>
+								<p class="card__label">Google Street Panorama View</p>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://clck.ru/3NKLqN" class="card__link">
+								<img loading="lazy" src="assets/img/cards/3.webp" alt="Барочная религиозная живопись с ангелами на небесах и людьми, протягивающими руки вверх" class="card__img" />
+								<h3 class="card__title card__title--underline">Colonnade Perrault</h3>
+								<p class="card__label card__label--large">360° Virtual Tour</p>
+								<p class="card__label">Google Street Panorama View</p>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://clck.ru/3NKLqh" class="card__link">
+								<img loading="lazy" src="assets/img/cards/4.webp" alt="Бронзовая скульптура мужчины с длинными развевающимися волосами в музее, на фоне классической архитектуры с окнами" class="card__img" />
+								<h3 class="card__title card__title--underline">Greek hall</h3>
+								<p class="card__label card__label--large">360° Virtual Tour</p>
+								<p class="card__label">Google Street Panorama View</p>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://clck.ru/3NKLrS" class="card__link">
+								<img loading="lazy" src="assets/img/cards/5.webp" alt="Частичный вид картины Мона Лиза Леонардо да Винчи в позолоченной раме, фрагмент верхней части лица и фона" class="card__img" />
+								<h3 class="card__title card__title--underline">Mona Lisa</h3>
+								<p class="card__label card__label--large">360° Virtual Tour</p>
+								<p class="card__label">Google Street Panorama View</p>
+							</a>
+						</li>
+						<li class="card">
+							<a href="https://clck.ru/3NKLru" class="card__link">
+								<img loading="lazy" src="assets/img/cards/6.webp" alt="Религиозная живопись с изображением ангелов и людей, смотрящих вверх на фигуру в небе, окутанную облаками и светом" class="card__img" />
+								<h3 class="card__title card__title--underline">Night Palace</h3>
+								<p class="card__label card__label--large">360° Virtual Tour</p>
+								<p class="card__label">Google Street Panorama View</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
 
-      <nav class="header__nav nav">
-        <div class="header__nav-wrapper">
-          <ul class="header__list nav__list">
-            <li class="nav__item">
-              <a href="#visiting" class="header__link nav__link">
-                <span class="header__link-wrapper">
-                  <span class="nav__text">Visiting</span>
-                  <span class="icon header__icon"></span>
-                </span>
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#explore" class="header__link nav__link">
-                <span class="header__link-wrapper">
-                  <span class="nav__text">Explore</span>
-                  <span class="icon header__icon"></span>
-                </span>
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#video" class="header__link nav__link">
-                <span class="header__link-wrapper">
-                  <span class="nav__text">Video</span>
-                  <span class="icon header__icon"></span>
-                </span>
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#gallery" class="header__link nav__link">
-                <span class="header__link-wrapper">
-                  <span class="nav__text">Gallery</span>
-                  <span class="icon header__icon"></span>
-                </span>
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#tickets" class="header__link nav__link">
-                <span class="header__link-wrapper">
-                  <span class="nav__text">Tickets</span>
-                  <span class="icon header__icon"></span>
-                </span>
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#contacts" class="header__link nav__link">
-                <span class="header__link-wrapper">
-                  <span class="nav__text">Contacts</span>
-                  <span class="icon header__icon"></span>
-                </span>
-              </a>
-            </li>
-          </ul>
+			<section id="explore" class="section explore">
+				<div class="container container__section container__explore">
+					<div class="explore__content">
+						<h2 class="section__title section__title--underline">Picture explore</h2>
+						<div class="explore__desc explore__desc--hidden desc">
+							<span class="desc__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</span>
+							<span class="desc__text">It was cleaned in 1984 to remove a <span class="desc__text--highlight">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</span>
+							<span class="desc__text desc__text--hidden">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</span>
+						</div>
+					</div>
+					<div class="explore__slider-comparison slider-comparison">
+						<div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--before">
+							<img loading="lazy" class="slider-comparison__img slider-comparison__img--before" src="assets/img/slider-comparison/before.webp" alt="До" />
+						</div>
+						<div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--after">
+							<img loading="lazy" class="slider-comparison__img slider-comparison__img--after" src="assets/img/slider-comparison/after.webp" alt="После" />
+						</div>
+						<input id="sliderCompareRange" aria-label="Сравнение изображений" type="range" class="slider-comparison__control" min="0" max="100" value="61" />
+						<div class="slider-comparison__handle handle">
+							<div class="handle__top"></div>
+							<div class="handle__thumb"></div>
+							<div class="handle__bottom"></div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-          <div class="nav__content">
-            <div class="nav__pic">
-              <div class="nav__img-wrapper nav__img-wrapper--main">
-                <img loading="lazy" src="assets/img/nav/louvre-exterior.webp" alt="Фасад Лувра с пирамидой и статуей"
-                  class="nav__img nav__img--main">
-              </div>
+			<section id="video" class="section video">
+				<div class="container container__section container__video">
+					<div class="video__content">
+						<h2 class="section__title section__title--gold">Video journey</h2>
+						<p class="video__desc desc__text desc__text--hidden">
+							Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code
+						</p>
+					</div>
+					<div class="video__media">
+						<div class="video__player player">
+							<div class="player__wrapper">
+								<video id="player" class="player__video" poster="assets/img/poster/poster4.jpg" preload="auto">
+									<source src="assets/video/video4.mp4" type="video/mp4" />
+									Ваш браузер не поддерживает тег &lt;video&gt;.
+								</video>
+								<button id="playerPaused" aria-label="Приостановить" class="player__btn">
+									<span class="icon player__icon player__icon--paused"></span>
+								</button>
+								<div class="player__speed-info player__speed-info--hidden">1x</div>
+								<div class="player__video-controller video-controller">
+									<button id="videoPlayBtn" aria-label="Play video" class="video-controller__btn">
+										<span class="icon video-controller__icon video-controller__icon--play"></span>
+									</button>
+									<input id="videoProgressRange" aria-label="Прогресс воспроизведения видео" type="range" value="0" min="0" max="100" step="1" class="video-controller__progress" />
+									<button id="videoVolumeBtn" aria-label="Toggle sound" class="video-controller__btn">
+										<span class="icon video-controller__icon video-controller__icon--volume"></span>
+									</button>
+									<input id="videoVolumeRange" aria-label="Громкость видео" type="range" value="54" min="0" max="100" step="1" class="video-controller__volume" />
+									<button id="videoFullscreenBtn" aria-label="Fullscreen mode" class="video-controller__btn">
+										<span class="icon video-controller__icon video-controller__icon--fullscreen"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="video__videoslider videoslider">
+							<div class="videoslider__wrapper">
+								<div id="videoslider" class="videoslider__videoslides"></div>
+							</div>
+							<div class="videoslider__nav">
+								<button id="videosliderPrevBtn" aria-label="Previous video" class="videoslider__btn">
+									<span class="icon videoslider__icon videoslider__icon--prev"></span>
+								</button>
+								<div class="videoslider__pagination">
+									<button id="videosliderDot1" data-videoslide="0" aria-label="Перейти к видео 1" class="videoslider__dot"></button>
+									<button id="videosliderDot2" data-videoslide="1" aria-label="Перейти к видео 2" class="videoslider__dot"></button>
+									<button id="videosliderDot3" data-videoslide="2" aria-label="Перейти к видео 3" class="videoslider__dot"></button>
+									<button id="videosliderDot4" data-videoslide="3" aria-label="Перейти к видео 4" class="videoslider__dot"></button>
+									<button id="videosliderDot5" data-videoslide="4" aria-label="Перейти к видео 5" class="videoslider__dot"></button>
+								</div>
+								<button id="videosliderNextBtn" aria-label="Next video" class="videoslider__btn">
+									<span class="icon videoslider__icon videoslider__icon--next"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-              <div class="nav__img-row">
-                <div class="nav__img-wrapper">
-                  <img loading="lazy" src="assets/img/nav/louvre-hall.webp"
-                    alt="Внутренний зал Лувра с аркой и статуями" class="nav__img">
-                </div>
-                <div class="nav__img-wrapper">
-                  <img loading="lazy" src="assets/img/nav/louvre-pyramid.webp" alt="Двор Лувра с пирамидой на закате"
-                    class="nav__img">
-                </div>
-              </div>
-            </div>
-
-
-            <ul class="nav__social social">
-              <li class="social__item">
-                <a href="https://clck.ru/3NKw6A" class="social__link" aria-label="YouTube" target="_blank"
-                  rel="noopener">
-                  <span class="icon social__icon social__icon--youtube"></span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="https://clck.ru/3NKw76" class="social__link" aria-label="Instagram" target="_blank"
-                  rel="noopener">
-                  <span class="icon social__icon social__icon--instagram"></span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="https://clck.ru/3NKw7P" class="social__link" aria-label="Facebook" target="_blank"
-                  rel="noopener">
-                  <span class="icon social__icon social__icon--facebook"></span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="https://clck.ru/3NKw7e" class="social__link" aria-label="Twitter" target="_blank"
-                  rel="noopener">
-                  <span class="icon social__icon social__icon--twitter"></span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a href="https://clck.ru/3NKw8Y" class="social__link" aria-label="Pinterest" target="_blank"
-                  rel="noopener">
-                  <span class="icon social__icon social__icon--pinterest"></span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-    <section id="welcome" class="section welcome">
-      <div class="container container__section container__welcome">
-
-        <div class="welcome__content">
-          <h1 class="section__title welcome__title"><span>Welcome </span><span>to the Louvre</span></h1>
-          <p class="welcome__text">From the castle to the museum</p>
-          <a href="https://clck.ru/3NKotY" class="welcome__link welcome__link--hidden"><span>Discover the
-              Louvre</span></a>
-        </div>
-
-        <div id="slider" class="welcome__slider slider">
-          <div class="slider__wrapper">
-            <div id="slides" class="slider__slides">
-              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/1.webp"
-                alt="Портрет женщины с загадочной улыбкой на фоне пейзажа, картина Леонардо да Винчи 'Мона Лиза'">
-              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/2.jpg" alt="">
-              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/3.jpg" alt="">
-              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/4.jpg" alt="">
-              <img fetchpriority="high" class="slider__slide" src="assets/img/slider/5.jpg" alt="">
-              </img>
-            </div>
-          </div>
-
-          <div class="slider__controls">
-            <div class="slider__counter">
-              <span class="slider__current-slide"></span>
-              <span class="slider__divider">|</span>
-              <span class="slider__total-slides"></span>
-            </div>
-
-            <div class="slider__pagination">
-              <button id="slideDot1" data-slide="0" aria-label="Перейти к слайду 1" class="slider__dot"></button>
-              <button id="slideDot2" data-slide="1" aria-label="Перейти к слайду 2" class="slider__dot"></button>
-              <button id="slideDot3" data-slide="2" aria-label="Перейти к слайду 3" class="slider__dot"></button>
-              <button id="slideDot4" data-slide="3" aria-label="Перейти к слайду 4" class="slider__dot"></button>
-              <button id="slideDot5" data-slide="4" aria-label="Перейти к слайду 5" class="slider__dot"></button>
-            </div>
-
-            <div class="slider__nav">
-              <button id="sliderPrevBtn" aria-label="Предыдущий слайд" class="slider__btn">
-                <span class="icon slider__icon slider__icon--prev"></span>
-              </button>
-              <button id="sliderNextBtn" aria-label="Следующий слайд" class="slider__btn">
-                <span class="icon slider__icon slider__icon--next"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="visiting" class="section visiting">
-      <div class="container container__section container__visiting">
-        <h2 class="section__title section__title--gold section__title--underline">Virtual tour</h2>
-        <ul class="cards">
-          <li class="card">
-            <a href="https://clck.ru/3NKLn5" class="card__link">
-              <img loading="lazy" src="assets/img/cards/1.webp"
-                alt="Золотое барочное убранство с двумя ангелами, держащими герб, в интерьере церкви или дворца"
-                class="card__img">
-              <h3 class="card__title card__title--underline">Royal Palace</h3>
-              <p class="card__label card__label--large">360° Virtual Tour</p>
-              <p class="card__label">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="card">
-            <a href="https://clck.ru/3NKLph" class="card__link">
-              <img loading="lazy" src="assets/img/cards/2.webp"
-                alt="Две женщины сидят на скамье и рассматривают крупные классические картины в музейном зале"
-                class="card__img">
-              <h3 class="card__title card__title--underline">Denon Wing</h3>
-              <p class="card__label card__label--large">360° Virtual Tour</p>
-              <p class="card__label">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="card">
-            <a href="https://clck.ru/3NKLqN" class="card__link">
-              <img loading="lazy" src="assets/img/cards/3.webp"
-                alt="Барочная религиозная живопись с ангелами на небесах и людьми, протягивающими руки вверх"
-                class="card__img">
-              <h3 class="card__title card__title--underline">Colonnade Perrault</h3>
-              <p class="card__label card__label--large">360° Virtual Tour</p>
-              <p class="card__label">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="card">
-            <a href="https://clck.ru/3NKLqh" class="card__link">
-              <img loading="lazy" src="assets/img/cards/4.webp"
-                alt="Бронзовая скульптура мужчины с длинными развевающимися волосами в музее, на фоне классической архитектуры с окнами"
-                class="card__img">
-              <h3 class="card__title card__title--underline">Greek hall</h3>
-              <p class="card__label card__label--large">360° Virtual Tour</p>
-              <p class="card__label">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="card">
-            <a href="https://clck.ru/3NKLrS" class="card__link">
-              <img loading="lazy" src="assets/img/cards/5.webp"
-                alt="Частичный вид картины Мона Лиза Леонардо да Винчи в позолоченной раме, фрагмент верхней части лица и фона"
-                class="card__img">
-              <h3 class="card__title card__title--underline">Mona Lisa</h3>
-              <p class="card__label card__label--large">360° Virtual Tour</p>
-              <p class="card__label">Google Street Panorama View</p>
-            </a>
-          </li>
-          <li class="card">
-            <a href="https://clck.ru/3NKLru" class="card__link">
-              <img loading="lazy" src="assets/img/cards/6.webp"
-                alt="Религиозная живопись с изображением ангелов и людей, смотрящих вверх на фигуру в небе, окутанную облаками и светом"
-                class="card__img">
-              <h3 class="card__title card__title--underline">Night Palace</h3>
-              <p class="card__label card__label--large">360° Virtual Tour</p>
-              <p class="card__label">Google Street Panorama View</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="explore" class="section explore">
-      <div class="container container__section container__explore">
-        <div class="explore__content">
-          <h2 class="section__title section__title--underline">Picture explore</h2>
-          <div class="explore__desc explore__desc--hidden desc">
-            <span class="desc__text">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the
-              Spanish Golden Age.</span>
-            <span class="desc__text">It was cleaned in 1984 to remove a <span class="desc__text--highlight">"yellow
-                veil"</span> of dust that had gathered since the
-              previous
-              restoration in the 19th century.</span>
-            <span class="desc__text desc__text--hidden">The cleaning provoked furious protests, not because the
-              picture had been
-              damaged in any way, but because it looked different.</span>
-          </div>
-        </div>
-
-        <div class="explore__slider-comparison slider-comparison">
-          <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--before">
-            <img loading="lazy" class="slider-comparison__img slider-comparison__img--before"
-              src="assets/img/slider-comparison/before.webp" alt="До">
-          </div>
-          <div class="slider-comparison__img-wrapper slider-comparison__img-wrapper--after">
-            <img loading="lazy" class="slider-comparison__img slider-comparison__img--after"
-              src="assets/img/slider-comparison/after.webp" alt="После">
-          </div>
-          <input id="sliderCompareRange" aria-label="Сравнение изображений" type="range"
-            class="slider-comparison__control" min="0" max="100" value="61">
-          <div class="slider-comparison__handle handle">
-            <div class="handle__top"></div>
-            <div class="handle__thumb"></div>
-            <div class="handle__bottom"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="video" class="section video">
-      <div class="container container__section container__video">
-        <div class="video__content">
-          <h2 class="section__title section__title--gold">Video journey</h2>
-          <p class="video__desc desc__text desc__text--hidden">
-            Enter and visit one of the most famous museums in the world and
-            enjoy masterpieces such as Mona Lisa or Hammurabi's Code
-          </p>
-        </div>
-
-        <div class="video__media">
-          <div class="video__player player">
-            <div class="player__wrapper">
-              <video id="player" class="player__video" poster="assets/img/poster/poster4.jpg" preload="auto">
-                <source src="assets/video/video4.mp4" type="video/mp4">
-                Ваш браузер не поддерживает тег &lt;video&gt;.
-              </video>
-
-              <button id="playerPaused" aria-label="Приостановить" class="player__btn">
-                <span class="icon player__icon player__icon--paused"></span>
-              </button>
-
-              <div class="player__speed-info player__speed-info--hidden">1x</div>
-
-              <div class="player__video-controller video-controller">
-                <button id="videoPlayBtn" aria-label="Play video" class="video-controller__btn">
-                  <span class="icon video-controller__icon video-controller__icon--play"></span>
-                </button>
-                <input id="videoProgressRange" aria-label="Прогресс воспроизведения видео" type="range" value="0"
-                  min="0" max="100" step="1" class="video-controller__progress">
-                <button id="videoVolumeBtn" aria-label="Toggle sound" class="video-controller__btn">
-                  <span class="icon video-controller__icon video-controller__icon--volume"></span>
-                </button>
-                <input id="videoVolumeRange" aria-label="Громкость видео" type="range" value="54" min="0" max="100"
-                  step="1" class="video-controller__volume">
-                <button id="videoFullscreenBtn" aria-label="Fullscreen mode" class="video-controller__btn">
-                  <span class="icon video-controller__icon video-controller__icon--fullscreen"></span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="video__videoslider videoslider">
-            <div class="videoslider__wrapper">
-              <div id="videoslider" class="videoslider__videoslides"></div>
-            </div>
-            <div class="videoslider__nav">
-              <button id="videosliderPrevBtn" aria-label="Previous video" class="videoslider__btn">
-                <span class="icon videoslider__icon videoslider__icon--prev"></span>
-              </button>
-              <div class="videoslider__pagination">
-                <button id="videosliderDot1" data-videoslide="0" aria-label="Перейти к видео 1"
-                  class="videoslider__dot"></button>
-                <button id="videosliderDot2" data-videoslide="1" aria-label="Перейти к видео 2"
-                  class="videoslider__dot"></button>
-                <button id="videosliderDot3" data-videoslide="2" aria-label="Перейти к видео 3"
-                  class="videoslider__dot"></button>
-                <button id="videosliderDot4" data-videoslide="3" aria-label="Перейти к видео 4"
-                  class="videoslider__dot"></button>
-                <button id="videosliderDot5" data-videoslide="4" aria-label="Перейти к видео 5"
-                  class="videoslider__dot"></button>
-              </div>
-              <button id="videosliderNextBtn" aria-label="Next video" class="videoslider__btn">
-                <span class="icon videoslider__icon videoslider__icon--next"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="section gallery">
-      <div class="container container__section container__gallery">
-        <h2 class="section__title">Art gallery</h2>
-
-        <div class="gallery__container">
-          <div class="gallery__inner-container">
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/2.webp"
-                alt="На мраморной скульптуре изображена женщина, охотящаяся на оленя" class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/1.webp"
-                alt="На мраморной статуе изображен поцелуй Амура и Психеи, классический сюжет, изображающий романтическую связь"
-                class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/7.webp"
-                alt="На изображении представлена знаменитая картина Леонардо да Винчи 'Мона Лиза'" class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/9.webp"
-                alt="На изображении представлен интерьер, в котором находятся три белые скульптуры"
-                class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/8.webp"
-                alt="На фотографии изображен интерьер величественного здания с классической архитектурой"
-                class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/10.webp"
-                alt="Изображение показывает часть здания Лувра в Париже, Франция" class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/4.webp"
-                alt="На фотографии изображена статуя крылатой победы, выполненная из белого мрамора"
-                class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/3.webp"
-                alt="Внутренний двор музея с несколькими скульптурами, расположенными перед аркой" class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/15.webp"
-                alt="На изображении видна площадь перед Лувром в Париже" class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/6.webp"
-                alt="На изображении представлена картина 'Святая Анна с Мадонной и младенцем Христом' Леонардо да Винчи"
-                class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/5.webp"
-                alt="Изящная статуя обнаженной женщины, выполненная из белого мрамора, запечатлевает античную красоту"
-                class="gallery__img">
-            </div>
-            <div class="gallery__img-wrapper">
-              <img loading="lazy" src="assets/img/gallery/12.webp"
-                alt="Изображение демонстрирует интерьер здания с несколькими скульптурами и деревьями"
-                class="gallery__img">
-            </div>
-            <!-- <div class="gallery__img-wrapper">
+			<section id="gallery" class="section gallery">
+				<div class="container container__section container__gallery">
+					<h2 class="section__title">Art gallery</h2>
+					<div class="gallery__container">
+						<div class="gallery__inner-container">
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/2.webp" alt="На мраморной скульптуре изображена женщина, охотящаяся на оленя" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/1.webp" alt="На мраморной статуе изображен поцелуй Амура и Психеи, классический сюжет, изображающий романтическую связь" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/7.webp" alt="На изображении представлена знаменитая картина Леонардо да Винчи 'Мона Лиза'" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/9.webp" alt="На изображении представлен интерьер, в котором находятся три белые скульптуры" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/8.webp" alt="На фотографии изображен интерьер величественного здания с классической архитектурой" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/10.webp" alt="Изображение показывает часть здания Лувра в Париже, Франция" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/4.webp" alt="На фотографии изображена статуя крылатой победы, выполненная из белого мрамора" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/3.webp" alt="Внутренний двор музея с несколькими скульптурами, расположенными перед аркой" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/15.webp" alt="На изображении видна площадь перед Лувром в Париже" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/6.webp" alt="На изображении представлена картина 'Святая Анна с Мадонной и младенцем Христом' Леонардо да Винчи" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/5.webp" alt="Изящная статуя обнаженной женщины, выполненная из белого мрамора, запечатлевает античную красоту" class="gallery__img" />
+							</div>
+							<div class="gallery__img-wrapper">
+								<img loading="lazy" src="assets/img/gallery/12.webp" alt="Изображение демонстрирует интерьер здания с несколькими скульптурами и деревьями" class="gallery__img" />
+							</div>
+							<!-- <div class="gallery__img-wrapper">
               <img loading="lazy" src="assets/img/gallery/11.webp" alt="Картина Эжена Делакруа 'Свобода, ведущая народ'"
                 class="gallery__img">
             </div>
@@ -447,187 +366,319 @@
               <img loading="lazy" src="assets/img/gallery/14.webp"
                 alt="На изображении представлен портрет молодой женщины на темном фоне" class="gallery__img">
             </div> -->
-          </div>
-        </div>
+						</div>
+					</div>
+				</div>
+			</section>
 
+			<section id="tickets" class="section tickets">
+				<div class="container container__section container__tickets tickets__container">
+					<h2 class="section__title section__title--gold section__title--underline">Buy tickets</h2>
+					<div class="tickets__content">
+						<div class="tickets__img-wrapper">
+							<img loading="lazy" src="assets/img/antique-painting.webp" alt="На картине изображена сцена, в которой мужчина в римском доспехе передает щит обнаженной женщине" class="tickets__img" />
+						</div>
+						<div class="tickets__form form">
+							<div class="form__wrapper">
+								<fieldset class="form__ticket-type form__ticket-type--hidden ticket-type">
+									<legend class="ticket-type__title">Ticket Type</legend>
+									<label class="ticket-type__item">
+										Permanent exhibition
+										<input id="radioPermanent" aria-label="Постоянная выставка" type="radio" checked="checked" name="radio" class="ticket-type__input" />
+										<span class="ticket-type__checkmark"></span>
+									</label>
+									<label class="ticket-type__item">
+										Temporary exhibition
+										<input id="radioTemporary" aria-label="Временная выставка" type="radio" name="radio" class="ticket-type__input" />
+										<span class="ticket-type__checkmark"></span>
+									</label>
+									<label class="ticket-type__item">
+										Combined Admission
+										<input id="radioCombined" aria-label="Комбинированный билет" type="radio" name="radio" class="ticket-type__input" />
+										<span class="ticket-type__checkmark"></span>
+									</label>
+								</fieldset>
+								<fieldset class="form__amount amount">
+									<div class="amount__wrapper">
+										<legend class="amount__title">Amount</legend>
+										<p class="amount__item">Basic 18+</p>
+										<div class="amount__counter">
+											<button id="adultDecrementBtn" aria-label="Decrease adult count" type="button" class="amount__btn">–</button>
+											<input id="adultCount" aria-label="Количество взрослых" tabindex="-1" type="number" min="0" max="99" value="0" readonly class="amount__number" />
+											<button id="adultIncrementBtn" aria-label="Increase adult count" type="button" class="amount__btn">+</button>
+										</div>
+										<p class="amount__item">Senior 65+</p>
+										<div class="amount__counter">
+											<button id="seniorDecrementBtn" aria-label="Decrease senior count" type="button" class="amount__btn">–</button>
+											<input id="seniorCount" aria-label="Количество пожилых" tabindex="-1" type="number" min="0" max="99" value="0" readonly class="amount__number" />
+											<button id="seniorIncrementBtn" aria-label="Increase senior coun" type="button" class="amount__btn">+</button>
+										</div>
+									</div>
+									<div class="form__sum"><span class="form__caption">Total €</span><span class="form__total">220</span></div>
+								</fieldset>
+							</div>
+							<button id="buyNowBtn" aria-label="Buy ticket now" class="form__btn"><span class="form__btn-caption">Buy Now</span></button>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      </div>
-    </section>
+			<div class="parallax"></div>
 
-    <section id="tickets" class="section tickets">
-      <div class="container container__section container__tickets tickets__container">
-        <h2 class="section__title section__title--gold section__title--underline">Buy tickets</h2>
+			<section id="contacts" class="section contacts">
+				<div class="container container__section container__contacts">
+					<h2 class="section__title section__title--gold section__title--underline">Contacts</h2>
+					<div class="contacts__content">
+						<ul class="contacts__list">
+							<li class="contacts__subtitle"><span class="contacts__text">Palais Royal </span><span class="contacts__text">Musee du Louvre</span></li>
+							<li class="contacts__item">address: <a href="https://clck.ru/3NKw6b" class="contacts__link">75001 Paris, France</a></li>
+							<li class="contacts__item">phone: <a href="tel:+330140205050" class="contacts__link">+33(0) 1 40 20 50 50</a></li>
+							<li class="contacts__item">mail: <a href="mailto:info@louvre.fr" class="contacts__link">info@louvre.fr</a></li>
+						</ul>
+						<div class="contacts__map-wrapper">
+							<div id="map" class="contacts__map"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-        <div class="tickets__content">
-          <div class="tickets__img-wrapper">
-            <img loading="lazy" src="assets/img/antique-painting.webp"
-              alt="На картине изображена сцена, в которой мужчина в римском доспехе передает щит обнаженной женщине"
-              class="tickets__img">
-          </div>
+		<div class="popup">
+			<div class="popup__container">
+				<div class="popup__close"></div>
+				<form class="popup__form">
+					<div class="popup__booking booking">
+						<div class="booking__wrapper">
+							<div class="booking__content">
+								<div class="booking__logo">
+									<div class="icon booking__icon booking__icon--logo"></div>
+								</div>
+								<div class="booking__title">Booking tickets</div>
+								<div class="booking__subtitle">Tour to Louvre</div>
+							</div>
+							<div class="booking__datetime">
+								<div class="booking__input-container booking__input-date">
+									<input type="date" id="dateInput" class="booking__date" />
+									<div class="booking__input-wrapper">
+										<div class="booking__input-icon-wrapper">
+											<div class="icon booking__input-icon booking__input-icon--date"></div>
+										</div>
+										<span class="booking__input-header booking__input-header--date">Date</span>
+										<div class="booking__input-icon-wrapper">
+											<div class="icon booking__input-icon booking__dropdown booking__input-icon--down-arrow booking__input-icon--date-down-arrow"></div>
+										</div>
+									</div>
+								</div>
+								<div class="booking__input-container booking__input-time">
+									<select id="timeInput" class="booking__time"></select>
+									<div class="booking__input-wrapper">
+										<div class="booking__input-icon-wrapper">
+											<div class="icon booking__input-icon booking__input-icon--time"></div>
+										</div>
+										<span class="booking__input-header booking__input-header--time">Time</span>
+										<div class="booking__input-icon-wrapper">
+											<div class="icon booking__input-icon booking__dropdown booking__input-icon--down-arrow booking__input-icon--time-down-arrow"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="booking__input-container">
+								<div class="booking__input-wrapper">
+									<div class="booking__input-icon-wrapper">
+										<div class="icon booking__input-icon booking__input-icon--person"></div>
+									</div>
+									<input type="text" name="" id="" class="booking__input booking__input--person" placeholder="Name" />
+								</div>
+							</div>
+							<div class="booking__input-container">
+								<div class="booking__input-wrapper">
+									<div class="booking__input-icon-wrapper">
+										<div class="icon booking__input-icon booking__input-icon--email"></div>
+									</div>
+									<input type="email" name="" id="" class="booking__input booking__input--email" placeholder="E-mail" />
+								</div>
+							</div>
+							<div class="booking__input-container">
+								<div class="booking__input-wrapper">
+									<div class="booking__input-icon-wrapper">
+										<div class="icon booking__input-icon booking__input-icon--tel"></div>
+									</div>
+									<input type="number" name="" id="" class="booking__input booking__input--tel" placeholder="Phone" />
+								</div>
+							</div>
+							<div class="booking__input-container booking__input-ticket-type">
+								<select id="ticketTypeInput" class="booking__ticket-type">
+									<option class="booking__ticket-type-option" value="permanent">Permanent exhibition</option>
+									<option class="booking__ticket-type-option" value="temporary">Temporary exhibition</option>
+									<option class="booking__ticket-type-option" value="combined">Combined Admission</option>
+								</select>
+								<div class="booking__input-wrapper">
+									<div class="booking__input-icon-wrapper">
+										<div class="icon booking__input-icon booking__input-icon--ballot"></div>
+									</div>
+									<span class="booking__input-header booking__input-header--ticket-type">Ticket Type</span>
+									<div class="booking__input-icon-wrapper">
+										<div class="icon booking__input-icon booking__dropdown booking__input-icon--down-arrow booking__input-icon--ticket-type-down-arrow"></div>
+									</div>
+								</div>
+							</div>
+							<div class="booking__entry-ticket entry-ticket">
+								<div class="entry-ticket__title">Entry ticket</div>
+								<ul class="entry-ticket__type">
+									<li class="entry-ticket__item">
+										<div class="entry-ticket__item-title">Basic 18+ (<span class="entry-ticket__basic-count">0</span> €)</div>
+										<div class="entry-ticket__count">
+											<button class="entry-ticket__btn" type="button">–</button>
+											<input class="entry-ticket__number entry-ticket__basic-cost" tabindex="-1" type="number" min="0" max="99" value="0" readonly />
+											<button class="entry-ticket__btn" type="button">+</button>
+										</div>
+									</li>
+									<li class="entry-ticket__item">
+										<div class="entry-ticket__item-title">Senior 65+ (<span class="entry-ticket__senior-count">0</span> €)</div>
+										<div class="entry-ticket__count">
+											<button class="entry-ticket__btn" type="button">–</button>
+											<input class="entry-ticket__number entry-ticket__senior-cost" tabindex="-1" type="number" min="0" max="99" value="0" readonly />
+											<button class="entry-ticket__btn" type="button">+</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="popup__overview overview">
+						<div class="overview__wrapper">
+							<div class="overview__content">
+								<div class="overview__info">
+									<div class="overview__title">Overview</div>
+									<div class="overview__subtitle">Tour to Louvre</div>
+									<div class="overview__item overview__date"><span class="icon overview__icon overview__icon--date"></span>Friday, August 19</div>
+									<div class="overview__item overview__time"><span class="icon overview__icon overview__icon--time"></span>16 : 30</div>
+									<div class="overview__item overview__ticket-type"><span class="icon overview__icon overview__icon--check"></span>Temporary exhibition</div>
+								</div>
+								<img class="overview__img" src="assets/svg/popup/miniature.png" alt="" />
+							</div>
+							<ul class="overview__tickets">
+								<li class="overview__ticket-item">
+									<span class="overview__ticket"> <span class="overview__count overview__basic-count">0</span>Basic (<span class="overview__cost overview__basic-cost">0 €</span>) </span>
+									<span class="overview__ticket-prices overview__basic-ticket-prices">0 €</span>
+								</li>
+								<li class="overview__ticket-item">
+									<span class="overview__ticket"> <span class="overview__count overview__senior-count">0</span>Senior (<span class="overview__cost overview__senior-cost">0 €</span>) </span>
+									<span class="overview__ticket-prices overview__senior-ticket-prices">0 €</span>
+								</li>
+							</ul>
+							<div class="overview__total-cost">
+								<span>Total:</span>
+								<span class="overview__ticket-prices overview__senior-ticket-prices">0 €</span>
+							</div>
+							<div class="overview__bank-card bank-card">
+								<div class="bank-card__wrapper">
+									<div class="bank-card__side bank-card__front-side front-side">
+										<div class="front-side__content">
+											<div class="front-side__payment-info">
+												<div class="bank-card__title">Card number</div>
+												<input class="bank-card__input bank-card__number" type="number" name="" id="" />
+												<div class="bank-card__title">Expiration date</div>
+												<div class="bank-card__expiration-date">
+													<input class="bank-card__input bank-card__number" type="number" name="" id="" />
+													<input class="bank-card__input bank-card__number" type="number" name="" id="" />
+												</div>
+											</div>
+											<div class="front-side__payment-systems">
+												<div class="icon bank-card__icon bank-card__icon--visa"></div>
+												<div class="icon bank-card__icon bank-card__icon--mastercard"></div>
+											</div>
+										</div>
+										<div class="bank-card__title">Cardholder name</div>
+										<input class="bank-card__input bank-card__cardholder-name" type="text" name="" id="" />
+									</div>
+									<div class="bank-card__side bank-card__back-side back-side">
+										<div class="bank-card__magnetic-strip"></div>
+										<div class="back-side__content">
+											<div class="back-side__title">CVC/CVV</div>
+											<input class="bank-card__input back-side__code" type="number" name="" id="" />
+											<div class="back-side__description"><span>The last </span><span>3 or 4 digits </span><span>on back </span><span>of the card</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="popup__btn" type="submit">Book</button>
+					</div>
+				</form>
+			</div>
+		</div>
 
-          <form action="#" class="tickets__form form">
-            <div class="form__wrapper">
-              <fieldset class="form__ticket-type form__ticket-type--hidden ticket-type">
-                <legend class="ticket-type__title">Ticket Type</legend>
-                <label class="ticket-type__item">Permanent exhibition
-                  <input id="radioPermanent" aria-label="Постоянная выставка" type="radio" checked="checked"
-                    name="radio" class="ticket-type__input">
-                  <span class="ticket-type__checkmark"></span>
-                </label>
-                <label class="ticket-type__item">Temporary exhibition
-                  <input id="radioTemporary" aria-label="Временная выставка" type="radio" name="radio"
-                    class="ticket-type__input">
-                  <span class="ticket-type__checkmark"></span>
-                </label>
-                <label class="ticket-type__item">Combined Admission
-                  <input id="radioCombined" aria-label="Комбинированный билет" type="radio" name="radio"
-                    class="ticket-type__input">
-                  <span class="ticket-type__checkmark"></span>
-                </label>
-              </fieldset>
+		<footer class="footer">
+			<div class="container container__section container__footer">
+				<div class="footer__upper">
+					<div class="footer__logo logo">
+						<a href="#" class="logo__link logo__link--narrow">
+							<span class="icon logo__icon"></span>
+							<span class="logo__title">Louvre</span>
+						</a>
+					</div>
+					<div class="footer__wrapper">
+						<nav class="footer__nav nav">
+							<ul class="footer__list nav__list">
+								<li class="footer__item nav__item">
+									<a href="#visiting" class="footer__link nav__link">Visiting</a>
+								</li>
+								<li class="footer__item nav__item">
+									<a href="#explore" class="footer__link nav__link">Explore</a>
+								</li>
+								<li class="footer__item nav__item">
+									<a href="#Video" class="footer__link nav__link">Video</a>
+								</li>
+								<li class="footer__item nav__item">
+									<a href="#gallery" class="footer__link nav__link">Gallery</a>
+								</li>
+								<li class="footer__item nav__item">
+									<a href="#tickets" class="footer__link nav__link">Tickets</a>
+								</li>
+								<li class="footer__item nav__item">
+									<a href="#contacts" class="footer__link nav__link">Contacts</a>
+								</li>
+							</ul>
+						</nav>
+						<ul class="footer__social social">
+							<li class="social__item">
+								<a href="https://clck.ru/3NKw6A" class="social__link" aria-label="YouTube" target="_blank" rel="noopener">
+									<span class="icon social__icon social__icon--youtube"></span>
+								</a>
+							</li>
+							<li class="social__item">
+								<a href="https://clck.ru/3NKw76" class="social__link" aria-label="Instagram" target="_blank" rel="noopener">
+									<span class="icon social__icon social__icon--instagram"></span>
+								</a>
+							</li>
+							<li class="social__item">
+								<a href="https://clck.ru/3NKw7P" class="social__link" aria-label="Facebook" target="_blank" rel="noopener">
+									<span class="icon social__icon social__icon--facebook"></span>
+								</a>
+							</li>
+							<li class="social__item">
+								<a href="https://clck.ru/3NKw7e" class="social__link" aria-label="Twitter" target="_blank" rel="noopener">
+									<span class="icon social__icon social__icon--twitter"></span>
+								</a>
+							</li>
+							<li class="social__item">
+								<a href="https://clck.ru/3NKw8Y" class="social__link" aria-label="Pinterest" target="_blank" rel="noopener">
+									<span class="icon social__icon social__icon--pinterest"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 
-              <fieldset class="form__amount amount">
-                <div class="amount__wrapper">
-                  <legend class="amount__title">Amount</legend>
-                  <p class="amount__item">Basic 18+</p>
-                  <div class="amount__counter">
-                    <button id="adultDecrementBtn" aria-label="Decrease adult count" type="button"
-                      class="amount__btn">–</button>
-                    <input id="adultCount" aria-label="Количество взрослых" tabindex="-1" type="number" min="0" max="99"
-                      value="0" readonly class="amount__number">
-                    <button id="adultIncrementBtn" aria-label="Increase adult count" type="button"
-                      class="amount__btn">+</button>
-                  </div>
+				<div class="footer__lower">
+					<p class="footer__desc">© 2025</p>
+					<a class="footer__desc footer__desc--hidden" href="https://rs.school/courses/javascript-ru">The Rolling Scopes School</a>
+					<a class="footer__desc" href="https://github.com/mvavilin">@mvavilin</a>
+				</div>
+			</div>
+		</footer>
 
-                  <p class="amount__item">Senior 65+</p>
-                  <div class="amount__counter">
-                    <button id="seniorDecrementBtn" aria-label="Decrease senior count" type="button"
-                      class="amount__btn">–</button>
-                    <input id="seniorCount" aria-label="Количество пожилых" tabindex="-1" type="number" min="0" max="99"
-                      value="0" readonly class="amount__number">
-                    <button id="seniorIncrementBtn" aria-label="Increase senior coun" type="button"
-                      class="amount__btn">+</button>
-                  </div>
-                </div>
-
-                <div class="form__sum"><span class="form__caption">Total €</span><span class="form__total">220</span>
-                </div>
-              </fieldset>
-            </div>
-
-            <button id="buyNowBtn" aria-label="Buy ticket now" type="submit" class="form__btn"><span
-                class="form__btn-caption">Buy
-                Now</span></button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <div class="parallax"></div>
-
-    <section id="contacts" class="section contacts">
-      <div class="container container__section container__contacts">
-        <h2 class="section__title section__title--gold section__title--underline">Contacts</h2>
-
-        <div class="contacts__content">
-          <ul class="contacts__list">
-            <li class="contacts__subtitle"><span class="contacts__text">Palais Royal </span><span
-                class="contacts__text">Musee du Louvre</span></li>
-            <li class="contacts__item">address: <a href="https://clck.ru/3NKw6b" class="contacts__link">75001 Paris,
-                France</a>
-            </li>
-            <li class="contacts__item">phone: <a href="tel:+330140205050" class="contacts__link">+33(0) 1 40 20 50
-                50</a>
-            </li>
-            <li class="contacts__item">mail: <a href="mailto:info@louvre.fr" class="contacts__link">info@louvre.fr</a>
-            </li>
-          </ul>
-
-          <div class="contacts__map-wrapper">
-            <div id="map" class="contacts__map"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container container__section container__footer">
-      <div class="footer__upper">
-        <div class="footer__logo logo">
-          <a href="#" class="logo__link logo__link--narrow">
-            <span class="icon logo__icon"></span>
-            <span class="logo__title">Louvre</span>
-          </a>
-        </div>
-
-        <div class="footer__wrapper">
-          <nav class="footer__nav nav">
-            <ul class="footer__list nav__list">
-              <li class="footer__item nav__item">
-                <a href="#visiting" class="footer__link nav__link">Visiting</a>
-              </li>
-              <li class="footer__item nav__item">
-                <a href="#explore" class="footer__link nav__link">Explore</a>
-              </li>
-              <li class="footer__item nav__item">
-                <a href="#Video" class="footer__link nav__link">Video</a>
-              </li>
-              <li class="footer__item nav__item">
-                <a href="#gallery" class="footer__link nav__link">Gallery</a>
-              </li>
-              <li class="footer__item nav__item">
-                <a href="#tickets" class="footer__link nav__link">Tickets</a>
-              </li>
-              <li class="footer__item nav__item">
-                <a href="#contacts" class="footer__link nav__link">Contacts</a>
-              </li>
-            </ul>
-          </nav>
-
-          <ul class="footer__social social">
-            <li class="social__item">
-              <a href="https://clck.ru/3NKw6A" class="social__link" aria-label="YouTube" target="_blank" rel="noopener">
-                <span class="icon social__icon social__icon--youtube"></span>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="https://clck.ru/3NKw76" class="social__link" aria-label="Instagram" target="_blank"
-                rel="noopener">
-                <span class="icon social__icon social__icon--instagram"></span>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="https://clck.ru/3NKw7P" class="social__link" aria-label="Facebook" target="_blank"
-                rel="noopener">
-                <span class="icon social__icon social__icon--facebook"></span>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="https://clck.ru/3NKw7e" class="social__link" aria-label="Twitter" target="_blank" rel="noopener">
-                <span class="icon social__icon social__icon--twitter"></span>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="https://clck.ru/3NKw8Y" class="social__link" aria-label="Pinterest" target="_blank"
-                rel="noopener">
-                <span class="icon social__icon social__icon--pinterest"></span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer__lower">
-        <p class="footer__desc">© 2025</p>
-        <a class="footer__desc footer__desc--hidden" href="https://rs.school/courses/javascript-ru">The Rolling Scopes
-          School</a>
-        <a class="footer__desc" href="https://github.com/mvavilin">@mvavilin</a>
-      </div>
-    </div>
-  </footer>
-
-  <script type="module" src="index.js"></script>
-</body>
-
+		<script type="module" src="index.js"></script>
+	</body>
 </html>

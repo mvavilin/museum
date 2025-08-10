@@ -2,28 +2,35 @@
   --black: #030303;
   --border: 0.1rem solid var(--black);
 
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   left: 0;
+  top: 0;
   transition: left 0.8s ease;
   color: var(--black);
+  z-index: 1;
 
   &--close {
     left: -100%;
   }
 
   &__container {
-    position: relative;
     flex-grow: 1;
-    background-color: $color-white;
+    position: relative;
     max-width: 75%;
+    max-height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
     padding: 4.75% 12.25%;
+    background-color: $color-white;
   }
+
+  &__content {}
 
   &__close {
     cursor: pointer;
@@ -35,7 +42,7 @@
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -43,9 +50,11 @@
       height: 0.1rem;
       background-color: $color-black;
     }
+
     &::before {
       transform: translate(-50%, -50%) rotate(45deg);
     }
+
     &::after {
       transform: translate(-50%, -50%) rotate(-45deg);
     }
@@ -84,6 +93,7 @@
     padding-bottom: 1rem;
   }
 }
+
 .booking {
   &__wrapper {
     display: flex;
@@ -102,7 +112,7 @@
   &__icon--logo {
     width: 8.5rem;
     height: 4.1rem;
-    mask-image: url('../assets/svg/logo.svg');
+    mask-image: url("../assets/svg/logo.svg");
   }
 
   &__title {
@@ -183,7 +193,7 @@
   }
 
   &__input-icon--date {
-    mask-image: url('../assets/svg/popup/date.svg');
+    mask-image: url("../assets/svg/popup/date.svg");
   }
 
   &__input,
@@ -197,6 +207,7 @@
     background-color: white;
     padding: 0;
     padding-right: 1.5rem;
+    width: 100%;
 
     &::placeholder {
       color: var(--black);
@@ -206,7 +217,7 @@
   &__input-icon--down-arrow {
     width: 1.7rem;
     height: 1.7rem;
-    mask-image: url('../assets/svg/popup/down-arrow.svg');
+    mask-image: url("../assets/svg/popup/down-arrow.svg");
   }
 
   &__time-option {
@@ -218,23 +229,23 @@
   }
 
   &__input-icon--time {
-    mask-image: url('../assets/svg/popup/date.svg');
+    mask-image: url("../assets/svg/popup/date.svg");
   }
 
   &__input-icon--person {
-    mask-image: url('../assets/svg/popup/person.svg');
+    mask-image: url("../assets/svg/popup/person.svg");
   }
 
   &__input-icon--email {
-    mask-image: url('../assets/svg/popup/email.svg');
+    mask-image: url("../assets/svg/popup/email.svg");
   }
 
   &__input-icon--tel {
-    mask-image: url('../assets/svg/popup/tel.svg');
+    mask-image: url("../assets/svg/popup/tel.svg");
   }
 
   &__input-icon--ballot {
-    mask-image: url('../assets/svg/popup/ballot.svg');
+    mask-image: url("../assets/svg/popup/ballot.svg");
   }
 
   &__time {
@@ -253,6 +264,7 @@
     border: var(--border);
   }
 }
+
 .entry-ticket {
   &__title {
     margin-top: -0.5rem;
@@ -305,9 +317,9 @@
     width: 3.5rem;
   }
 }
+
 .overview {
-  &__wrapper {
-  }
+  &__wrapper {}
 
   &__content {
     display: flex;
@@ -347,13 +359,15 @@
     background-color: var(--black);
 
     &--date {
-      mask-image: url('../assets/svg/popup/date.svg');
+      mask-image: url("../assets/svg/popup/date.svg");
     }
+
     &--time {
-      mask-image: url('../assets/svg/popup/time.svg');
+      mask-image: url("../assets/svg/popup/time.svg");
     }
+
     &--check {
-      mask-image: url('../assets/svg/popup/check.svg');
+      mask-image: url("../assets/svg/popup/check.svg");
     }
   }
 
@@ -401,69 +415,239 @@
     margin-bottom: 2.6rem;
   }
 }
+
 .bank-card {
   &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    padding-top: 3rem;
+    min-height: 24.1rem;
   }
 
   &__side {
+    width: 77%;
+    height: 21.1rem;
+    border-radius: 0.3rem;
+    padding: 1.5rem 2rem;
   }
 
   &__front-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #bcbcbc;
+    z-index: 1;
   }
 
   &__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
-  &__number {
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: $color-white;
+    padding: 1rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
+
+  &__number {}
 
   &__expiration-date {
+    display: flex;
+    column-gap: 2.5rem;
   }
 
   &__icon {
+    background-color: inherit;
+    background-repeat: no-repeat;
   }
 
   &__icon--visa {
+    width: 5.5rem;
+    height: 1.6rem;
+    background-image: url("../assets/svg/popup/visa.svg");
   }
 
   &__icon--mastercard {
+    width: 5.3rem;
+    height: 3.2rem;
+    background-image: url("../assets/svg/popup/mastercard.svg");
   }
 
   &__back-side {
+    background-color: #939393;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   &__magnetic-strip {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 100%;
+    height: 4.5rem;
+    background-color: var(--black);
   }
 
-  &__cardholder-name {
-  }
+  &__cardholder-name {}
 }
+
 .front-side {
   &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   &__payment-info {
+    max-width: 21.5rem;
   }
 
   &__payment-systems {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    margin-top: 2rem;
   }
 }
+
 .back-side {
+  padding-top: 8.5rem;
+  display: flex;
+  justify-content: end;
+
   &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    max-width: 7.5rem;
   }
 
   &__title {
+    align-self: center;
+    font-size: 1.2rem;
   }
 
   &__code {
+    margin-bottom: 0;
   }
 
   &__description {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
   }
 }
+
 @media (max-width: $breakpoint-lg) {
+  .popup {
+    &__container {
+      max-width: 100%;
+      padding: 7.3% 2.5%;
+    }
+  }
 }
+
 @media (max-width: $breakpoint-md) {
+  .popup {
+    &__container {
+      max-width: 77%;
+      padding: 10% 4%;
+    }
+
+    &__form {
+      flex-direction: column;
+      row-gap: 5rem;
+    }
+
+    &__booking {
+      max-width: 100%;
+    }
+
+    &__overview {
+      max-width: 100%;
+      padding: 2.5rem 1.5rem;
+    }
+  }
+
+  .booking {
+    &__content {
+      margin-bottom: 3.375%;
+    }
+
+    &__input-date,
+    &__input-time {
+      flex-shrink: 0;
+      flex-basis: 25.1rem;
+    }
+  }
+
+  .bank-card {
+    &__side {
+      width: 72%;
+    }
+  }
 }
+
 @media (max-width: $breakpoint-sm) {
+  .popup {
+    &__container {
+      max-width: 100%;
+      padding: 19% 7%;
+    }
+  }
+
+  .booking {
+    &__title {
+      font-size: 3.5rem;
+    }
+
+    &__content {
+      margin-bottom: 5.375%;
+    }
+
+    &__input-date,
+    &__input-time {
+      flex-basis: 100%;
+    }
+  }
+
+  .overview {
+    &__img {
+      width: 12rem;
+      height: 9.6rem;
+    }
+
+    &__bank-card {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .bank-card {
+    &__wrapper {
+      padding-top: 0;
+    }
+
+    &__side {
+      width: 100%;
+    }
+
+    &__front-side {
+      position: inherit;
+    }
+
+    &__back-side {
+      position: inherit;
+    }
+  }
 }

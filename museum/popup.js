@@ -1,4 +1,3 @@
-
 const dateInputEl = document.querySelector('.booking__input-date');
 const timeInputEl = document.querySelector('.booking__input-time');
 const ticketTypeInputEl = document.querySelector('.booking__input-ticket-type');

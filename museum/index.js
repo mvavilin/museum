@@ -9,6 +9,8 @@ import { initInteractiveMap } from './js/interactiveMap.js';
 import { initTicketForm, openPopup } from './js/popup.js';
 import { formValidationInitialization } from './js/validation.js';
 
+const disclaimer = document.getElementById('disclaimer');
+setTimeout(() => disclaimer.classList.remove('disclaimer--active'), 20000);
 let play = true;
 const usePlay = (bool) => bool ? play = true : play = false;
 const isPlay = () => play ? true : false;
@@ -54,19 +56,30 @@ initTicketForm(saveTicketDateToStorage, restoreTicketDateFromStorageToForm, rest
 formValidationInitialization();
 
 // Плавная прокрутка вверх при клике
-const backToTopButton = document.getElementById("returnToTop");
+const backToTopButton = document.getElementById('returnToTop');
+const disclaimerCloseBtn = document.getElementById('disclaimerCloseBtn');
 
-window.addEventListener("scroll", () => {
+disclaimer.classList.add('disclaimer--active');
+disclaimerCloseBtn.addEventListener('click', () => disclaimer.classList.remove('disclaimer--active'));
+if (window.pageYOffset > 0) disclaimer.classList.remove('disclaimer--active');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 0) {
+    disclaimer.classList.remove('disclaimer--active');
+  };
   if (window.pageYOffset > 300) {
-    backToTopButton.classList.add("return-to-top--active");
+    backToTopButton.classList.add('return-to-top--active');
+    // disclaimer.classList.add('disclaimer--inactive');
   } else {
-    backToTopButton.classList.remove("return-to-top--active");
+    backToTopButton.classList.remove('return-to-top--active');
+    // disclaimer.classList.remove('disclaimer--inactive');
+    // setTimeout(() => disclaimer.classList.add('disclaimer--inactive'), 15000);
   }
 });
 
-backToTopButton.addEventListener("click", () => {
+backToTopButton.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: 'smooth'
   });
 });

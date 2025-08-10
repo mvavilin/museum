@@ -490,8 +490,8 @@ iframe {
   position: fixed;
   bottom: 4rem;
   right: 4rem;
-  width: 8rem;
-  height: 8rem;
+  width: 5rem;
+  height: 5rem;
   background-color: #000000;
   border: none;
   opacity: 0;
@@ -524,8 +524,8 @@ iframe {
   background-color: #333333;
 }
 .return-to-top__icon {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   mask-image: url(../assets/svg/arrow-top.svg);
 }
 

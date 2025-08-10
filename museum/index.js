@@ -4,8 +4,9 @@ import { initHeaderNav } from './js/headerNav.js';
 import { initSliderComparison } from './js/sliderComparison.js';
 import { initGallery } from './js/gallery.js';
 import { initVideoslider } from './js/videoslider.js';
-import { initTicketCalculator } from './js/ticketСalculator.js';
+import { initTicketCalculator, saveTicketDateToStorage, restoreTicketDateFromStorageToForm, restoreTicketDateFromStorage } from './js/ticketСalculator.js';
 import { initInteractiveMap } from './js/interactiveMap.js';
+import { initTicketForm, openPopup } from './js/popup.js';
 
 // Инициализация бургер-меню и навигации
 initHeaderNav();
@@ -24,6 +25,7 @@ const slides = document.getElementById('slides'),
   sliderTotalSlides = document.querySelector('.slider__total-slides');
 
 slide(slides, sliderPrevBtn, sliderNextBtn, sliderPagination, sliderDots, sliderCurrentSlide, sliderTotalSlides);
+// 
 
 // Инициализация кастомного видеоплеера в секции Video
 initVideoPlayer();
@@ -35,8 +37,10 @@ initGallery();
 initVideoslider(updateMainVideo);
 
 // Инициализация калькулятора продажи билетов в секции Tickets
-initTicketCalculator();
+initTicketCalculator(openPopup);
 
 // Инициализация интерактивной карты в секции Contacts
-const prices = { permanent: { basic: 20, senior: 10 }, temporary: { basic: 25, senior: 12.5 }, combined: { basic: 40, senior: 20 }, };
-initInteractiveMap(prices);
+initInteractiveMap();
+
+// Инициализация калькулятора продажи билетов в форме продажи билетов
+initTicketForm(saveTicketDateToStorage, restoreTicketDateFromStorageToForm, restoreTicketDateFromStorage);

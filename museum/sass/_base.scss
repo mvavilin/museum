@@ -14,6 +14,13 @@ body {
   line-height: $line-height-base;
 }
 
+.body {
+  &--hidden {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -309,11 +316,9 @@ iframe {
       bottom: 0;
       width: 100%;
       height: 18.5%;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        $color-background 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0) 0%,
+          $color-background 100%);
     }
   }
 
@@ -322,10 +327,7 @@ iframe {
     flex-flow: column wrap;
     align-content: space-between;
     column-gap: var(--imgWrapperGapX);
-    height: calc(
-      (var(--imgWrapperHeight) + var(--imgWrapperBottomMargin)) *
-        var(--imgCount)
-    );
+    height: calc((var(--imgWrapperHeight) + var(--imgWrapperBottomMargin)) * var(--imgCount));
 
     &::before,
     &::after {
@@ -360,9 +362,11 @@ iframe {
     &:nth-child(3n + 1) {
       order: 1;
     }
+
     &:nth-child(3n + 2) {
       order: 2;
     }
+
     &:nth-child(3n) {
       order: 3;
     }

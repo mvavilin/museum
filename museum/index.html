@@ -711,14 +711,13 @@
 									<div class="front-side__content">
 										<div class="front-side__payment-info">
 											<div class="bank-card__title">Card number</div>
-											<input class="bank-card__input bank-card__number" type="number" name=""
-												id="" />
+											<input class="bank-card__input" type="text" name="" id="" />
 											<div class="bank-card__title">Expiration date</div>
 											<div class="bank-card__expiration-date">
 												<input class="bank-card__input bank-card__number" type="number" name=""
-													id="" />
+													id="" min="0" max="99" />
 												<input class="bank-card__input bank-card__number" type="number" name=""
-													id="" />
+													id="" min="0" max="9999" />
 											</div>
 										</div>
 										<div class="front-side__payment-systems">
@@ -734,7 +733,7 @@
 									<div class="bank-card__magnetic-strip"></div>
 									<div class="back-side__content">
 										<div class="back-side__title">CVC/CVV</div>
-										<input class="bank-card__input back-side__code" type="number" name="" id="" />
+										<input class="bank-card__input back-side__code" type="text" name="" id="" />
 										<div class="back-side__description"><span>The last </span><span>3 or 4 digits
 											</span><span>on back
 											</span><span>of the card</span></div>

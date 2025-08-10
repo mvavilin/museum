@@ -16,7 +16,7 @@
   z-index: 1000;
 
   &--close {
-    // left: -100%;
+    left: -100%;
   }
 
   &__container {
@@ -89,6 +89,10 @@
     color: $color-white;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    &--inactive {
+      background-color: #bcbcbc;
+    }
   }
 }
 
@@ -477,7 +481,17 @@
     margin-bottom: 1rem;
   }
 
-  &__number {}
+  &__number {
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      cursor: pointer;
+      opacity: 1;
+      height: 15px;
+      border-left: 3px solid #000;
+      margin: 0;
+    }
+  }
 
   &__expiration-date {
     display: flex;

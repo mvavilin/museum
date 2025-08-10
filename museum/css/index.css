@@ -2092,6 +2092,9 @@ iframe {
   color: var(--black);
   z-index: 1000;
 }
+.popup--close {
+  left: -100%;
+}
 .popup__container {
   flex-grow: 1;
   position: relative;
@@ -2153,6 +2156,9 @@ iframe {
   color: #ffffff;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.popup__btn--inactive {
+  background-color: #bcbcbc;
 }
 
 .booking__wrapper {
@@ -2465,6 +2471,13 @@ iframe {
   height: 3.5rem;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+}
+.bank-card__number::-webkit-inner-spin-button, .bank-card__number::-webkit-outer-spin-button {
+  cursor: pointer;
+  opacity: 1;
+  height: 15px;
+  border-left: 3px solid #000;
+  margin: 0;
 }
 .bank-card__expiration-date {
   display: flex;

@@ -32,7 +32,7 @@ function closePopup() {
 	popup.classList.add('popup--close');
 }
 
-export function initTicketForm(saveTicketDateToStorage, restoreTicketDateFromStorageToForm, restoreTicketDateFromStorage) {
+export function initTicketForm(saveTicketDateToStorage, restoreTicketDateFromStorageToForm, restoreTicketDateFromStorage, usePlay) {
 	const dateInputEl = document.querySelector('.booking__input-date');
 	const timeInputEl = document.querySelector('.booking__input-time');
 	const ticketTypeInputEl = document.querySelector('.booking__input-ticket-type');
@@ -133,11 +133,13 @@ export function initTicketForm(saveTicketDateToStorage, restoreTicketDateFromSto
 		if (!popupCont.contains(e.target)) {
 			closePopup();
 			restoreTicketDateFromStorage();
+			usePlay(true);
 		}
 	});
 	popupCloseBtn.addEventListener('click', () => {
 		closePopup();
 		restoreTicketDateFromStorage();
+		usePlay(true);
 	});
 
 	document.getElementById('basicIncrementBtnEntry').addEventListener('click', () => {

@@ -55,7 +55,7 @@ export function restoreTicketDateFromStorageToForm() {
 	}
 }
 
-export function initTicketCalculator(openPopup) {
+export function initTicketCalculator(openPopup, usePlay) {
 	const ticketRadios = document.querySelectorAll('.ticket-type__input');
 	const openPopupBtn = document.getElementById('buyNowBtn');
 
@@ -95,5 +95,6 @@ export function initTicketCalculator(openPopup) {
 	openPopupBtn.addEventListener('click', () => {
 		restoreTicketDateFromStorageToForm();
 		openPopup();
+		usePlay(false);
 	});
 }

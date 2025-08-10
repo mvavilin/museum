@@ -44,7 +44,7 @@ function updateRangeStyle(range, property) {
 	range.style.setProperty(property, `${val}%`);
 }
 
-export function initVideoPlayer() {
+export function initVideoPlayer(isPlay) {
 	// Инициализация
 	updateVolumeRange();
 
@@ -116,7 +116,7 @@ export function initVideoPlayer() {
 	document.addEventListener('keydown', (e) => {
 		const key = e.key.toLowerCase();
 		const shift = e.shiftKey;
-
+		if (!isPlay()) return;
 		switch (key) {
 			case ' ':
 				e.preventDefault();

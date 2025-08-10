@@ -13,10 +13,10 @@
   top: 0;
   transition: left 0.8s ease;
   color: var(--black);
-  z-index: 100;
+  z-index: 1000;
 
   &--close {
-    left: -100%;
+    // left: -100%;
   }
 
   &__container {
@@ -140,6 +140,27 @@
     position: relative;
     width: 100%;
     border: var(--border);
+
+    &--err {
+      border-color: $color-primary;
+    }
+
+    &--err .booking__input-icon {
+      transition: none;
+      background-color: $color-primary;
+    }
+  }
+
+  &__err-message {
+    display: none;
+    color: $color-primary;
+    font-size: 1.2rem;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+
+    &--active {
+      display: block;
+    }
   }
 
   &__input-date,
@@ -202,14 +223,14 @@
   &__input {
     border: none;
     outline: none;
-    background-color: white;
+    background-color: $color-white;
     padding: 0;
     padding-right: 1.5rem;
     width: 100%;
+  }
 
-    &::placeholder {
-      color: var(--black);
-    }
+  &::placeholder {
+    color: var(--black);
   }
 
   &__input-icon--down-arrow {

@@ -2090,10 +2090,7 @@ iframe {
   top: 0;
   transition: left 0.8s ease;
   color: var(--black);
-  z-index: 100;
-}
-.popup--close {
-  left: -100%;
+  z-index: 1000;
 }
 .popup__container {
   flex-grow: 1;
@@ -2199,6 +2196,23 @@ iframe {
   width: 100%;
   border: var(--border);
 }
+.booking__input-container--err {
+  border-color: #710707;
+}
+.booking__input-container--err .booking__input-icon {
+  transition: none;
+  background-color: #710707;
+}
+.booking__err-message {
+  display: none;
+  color: #710707;
+  font-size: 1.2rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+.booking__err-message--active {
+  display: block;
+}
 .booking__input-date, .booking__input-time {
   flex-shrink: 0;
   flex-basis: 19rem;
@@ -2245,12 +2259,12 @@ iframe {
 .booking__input {
   border: none;
   outline: none;
-  background-color: white;
+  background-color: #ffffff;
   padding: 0;
   padding-right: 1.5rem;
   width: 100%;
 }
-.booking__input::placeholder {
+.booking::placeholder {
   color: var(--black);
 }
 .booking__input-icon--down-arrow {

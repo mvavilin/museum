@@ -583,33 +583,36 @@
 								</div>
 							</div>
 						</div>
-						<div class="booking__input-container">
+						<div class="booking__input-container" id="nameErrCont">
 							<div class="booking__input-wrapper">
 								<div class="booking__input-icon-wrapper">
 									<div class="icon booking__input-icon booking__input-icon--person"></div>
 								</div>
-								<input type="text" name="" id="" class="booking__input booking__input--person"
+								<input type="text" name="name" id="name" class="booking__input booking__input--person"
 									placeholder="Name" />
 							</div>
 						</div>
-						<div class="booking__input-container">
+						<div class="booking__err-message" id="nameErr"></div>
+						<div class="booking__input-container" id="emailErrCont">
 							<div class="booking__input-wrapper">
 								<div class="booking__input-icon-wrapper">
 									<div class="icon booking__input-icon booking__input-icon--email"></div>
 								</div>
-								<input type="email" name="" id="" class="booking__input booking__input--email"
+								<input type="email" name="email" id="email" class="booking__input booking__input--email"
 									placeholder="E-mail" />
 							</div>
 						</div>
-						<div class="booking__input-container">
+						<div class="booking__err-message" id="emailErr"></div>
+						<div class="booking__input-container" id="phoneErrCont">
 							<div class="booking__input-wrapper">
 								<div class="booking__input-icon-wrapper">
 									<div class="icon booking__input-icon booking__input-icon--tel"></div>
 								</div>
-								<input type="number" name="" id="" class="booking__input booking__input--tel"
+								<input type="tel" name="phone" id="phone" class="booking__input booking__input--tel"
 									placeholder="Phone" />
 							</div>
 						</div>
+						<div class="booking__err-message" id="phoneErr"></div>
 						<div class="booking__input-container booking__input-ticket-type">
 							<select id="ticketTypeInput" class="booking__ticket-type">
 								<option class="booking__ticket-type-option" value="permanent">Permanent exhibition

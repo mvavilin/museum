@@ -1,0 +1,50 @@
+.return-to-top {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #000000;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: $border-radius-full;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-1.5rem);
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    animation: float 5s ease-in-out infinite;
+  }
+
+  &:hover {
+    background-color: #b3b3b3;
+    transform: scale(1.05);
+
+    .return-to-top__icon {
+      background-color: #333333;
+    }
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    mask-image: url(../assets/svg/arrow-top.svg);
+  }
+}

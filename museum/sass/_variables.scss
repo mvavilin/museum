@@ -1,0 +1,127 @@
+// Roboto
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-VariableFont_wdth\,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Forum
+@font-face {
+  font-family: "Forum";
+  src: url("../assets/fonts/Forum-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+// Базовые настройки
+$html-font-size: 10px;
+
+// Цвета
+$color-white: #ffffff;
+$color-black: #000000;
+$color-primary: #710707;
+$color-secondary: #9d8665;
+$color-text: #000000;
+$color-text-light: #ffffff;
+$color-background: #030303;
+$color-link-hover: #9d8665;
+$color-link-active: #7e6c51;
+$color-dot-active: #d2b183;
+$color-desc-marker: #caaa7d;
+$color-player-control-unit: #b3b3b3;
+$color-player-control-unit-hover: #989898;
+$color-player-pagination-unit: #999999;
+$color-videoslider-pagination-unit-hover: #710707;
+$color-videoslider-pagination-unit-active: #333333;
+$color-footer-line: #666666;
+
+// Шрифты
+$font-primary: "Forum", serif;
+$font-secondary: "Roboto", sans-serif;
+
+// Размеры шрифтов
+$font-size-base: 1.8rem;
+$font-size-xxs: 1.6rem;
+$font-size-xs: 2rem;
+$font-size-md: 2.2rem;
+$font-size-m: 2.4rem;
+$font-size-lg: 2.8rem;
+$font-size-xl: 3.2rem;
+$font-size-xxl: 4rem;
+$font-size-xxxl: 5rem;
+$font-size-xxxxl: 8rem;
+
+// Насыщенность шрифтов
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+// Межстрочные интервалы
+$line-height-base: normal;
+$line-height-xs: 2.2rem;
+$line-height-sm: 3.85rem;
+$line-height-md: 4rem;
+$line-height-lg: 6rem;
+$line-height-xl: 7.5rem;
+$line-height-xxl: 9rem;
+
+// Межбуквенные интервалы
+$letter-spacing-normal: 0.5rem;
+$letter-spacing-xs: 0.165rem;
+$letter-spacing-sm: 0.2rem;
+$letter-spacing-md: 0.3rem;
+
+// Отступы
+$spacing-normal: 1rem;
+$spacing-xs: 2rem;
+$spacing-sm: 4rem;
+$spacing-md: 5rem;
+$spacing-lg: 6rem;
+$spacing-xl: 7.5rem;
+$spacing-xxl: 8rem;
+
+// Скругления
+$border-radius-normal: 1rem;
+$border-radius-full: 999.9rem;
+
+// Анимации
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Брейкпоинты
+$breakpoint-sm: 420px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1920px;
+
+// Максимальная ширина контейнера
+$container-max-width: 100%;
+$container-max-width-sm: 42rem;
+$container-max-width-md: 76.8rem;
+$container-max-width-lg: 102.4rem;
+$container-max-width-xl: 144rem;
+
+// Отступы контейнера
+$container-padding-sm: 2rem;
+$container-padding-md: 2rem;
+$container-padding-lg: 2rem;
+$container-padding-xl: 24rem;

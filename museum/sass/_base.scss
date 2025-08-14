@@ -1,0 +1,505 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: $html-font-size;
+}
+
+body {
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+iframe {
+  border: none;
+}
+
+.icon {
+  display: block;
+  background-color: $color-white;
+  mask-size: contain;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  transition: $transition-normal;
+}
+
+.container {
+  position: relative;
+  width: $container-max-width;
+  margin: 0 auto;
+  max-width: $container-max-width-xl + 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  &__header,
+  &__welcome,
+  &__explore,
+  &__gallery,
+  &__footer {
+    color: $color-text-light;
+  }
+
+  &__header {
+    padding-top: 5.9rem;
+    padding-bottom: 5.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-normal;
+  }
+
+  &__section {
+    display: flex;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
+
+  &__welcome {
+    display: block;
+    padding-top: 0;
+    padding-bottom: $spacing-lg;
+  }
+
+  &__visiting,
+  &__video,
+  &__gallery,
+  &__tickets,
+  &__contacts {
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  &__explore {
+    justify-content: space-between;
+    gap: $spacing-lg;
+  }
+
+  &__gallery {
+    padding-bottom: 0;
+  }
+
+  &__footer {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+
+.header {
+  background-color: $color-background;
+
+  &__nav {
+    max-width: 77.5rem;
+    flex-grow: 1;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-normal;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    font-size: $font-size-md;
+    font-weight: $font-weight-thin;
+    letter-spacing: $letter-spacing-xs;
+  }
+}
+
+.section {
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-xxxxl;
+    font-weight: $font-weight-thin;
+    line-height: $line-height-xxl;
+    letter-spacing: $letter-spacing-normal;
+    text-transform: uppercase;
+
+    &--gold {
+      color: $color-secondary;
+    }
+
+    &--underline {
+      position: relative;
+      margin-bottom: 2.8rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2.8rem;
+        left: 0;
+        width: 100%;
+        height: 0.3rem;
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+
+.welcome {
+  background-color: $color-background;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: absolute;
+    top: 15rem;
+    z-index: 1;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin-bottom: 5rem;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-light;
+    letter-spacing: $letter-spacing-sm;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    max-width: 36rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-radius: $border-radius-normal;
+    background-color: $color-primary;
+    font-size: $font-size-md;
+    font-weight: $font-weight-light;
+    letter-spacing: $letter-spacing-sm;
+    transition: $transition-normal;
+
+    &:hover {
+      background-color: $color-link-hover;
+    }
+
+    &:active {
+      background-color: $color-link-active;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.explore {
+  background-color: $color-background;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 66rem;
+  }
+
+  &__slider-comparison {
+    align-self: center;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 72rem;
+    height: 70rem;
+  }
+}
+
+.video {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-normal;
+  }
+
+  &__desc {
+    max-width: 72rem;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+}
+
+.gallery {
+  background-color: $color-black;
+
+  &__container {
+    pointer-events: none;
+    position: relative;
+    max-height: 196rem;
+    overflow-y: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 18.5%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        $color-background 100%
+      );
+    }
+  }
+
+  &__inner-container {
+    columns: 3 auto;
+    column-gap: 3.6rem;
+  }
+
+  &__img-wrapper {
+    max-width: 45.6rem;
+    margin-bottom: 2.5rem;
+
+    &:nth-child(1),
+    &:nth-child(11) {
+      padding-top: $spacing-md;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.tickets {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-lg;
+  }
+
+  &__img-wrapper {
+    max-width: 72rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+}
+
+.parallax {
+  width: 100%;
+  height: 40rem;
+  background-image: url("../assets/img/parallax-background.webp");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contacts {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-lg;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 2.5rem;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    font-size: $font-size-md;
+    font-weight: $font-weight-extra-light;
+  }
+
+  &__link {
+    transition: $transition-normal;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__map-wrapper {
+    max-width: 96rem;
+    height: 62rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    height: 100%;
+  }
+}
+
+.footer {
+  background-color: $color-black;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 2 * ($spacing-sm + 1rem) + $font-size-md;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: $color-footer-line;
+  }
+
+  &__upper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2.5rem;
+    column-gap: $spacing-xs;
+  }
+
+  &__logo {
+    margin-top: 1rem;
+  }
+
+  &__wrapper {
+    flex-grow: 1;
+    max-width: 110rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  &__nav {
+    flex-grow: 1;
+    margin-top: 1rem;
+  }
+
+  &__list {
+    columns: 2;
+    column-gap: $spacing-xs;
+    max-width: 49.5rem;
+  }
+
+  &__item {
+    margin-bottom: 2.5rem;
+  }
+
+  &__link {
+    font-size: $font-size-md;
+    font-weight: $font-weight-extra-light;
+    letter-spacing: $letter-spacing-sm;
+  }
+
+  &__social {
+    align-self: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  &__lower {
+    columns: 3;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  &__desc {
+    display: block;
+    font-size: $font-size-md;
+    font-weight: $font-weight-thin;
+    line-height: $line-height-xs;
+    letter-spacing: $letter-spacing-sm;
+    text-align: center;
+    transition: $transition-normal;
+
+    &:first-child {
+      text-align: left;
+
+      &:hover {
+        color: inherit;
+      }
+
+      &:active {
+        color: inherit;
+      }
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:active {
+      color: $color-link-active;
+    }
+  }
+}

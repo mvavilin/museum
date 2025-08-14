@@ -1,0 +1,153 @@
+@media (max-width: $breakpoint-sm) {
+  .container {
+    max-width: $container-max-width-sm;
+    padding-left: $container-padding-sm;
+    padding-right: $container-padding-sm;
+
+    &__header {
+      padding-top: 3.6rem;
+      padding-bottom: 3.6rem;
+    }
+
+    &__welcome {
+      padding-top: 0.5rem;
+      padding-bottom: 8rem;
+      gap: 2.5rem;
+    }
+
+    &__visiting {
+      padding-bottom: $spacing-sm;
+    }
+
+    &__video {
+      padding-top: $spacing-sm - 0.4rem;
+      padding-bottom: $spacing-sm;
+    }
+
+    &__gallery {
+      padding-bottom: 0;
+    }
+
+    &__contacts {
+      padding-bottom: $spacing-sm;
+    }
+  }
+
+  .header {
+    &__logo {
+      margin-top: 0;
+    }
+  }
+
+  .section {
+    &__title {
+      font-size: $font-size-lg;
+      line-height: $line-height-md;
+    }
+  }
+
+  .welcome {
+    &__text {
+      font-size: $font-size-xxs;
+    }
+  }
+
+  .explore {
+    &__slider-comparison {
+      max-width: 38rem;
+      height: 36.8rem;
+    }
+  }
+
+  .video {
+    &__media {
+      gap: $spacing-sm;
+    }
+  }
+
+  .gallery {
+    &__container {
+      max-height: 63.7rem;
+    }
+  }
+
+  .tickets {
+    &__content {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+
+    &__form {
+      align-items: center;
+    }
+
+    &__img-wrapper {
+      max-width: 100%;
+      height: 16rem;
+    }
+  }
+
+  .contacts {
+    &__subtitle,
+    &__item {
+      font-size: $font-size-xxs;
+    }
+
+    &__subtitle {
+      margin-bottom: 2.5rem;
+    }
+
+    &__map-wrapper {
+      height: 24.8rem;
+    }
+
+    &__img {
+      height: 300%;
+    }
+  }
+
+  .footer {
+    &::after {
+      bottom: 2 * $spacing-sm + $font-size-md;
+    }
+
+    &__upper {
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    &__logo {
+      margin-top: 0;
+    }
+
+    &__wrapper {
+      margin-top: 0;
+      row-gap: 1.5rem;
+    }
+
+    &__nav {
+      margin-top: 0.5rem;
+    }
+
+    &__list {
+      columns: 3 auto;
+      max-width: inherit;
+      column-gap: 7.5rem;
+    }
+
+    &__link {
+      font-size: $font-size-xxs;
+    }
+
+    &__social {
+      align-self: center;
+    }
+
+    &__desc {
+      font-size: $font-size-xxs;
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+}

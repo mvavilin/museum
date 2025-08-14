@@ -1,25 +1,39 @@
 .logo {
+  &__link {
+    display: flex;
+    gap: 2.5rem;
+  }
 
-    &__link {
-        display: flex;
-        gap: 2.5rem;
-    }
+  &__icon {
+    align-self: flex-start;
+    width: 4.9rem;
+    height: 2.6rem;
+    mask-image: url("../assets/svg/logo.svg");
+  }
 
-    &__image {
-        display: inline-block;
-        min-width: 4.9rem;
-        min-height: 2.6rem;
-        background-color: $color-white;
-        -webkit-mask-image: url("assets/svg/logo.svg");
-        -webkit-mask-size: contain;
-        -webkit-mask-position: top center;
-        -webkit-mask-repeat: no-repeat;
+  &__title {
+    font-family: $font-primary;
+    font-size: $font-size-lg;
+    letter-spacing: $letter-spacing-normal;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .logo {
+    &__icon {
+      width: 2.9rem;
+      height: 1.6rem;
     }
 
     &__title {
-        font-family: $font-primary;
-        font-size: $font-size-lg;
-        text-transform: uppercase;
-        letter-spacing: $letter-spacing-normal;
+      font-size: $font-size-xxs;
     }
+
+    &__link {
+      &--narrow {
+        column-gap: 2rem;
+      }
+    }
+  }
 }

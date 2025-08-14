@@ -1,9 +1,24 @@
 .desc {
+  &__text {
     font-size: $font-size-md;
     font-weight: $font-weight-light;
     line-height: $line-height-sm;
 
-    &__marker {
-        color: $color-desc-marker;
+    &--highlight {
+      color: $color-desc-marker;
     }
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .desc {
+    &__text {
+      font-size: $font-size-xs;
+      line-height: calc($line-height-sm - 0.2rem);
+
+      &--hidden {
+        display: none;
+      }
+    }
+  }
 }

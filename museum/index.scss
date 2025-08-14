@@ -1,0 +1,30 @@
+// Переменные
+@import "sass/variables";
+
+// Базовые стили
+@import "sass/base";
+
+// Адаптив
+@import "sass/media/desktop";
+@import "sass/media/tablet";
+@import "sass/media/mobile";
+
+// Компоненты интерфейса
+// Header
+@import "sass/components/logo";
+@import "sass/components/nav";
+// Welcome
+@import "sass/components/slider";
+// Visiting
+@import "sass/components/cards";
+// Explore
+@import "sass/components/slider-comparison";
+@import "sass/components/desc";
+// Video
+@import "sass/components/player";
+@import "sass/components/videoslider";
+// Tickets
+@import "sass/components/form";
+// Contacts
+// Footer
+@import "sass/components/social";

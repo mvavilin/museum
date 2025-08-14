@@ -1,12 +1,22 @@
 .player {
-  &__video {
+  --videoControllerHeight: 8.5rem;
+  --wrapperHeight: 65rem;
+
+  &__wrapper {
     position: relative;
-    max-height: 65rem;
+    overflow: hidden;
+    height: calc(var(--wrapperHeight) + var(--videoControllerHeight));
   }
 
-  &__preview {
+  &__video {
+    object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
+    padding-bottom: var(--videoControllerHeight);
+
+    &--fullscreen {
+      object-fit: contain;
+    }
   }
 
   &__btn {
@@ -14,22 +24,42 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - var(--videoControllerHeight));
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &__speed-info {
+    position: absolute;
+    top: var(--videoControllerHeight);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: $spacing-normal $spacing-normal * 2;
+    border-radius: $border-radius-normal / 2;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: $color-white;
+
+    &--hidden {
+      opacity: 0;
+    }
   }
 
   &__icon {
     &--paused {
       width: 15.3%;
       height: 100%;
-      mask-image: url("../assets/svg/player/paused.svg");
+      mask-image: url('../assets/svg/player/paused.svg');
     }
   }
 }
 
 .video-controller {
+  // --videoProgressRange: 54%;
+  --videoVolumeRange: 54%;
+  --videoProgressRange: 0%;
+  // --videoVolumeRange: 0%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,23 +67,39 @@
   padding: 2.5rem 3rem;
   background-color: $color-black;
 
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
   &__icon {
     cursor: pointer;
+    background-color: $color-player-control-unit;
 
     &--play {
       width: 2.3rem;
       height: 3.1rem;
-      mask-image: url("../assets/svg/player/play.svg");
+      mask-image: url('../assets/svg/player/play.svg');
     }
     &--volume {
       width: 3.8rem;
       height: 3.1rem;
-      mask-image: url("../assets/svg/player/volume.svg");
+      mask-image: url('../assets/svg/player/volume.svg');
     }
     &--fullscreen {
       width: 3.5rem;
       height: 3.5rem;
-      mask-image: url("../assets/svg/player/fullscreen.svg");
+      mask-image: url('../assets/svg/player/fullscreen.svg');
+    }
+
+    &--pause {
+      mask-image: url('../assets/svg/player/pause.svg');
+    }
+    &--mute {
+      mask-image: url('../assets/svg/player/mute.svg');
+    }
+    &--minimize {
+      mask-image: url('../assets/svg/player/minimize.svg');
     }
   }
 
@@ -65,7 +111,7 @@
     appearance: none;
 
     &::-webkit-slider-thumb {
-      cursor: ew-resize;
+      cursor: pointer;
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 50%;
@@ -80,10 +126,14 @@
     background: linear-gradient(
       to right,
       $color-primary 0%,
-      $color-primary 54%,
-      $color-white 54%,
+      $color-primary var(--videoProgressRange),
+      $color-white var(--videoProgressRange),
       $color-white 100%
     );
+
+    &--fullscreen {
+      max-width: 100%;
+    }
   }
 
   &__volume {
@@ -92,8 +142,8 @@
     background: linear-gradient(
       to right,
       $color-primary 0%,
-      $color-primary 42%,
-      $color-white 42%,
+      $color-primary var(--videoVolumeRange),
+      $color-white var(--videoVolumeRange),
       $color-white 100%
     );
   }
@@ -101,9 +151,8 @@
 
 @media (max-width: $breakpoint-lg) {
   .player {
-    &__preview {
-      max-height: 44.4rem;
-    }
+    --videoControllerHeight: 6rem;
+    --wrapperHeight: 44.4rem;
   }
 
   .video-controller {
@@ -148,6 +197,9 @@
 
 @media (max-width: $breakpoint-md) {
   .player {
+    --videoControllerHeight: 5.5rem;
+    --wrapperHeight: 32.9rem;
+
     &__icon {
       &--paused {
         width: 11.3%;
@@ -156,7 +208,7 @@
   }
 
   .video-controller {
-    position: relative;
+    // position: relative;
     padding: 1.3rem 3rem;
 
     &__icon {
@@ -192,6 +244,9 @@
 
 @media (max-width: $breakpoint-sm) {
   .player {
+    --videoControllerHeight: 5rem;
+    --wrapperHeight: 17.2rem;
+
     &__icon {
       &--paused {
         width: 13.3%;

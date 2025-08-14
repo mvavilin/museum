@@ -66,9 +66,7 @@
   }
 
   .gallery {
-    &__container {
-      max-height: 63.7rem;
-    }
+    --galleryContainerHeight: 63.7rem;
   }
 
   .tickets {

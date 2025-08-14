@@ -54,7 +54,6 @@
       position: absolute;
       top: 100%;
       left: 0;
-      z-index: 10;
       overflow-x: hidden;
       max-width: 29.7rem;
       width: 100%;
@@ -103,7 +102,7 @@
     &__icon {
       width: 1.2rem;
       height: 1.2rem;
-      mask-image: url("../assets/svg/menu_arrow.svg");
+      mask-image: url('../assets/svg/menu_arrow.svg');
     }
   }
 
@@ -161,9 +160,8 @@
   }
 
   .gallery {
-    &__container {
-      max-height: 126.5rem;
-    }
+    --imgWrapperWidth: 31%;
+    --galleryContainerHeight: 126.5rem;
   }
 
   .tickets {

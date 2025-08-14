@@ -14,6 +14,13 @@ body {
   line-height: $line-height-base;
 }
 
+.body {
+  &--hidden {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -138,6 +145,10 @@ iframe {
   &__nav {
     max-width: 77.5rem;
     flex-grow: 1;
+
+    &--visibility {
+      z-index: 10;
+    }
   }
 
   &__list {
@@ -172,7 +183,7 @@ iframe {
       margin-bottom: 2.8rem;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -2.8rem;
         left: 0;
@@ -282,40 +293,82 @@ iframe {
 }
 
 .gallery {
+  --imgCount: 15;
+  --imgWrapperWidth: 31.5%;
+  --imgWrapperHeight: 58rem;
+  --imgWrapperBottomMargin: 2.5rem;
+  --galleryContainerHeight: 196rem;
+  --imgWrapperGapX: 1rem;
+
   background-color: $color-black;
 
   &__container {
     pointer-events: none;
     position: relative;
-    max-height: 196rem;
+    //
+    height: var(--galleryContainerHeight);
+    //
     overflow-y: hidden;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       width: 100%;
       height: 18.5%;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        $color-background 100%
-      );
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0) 0%,
+          $color-background 100%);
     }
   }
 
   &__inner-container {
-    columns: 3 auto;
-    column-gap: 3.6rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    column-gap: var(--imgWrapperGapX);
+    height: calc((var(--imgWrapperHeight) + var(--imgWrapperBottomMargin)) * var(--imgCount));
+
+    &::before,
+    &::after {
+      content: '';
+      flex-basis: 100%;
+      width: 0;
+      order: 2;
+    }
   }
 
   &__img-wrapper {
-    max-width: 45.6rem;
-    margin-bottom: 2.5rem;
+    width: var(--imgWrapperWidth);
+    margin-bottom: var(--imgWrapperBottomMargin);
+    opacity: 0;
+    transform: translateY(2rem) scale(0.98);
+    transition: opacity $transition-slow, transform $transition-slow;
 
     &:nth-child(1),
-    &:nth-child(11) {
+    &:nth-child(3) {
       padding-top: $spacing-md;
+    }
+
+    &--open {
+      // Одновременная анимация
+      transition-delay: 0.8s;
+      // Поочередная анимация
+      // transition-delay: calc(var(--order) * 0.1s);
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    &:nth-child(3n + 1) {
+      order: 1;
+    }
+
+    &:nth-child(3n + 2) {
+      order: 2;
+    }
+
+    &:nth-child(3n) {
+      order: 3;
     }
   }
 
@@ -353,7 +406,7 @@ iframe {
 .parallax {
   width: 100%;
   height: 40rem;
-  background-image: url("../assets/img/parallax-background.webp");
+  background-image: url('../assets/img/parallax-background.webp');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -394,12 +447,15 @@ iframe {
   }
 
   &__map-wrapper {
+    flex-grow: 1;
     max-width: 96rem;
     height: 62rem;
     overflow: hidden;
   }
 
-  &__img {
+  &__map {
+    // filter: grayscale(100%);
+    width: 100%;
     height: 100%;
   }
 }
@@ -409,7 +465,7 @@ iframe {
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 2 * ($spacing-sm + 1rem) + $font-size-md;
     left: 0;
